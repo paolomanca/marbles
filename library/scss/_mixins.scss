@@ -76,7 +76,7 @@ http://sachagreif.com/sass-color-variables/
 TYPOGRAPHY
 *********************/
 
-$sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans-serif:        'OpenSans Light', "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
 
 @font-face {
@@ -89,6 +89,17 @@ $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
     font-weight: normal;
     font-style: normal;
 
+}
+
+@font-face {
+    font-family: 'OpenSans Light';
+    src: url('../fonts/OpenSans-Light-webfont.eot');
+    src: url('../fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Light-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Light-webfont.svg#genericonsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* 	To embed your own fonts, use this syntax
