@@ -188,6 +188,7 @@ function bones_theme_support() {
 	add_theme_support('automatic-feed-links');
 
 	// to add header image support go here: http://themble.com/support/adding-header-background-image-support/
+	add_theme_support('custom-header');
 
 	// adding post format support
 	add_theme_support( 'post-formats',

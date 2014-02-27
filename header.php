@@ -48,15 +48,24 @@
 				<div id="inner-header" class="wrap clearfix">
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
+					<div id="site-info">
+													
+							<?php if ( ! empty( get_header_image() ) ) {
+								printf('<a href="%s" rel="nofollow"><img src="%s" alt="TdB" /></a>', home_url(), get_header_image());
+							} ?>
+							
+							<h1 class="site-name"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo( 'name' ); ?></a></h1>
+						
+						<?php if ( !empty( get_bloginfo('description') ) ) {
+							printf('<span class="site-description">%s</span>', get_bloginfo('description'));
+						} else {
+							printf('<span class="site-email"><a href="mailto:%s">%s</a></span>', get_bloginfo( 'admin_email'));
+						}
+						
+						?>
 
-					<?php // if you'd like to use the site description you can un-comment it below ?>
-					<?php // bloginfo('description'); ?>
+					</div>
 
-
-					<nav role="navigation">
-						<?php bones_main_nav(); ?>
-					</nav>
 
 				</div>
 
