@@ -47,25 +47,31 @@
 
 				<div id="inner-header" class="wrap clearfix">
 
-					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
+					<?php if ( ! empty( get_header_image() ) ) { ?>
+					<div id="site-logo">
+						<?php printf('<a href="%s" rel="nofollow"><img src="%s" alt="TdB" /></a>', home_url(), get_header_image()); ?>
+					</div>
+					<?php } ?>
+
 					<div id="site-info">
 													
-							<?php if ( ! empty( get_header_image() ) ) {
-								printf('<a href="%s" rel="nofollow"><img src="%s" alt="TdB" /></a>', home_url(), get_header_image());
-							} ?>
-							
-							<h1 class="site-name"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo( 'name' ); ?></a></h1>
+						<h1 class="site-name"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo( 'name' ); ?></a></h1>
 						
 						<?php if ( !empty( get_bloginfo('description') ) ) {
 							printf('<span class="site-description">%s</span>', get_bloginfo('description'));
 						} else {
 							printf('<span class="site-email"><a href="mailto:%s">%s</a></span>', get_bloginfo( 'admin_email'));
-						}
-						
-						?>
+						} ?>
 
 					</div>
-
+					
+					<?php
+					wp_nav_menu(	array(	'theme_location' 	=> 'social-links',
+											'container_class'	=> 'social-links',
+											'link_before'		=> '<span>',
+											'link_after'		=> '</span>',
+											'items_wrap'		=> '<ul id="%1$s" class="%2$s"><span>Scopri di più su</span>%3$s</ul>',
+						) ); ?>
 
 				</div>
 

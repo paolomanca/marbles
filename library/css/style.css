@@ -436,16 +436,23 @@ http://sachagreif.com/sass-color-variables/
 TYPOGRAPHY
 *********************/
 @font-face {
-  font-family: 'Genericons';
-  src: url("../fonts/genericons-regular-webfont.eot");
-  src: url("../fonts/genericons-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/genericons-regular-webfont.woff") format("woff"), url("../fonts/genericons-regular-webfont.ttf") format("truetype"), url("../fonts/genericons-regular-webfont.svg#genericonsregular") format("svg");
+  font-family: 'OpenSans';
+  src: url("../fonts/opensans/OpenSans-Light-webfont.eot");
+  src: url("../fonts/opensans/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans/OpenSans-Light-webfont.woff") format("woff"), url("../fonts/opensans/OpenSans-Light-webfont.ttf") format("truetype"), url("../fonts/opensans/OpenSans-Light-webfont.svg#genericonsregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
-  font-family: 'OpenSans Light';
-  src: url("../fonts/OpenSans-Light-webfont.eot");
-  src: url("../fonts/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Light-webfont.woff") format("woff"), url("../fonts/OpenSans-Light-webfont.ttf") format("truetype"), url("../fonts/OpenSans-Light-webfont.svg#genericonsregular") format("svg");
+  font-family: 'OpenSans';
+  src: url("../fonts/opensans/OpenSans-Regular-webfont.eot");
+  src: url("../fonts/opensans/OpenSans-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans/OpenSans-Regular-webfont.woff") format("woff"), url("../fonts/opensans/OpenSans-Regular-webfont.ttf") format("truetype"), url("../fonts/opensans/OpenSans-Regular-webfont.svg#genericonsregular") format("svg");
+  font-weight: bold;
+  font-style: bold; }
+
+@font-face {
+  font-family: 'Genericons';
+  src: url("../fonts/genericons-regular-webfont.eot");
+  src: url("../fonts/genericons-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/genericons-regular-webfont.woff") format("woff"), url("../fonts/genericons-regular-webfont.ttf") format("truetype"), url("../fonts/genericons-regular-webfont.svg#genericonsregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -526,14 +533,17 @@ BOX SIZING
 /* @include box-sizing(border-box); */
 /* NOTE: value of "padding-box" is only supported in Gecko. So
 probably best not to use it. I mean, were you going to anyway? */
+/********************
+GENERICONS
+********************/
 /*********************
 BUTTONS
 *********************/
 .button, .button:visited {
-  font-family: "OpenSans Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  border: 1px solid #be0d37;
-  border-top-color: #db0f3f;
-  border-left-color: #db0f3f;
+  font-family: "OpenSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border: 1px solid #1b1b1b;
+  border-top-color: #2b2b2b;
+  border-left-color: #2b2b2b;
   padding: 4px 12px;
   color: white;
   display: inline-block;
@@ -545,30 +555,30 @@ BUTTONS
   margin-bottom: 20px;
   line-height: 21px;
   border-radius: 4px;
-  background-color: #e40f42;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f01d4f), to(#e40f42));
-  background-image: -webkit-linear-gradient(top, #f01d4f, #e40f42);
-  background-image: -moz-linear-gradient(top, #f01d4f, #e40f42);
-  background-image: -o-linear-gradient(top, #f01d4f, #e40f42);
-  background-image: linear-gradient(to bottom, #f01d4f, #e40f42); }
+  background-color: #303030;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#3d3d3d), to(#303030));
+  background-image: -webkit-linear-gradient(top, #3d3d3d, #303030);
+  background-image: -moz-linear-gradient(top, #3d3d3d, #303030);
+  background-image: -o-linear-gradient(top, #3d3d3d, #303030);
+  background-image: linear-gradient(to bottom, #3d3d3d, #303030); }
   .button:hover, .button:focus, .button:visited:hover, .button:visited:focus {
     color: white;
-    border: 1px solid #be0d37;
-    border-top-color: #9d0a2d;
-    border-left-color: #9d0a2d;
-    background-color: #cc0e3b;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#e40f42), to(#cc0e3b));
-    background-image: -webkit-linear-gradient(top, #e40f42, #cc0e3b);
-    background-image: -moz-linear-gradient(top, #e40f42, #cc0e3b);
-    background-image: -o-linear-gradient(top, #e40f42, #cc0e3b);
-    background-image: linear-gradient(to bottom, #e40f42, #cc0e3b); }
+    border: 1px solid #1b1b1b;
+    border-top-color: #0a0a0a;
+    border-left-color: #0a0a0a;
+    background-color: #232323;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#303030), to(#232323));
+    background-image: -webkit-linear-gradient(top, #303030, #232323);
+    background-image: -moz-linear-gradient(top, #303030, #232323);
+    background-image: -o-linear-gradient(top, #303030, #232323);
+    background-image: linear-gradient(to bottom, #303030, #232323); }
   .button:active, .button:visited:active {
-    background-color: #f01d4f;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#e40f42), to(#f01d4f));
-    background-image: -webkit-linear-gradient(top, #e40f42, #f01d4f);
-    background-image: -moz-linear-gradient(top, #e40f42, #f01d4f);
-    background-image: -o-linear-gradient(top, #e40f42, #f01d4f);
-    background-image: linear-gradient(to bottom, #e40f42, #f01d4f); }
+    background-color: #3d3d3d;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#303030), to(#3d3d3d));
+    background-image: -webkit-linear-gradient(top, #303030, #3d3d3d);
+    background-image: -moz-linear-gradient(top, #303030, #3d3d3d);
+    background-image: -o-linear-gradient(top, #303030, #3d3d3d);
+    background-image: linear-gradient(to bottom, #303030, #3d3d3d); }
 
 .blue-button, .blue-button:visited {
   border-color: #1472ad;
@@ -617,9 +627,12 @@ and will be used across all viewports.
 /*********************
 GENERAL STYLES
 *********************/
+html {
+  font-size: 62.5%; }
+
 body {
-  font-family: "Georgia", Cambria, Times New Roman, Times, serif;
-  font-size: 100%;
+  font-family: "OpenSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.8rem;
   line-height: 1.5;
   color: #565656; }
 
@@ -673,12 +686,13 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #f01d4f;
+  color: #3d3d3d;
+  text-decoration: none;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #d10e3c; }
+    color: #7eb7c7; }
   a:link, a:visited:link {
     /*
     this highlights links on iPhones/iPads.
@@ -691,7 +705,7 @@ a, a:visited {
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-  font-family: "OpenSans Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "OpenSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-rendering: optimizelegibility;
   font-weight: 500;
   /*
@@ -703,30 +717,101 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     text-decoration: none; }
 
 h1, .h1 {
-  font-size: 2.5em;
-  line-height: 1.333em; }
+  font-size: 2.5rem;
+  line-height: 1.333rem; }
 
 h2, .h2 {
-  font-size: 1.75em;
-  line-height: 1.4em;
-  margin-bottom: 0.375em; }
+  font-size: 1.75rem;
+  line-height: 1.4rem;
+  margin-bottom: 0.375rem; }
 
 h3, .h3 {
-  font-size: 1.125em; }
+  font-size: 1.125rem; }
 
 h4, .h4 {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   font-weight: 700; }
 
 h5, .h5 {
-  font-size: 0.846em;
-  line-height: 2.09em;
+  font-size: 0.846rem;
+  line-height: 2.09rem;
   text-transform: uppercase;
   letter-spacing: 2px; }
 
 /*********************
 HEADER STYLES
 *********************/
+.header #inner-header {
+  margin-top: 40px;
+  max-height: 50px; }
+.header #site-logo img {
+  float: left;
+  opacity: .8;
+  max-height: 50px; }
+.header #site-info {
+  float: center;
+  display: inline-block;
+  margin: 0 15px;
+  padding-top: 18px; }
+.header .site-name {
+  font-size: 2.4rem;
+  font-weight: 200;
+  letter-spacing: 1px;
+  margin: 0; }
+.header .site-name a {
+  color: #7c7c7c; }
+.header .site-description, .header .site-email {
+  margin-top: 3px;
+  padding-left: .45rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  display: block;
+  font-weight: bold; }
+.header .social-links {
+  display: inline;
+  float: right; }
+
+.header .social-links {
+  color: #a3a3a3;
+  font-size: 1.4rem; }
+  .header .social-links span:first-child {
+    text-transform: uppercase;
+    margin-right: .4rem; }
+  .header .social-links li {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: .15rem; }
+  .header .social-links a[href*="twitter"] span {
+    display: none; }
+  .header .social-links a[href*="twitter"]:before {
+    font-family: 'Genericons';
+    font-size: 2.6rem;
+    content: "\f202"; }
+  .header .social-links a[href*="facebook"] span {
+    display: none; }
+  .header .social-links a[href*="facebook"]:before {
+    font-family: 'Genericons';
+    font-size: 2.6rem;
+    content: "\f204"; }
+  .header .social-links a[href*="flickr"] span {
+    display: none; }
+  .header .social-links a[href*="flickr"]:before {
+    font-family: 'Genericons';
+    font-size: 2.6rem;
+    content: "\f210"; }
+  .header .social-links a[href*="vimeo"] span {
+    display: none; }
+  .header .social-links a[href*="vimeo"]:before {
+    font-family: 'Genericons';
+    font-size: 2.6rem;
+    content: "\f211"; }
+  .header .social-links a[href*="youtube"] span {
+    display: none; }
+  .header .social-links a[href*="youtube"]:before {
+    font-family: 'Genericons';
+    font-size: 2.6rem;
+    content: "\f212"; }
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -1351,7 +1436,12 @@ you can add resource intensive styles.
   This is the desktop size. It's larger than an iPad so it will only
   be seen on the Desktop. 
   
-  ******************************************************************/ }
+  ******************************************************************/
+  /*********************
+  LAYOUT & GRID STYLES
+  *********************/
+  .wrap {
+    max-width: 1000px; } }
 /*
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.

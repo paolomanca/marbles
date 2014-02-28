@@ -45,6 +45,11 @@ require_once( 'library/custom-post-type.php' ); // you can disable this if you l
 */
 // require_once( 'library/translation/translation.php' ); // this comes turned off by default
 
+/*************** REGISTERING MENUS ***************/
+
+register_nav_menu('social-links', 'Social Links');
+
+
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
