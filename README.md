@@ -1,30 +1,9 @@
-# Bones
-__A Lightweight Wordpress Development Theme__
+# Marbles
+__A custom Wordpress Theme for Teatro delle Biglie__
 
-Bones is designed to make the life of developers easier. It's built
-using HTML5 & has a strong semantic foundation. It was updated recently
-using some of the HTML5 Boilerplate's recommended markup and setup.
-It's constantly growing so be sure to check back often if you are a
-frequent user. I'm always open to contribution. :)
+_Marbles_ ('Biglie') is a custom theme realized for Teatro delle Biglie, a student-run theatre association at [Politecnico di Milano](http://polimi.it).
 
-Designed by **Eddie Machado**: http://themble.com/bones
-
-Special Thanks to:
-* Paul Irish & the HTML5 Boilerplate
-* Yoast for some WP functions & optimization ideas
-* Andrew Rogers for code optimization
-* David Dellanave for speed & code optimization
-* and several other developers. :)
-
-Submit Bugs & or Fixes:
-https://github.com/eddiemachado/bones/issues
-
+The theme is inspired on Caroline Moore's Spun Theme (https://wordpress.org/themes/spun), of which was originally a child theme. After a first release in such form, _Marbles_ is being ported to a newly written standalone theme based on [Bones](http://themble.com/bones/).
 
 ## License
-__[WTFPL](http://sam.zoy.org/wtfpl/)__
-
-	Are You Serious? Yes.
-
-
-## Meta
-* [Changelog](../../blob/master/CHANGELOG.md)
+The theme mainly addresses the needs of TdB; but if you think you can make something of this, I'm releasing this under the _[WTFPL](http://sam.zoy.org/wtfpl/)_. If you use it, let me know; if you improve it, you NEED to let me know ;)
