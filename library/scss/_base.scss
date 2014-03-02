@@ -21,7 +21,7 @@ html {
 
 body {
 	font-family: $sans-serif;
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 	line-height: 1.5;
 	color: $text-color;
 }
@@ -155,57 +155,56 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 
-.header {
 	
-	#inner-header {
-		margin-top: 40px;
-		max-height: 50px;
-	}
+#inner-header {
+	margin-top: 30px;
+	max-height: 50px;
+}
 	
-	#site-logo img {
-		float: left;
-		opacity: .8;
-		max-height: 50px;
-	}
+#site-logo img {
+	float: left;
+	opacity: .8;
+	max-height: 48px;
+}
 	
-	#site-info {
-		float: center;
-		display: inline-block;
-		margin: 0 15px;
-		padding-top: 18px;
-	}
-	
-	.site-name {
-		font-size: 2.4rem;
-		font-weight: 200;
-		letter-spacing: 1px;
-		margin: 0;
-	}
-	
-	.site-name a {
-		color: lighten($text-color, 15%);
-	}
-	
-	.site-description, .site-email {
-		margin-top: 3px;
-		padding-left: .45rem;
-		font-size: 1rem;
-		text-transform: uppercase;
-		display: block;
-		font-weight: bold;
-	}
-	
-	.social-links {
-		display: inline;
-		float: right;
-	}
+#site-info {
+	float: center;
+	display: inline-block;
+	margin: 0 15px;
+	padding-top: 17px;
+}
 
+#site-name {
+	font-size: 2.25rem;
+	letter-spacing: 1.3px;
+	margin: 0;
+	
+	a {
+		color: $text-color;
+	}
+	
+	a:hover {
+		color: lighten($text-color, 10%);
+	}
+}
+
+#site-description, #site-email {
+	color: darken($text-color, 15%);
+	margin-top: .85em;
+	padding-left: .4em;
+	font-size: .9rem;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+	display: block;
+	font-weight: bolder;
 }
 
 .header .social-links {
 
-	color: lighten($text-color, 30%);
-	font-size: 1.4rem;
+	color: lighten($text-color, 20%);
+	font-size: 1.3rem;
+	display: inline;
+	float: right;
 
 	span:first-child {
 		text-transform: uppercase;

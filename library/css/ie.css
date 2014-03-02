@@ -85,6 +85,13 @@ TYPOGRAPHY
   font-style: bold; }
 
 @font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/opensans/OpenSans-SemiBold-webfont.eot");
+  src: url("../fonts/opensans/OpenSans-SemiBold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans/OpenSans-SemiBold-webfont.woff") format("woff"), url("../fonts/opensans/OpenSans-SemiBold-webfont.ttf") format("truetype"), url("../fonts/opensans/OpenSans-SemiBold-webfont.svg#genericonsregular") format("svg");
+  font-weight: bolder;
+  font-style: bolder; }
+
+@font-face {
   font-family: 'Genericons';
   src: url("../fonts/genericons-regular-webfont.eot");
   src: url("../fonts/genericons-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/genericons-regular-webfont.woff") format("woff"), url("../fonts/genericons-regular-webfont.ttf") format("truetype"), url("../fonts/genericons-regular-webfont.svg#genericonsregular") format("svg");
@@ -176,9 +183,9 @@ BUTTONS
 *********************/
 .button, .button:visited {
   font-family: "OpenSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  border: 1px solid #1b1b1b;
-  border-top-color: #2b2b2b;
-  border-left-color: #2b2b2b;
+  border: 1px solid #4892a8;
+  border-top-color: #58a1b7;
+  border-left-color: #58a1b7;
   padding: 4px 12px;
   color: white;
   display: inline-block;
@@ -190,30 +197,30 @@ BUTTONS
   margin-bottom: 20px;
   line-height: 21px;
   border-radius: 4px;
-  background-color: #303030;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#3d3d3d), to(#303030));
-  background-image: -webkit-linear-gradient(top, #3d3d3d, #303030);
-  background-image: -moz-linear-gradient(top, #3d3d3d, #303030);
-  background-image: -o-linear-gradient(top, #3d3d3d, #303030);
-  background-image: linear-gradient(to bottom, #3d3d3d, #303030); }
+  background-color: #5fa5ba;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#71afc2), to(#5fa5ba));
+  background-image: -webkit-linear-gradient(top, #71afc2, #5fa5ba);
+  background-image: -moz-linear-gradient(top, #71afc2, #5fa5ba);
+  background-image: -o-linear-gradient(top, #71afc2, #5fa5ba);
+  background-image: linear-gradient(to bottom, #71afc2, #5fa5ba); }
   .button:hover, .button:focus, .button:visited:hover, .button:visited:focus {
     color: white;
-    border: 1px solid #1b1b1b;
-    border-top-color: #0a0a0a;
-    border-left-color: #0a0a0a;
-    background-color: #232323;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#303030), to(#232323));
-    background-image: -webkit-linear-gradient(top, #303030, #232323);
-    background-image: -moz-linear-gradient(top, #303030, #232323);
-    background-image: -o-linear-gradient(top, #303030, #232323);
-    background-image: linear-gradient(to bottom, #303030, #232323); }
+    border: 1px solid #4892a8;
+    border-top-color: #3e7c8f;
+    border-left-color: #3e7c8f;
+    background-color: #4d9bb3;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#5fa5ba), to(#4d9bb3));
+    background-image: -webkit-linear-gradient(top, #5fa5ba, #4d9bb3);
+    background-image: -moz-linear-gradient(top, #5fa5ba, #4d9bb3);
+    background-image: -o-linear-gradient(top, #5fa5ba, #4d9bb3);
+    background-image: linear-gradient(to bottom, #5fa5ba, #4d9bb3); }
   .button:active, .button:visited:active {
-    background-color: #3d3d3d;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#303030), to(#3d3d3d));
-    background-image: -webkit-linear-gradient(top, #303030, #3d3d3d);
-    background-image: -moz-linear-gradient(top, #303030, #3d3d3d);
-    background-image: -o-linear-gradient(top, #303030, #3d3d3d);
-    background-image: linear-gradient(to bottom, #303030, #3d3d3d); }
+    background-color: #71afc2;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#5fa5ba), to(#71afc2));
+    background-image: -webkit-linear-gradient(top, #5fa5ba, #71afc2);
+    background-image: -moz-linear-gradient(top, #5fa5ba, #71afc2);
+    background-image: -o-linear-gradient(top, #5fa5ba, #71afc2);
+    background-image: linear-gradient(to bottom, #5fa5ba, #71afc2); }
 
 .blue-button, .blue-button:visited {
   border-color: #1472ad;

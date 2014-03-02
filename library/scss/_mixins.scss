@@ -64,8 +64,8 @@ $bones-blue:        #1990db;
 
 $text-color:		#565656;
 
-$link-color:        darken($text-color, 10%);
-$link-hover:        #7eb7c7;
+$link-color:        #71afc2;
+$link-hover:        darken($link-color, 10%);
 
 /*
 Here's a great tutorial on how to
@@ -102,6 +102,17 @@ $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
          url('../fonts/opensans/OpenSans-Regular-webfont.svg#genericonsregular') format('svg');
     font-weight: bold;
     font-style: bold;
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../fonts/opensans/OpenSans-SemiBold-webfont.eot');
+    src: url('../fonts/opensans/OpenSans-SemiBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans/OpenSans-SemiBold-webfont.woff') format('woff'),
+         url('../fonts/opensans/OpenSans-SemiBold-webfont.ttf') format('truetype'),
+         url('../fonts/opensans/OpenSans-SemiBold-webfont.svg#genericonsregular') format('svg');
+    font-weight: bolder;
+    font-style: bolder;
 }
 
 @font-face {

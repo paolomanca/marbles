@@ -55,12 +55,12 @@
 
 					<div id="site-info">
 													
-						<h1 class="site-name"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo( 'name' ); ?></a></h1>
+						<h1 id="site-name"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo( 'name' ); ?></a></h1>
 						
 						<?php if ( !empty( get_bloginfo('description') ) ) {
-							printf('<span class="site-description">%s</span>', get_bloginfo('description'));
+							printf('<span id="site-description">%s</span>', get_bloginfo('description'));
 						} else {
-							printf('<span class="site-email"><a href="mailto:%s">%s</a></span>', get_bloginfo( 'admin_email'));
+							printf('<span id="site-email"><a href="mailto:%s">%s</a></span>', get_bloginfo( 'admin_email'));
 						} ?>
 
 					</div>
