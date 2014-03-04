@@ -55,14 +55,16 @@ class marbles_walker extends Walker_Nav_Menu
 		
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 								
-		$output .= '<div class="marble">';
-		$output .= '<a href="'. $item->url .'" title="'. $item->url .'" rel="bookmark">';
-		$output .= '<div class="marble-image">';
-		$output .= get_the_post_thumbnail( $item->object_id, 'medium' );
-		$output .= '</div><!-- .marble-image -->';
-		$output .= '<span class="marble-title">' . $item->title . '</span>';
-		$output .= '</a>';
-		$output .= '</div><!-- .marble -->';
+		$item_output = '<div class="marble">';
+		$item_output .= '<a href="'. $item->url .'" title="'. $item->url .'" rel="bookmark">';
+		$item_output .= '<div class="marble-image" role="presentation">';
+		$item_output .= get_the_post_thumbnail( $item->object_id, 'marbles-thumb' );
+		$item_output .= '</div><!-- .marble-image -->';
+		$item_output .= '<h2 class="marble-title">' . $item->title . '</h2>';
+		$item_output .= '</a>';
+		$item_output .= '</div><!-- .marble -->';
+				
+		$output .= $item_output;
 	}
 }
 
@@ -79,7 +81,7 @@ function register_marble_menus() {
 	));
 	
 	foreach($pages as $page){
-		register_nav_menu( $page->post_name, 'Biglie '. $page->post_title );
+		register_nav_menu( $page->post_name, $page->post_title );
 	}
 }
 add_action( 'after_setup_theme', 'register_marble_menus' );
@@ -89,26 +91,25 @@ add_action( 'after_setup_theme', 'register_marble_menus' );
 
 function menu_biglie_f( $atts ) {
 	extract( shortcode_atts( array(
-		'per_riga' => 3,
+		'size'		=> 'medium',
 	), $atts ) );
 	
 	$page = get_post( $post );
-	
-	$number = array(
-		3 => 'three',
-		4 => 'four'
-	);
-	
-	$n_marbles = $number[$per_riga];
-				
-	return wp_nav_menu( array(
+					
+	$output = wp_nav_menu( array(
 		'echo'				=>	0,
 		'items_wrap' 		=>	'%3$s',
 		'walker'			=>	new marbles_walker(),
 		'theme_location'	=>	$page->post_name,
 		'container'			=>	'nav',
-		'container_class'	=>	'marbles marbles-'. $page->post_name .' '. $n_marbles .'-row' )
+		'container_class'	=>	'marbles marbles-'. $page->post_name .' '. $size .'-size' )
 	);
+	
+	if ( empty($output) ) {
+		echo 'Menù biglie vuoto';
+	}
+	
+	return $output;
 	
 }
 add_shortcode( 'menu_biglie', 'menu_biglie_f' );
@@ -119,6 +120,7 @@ add_shortcode( 'menu_biglie', 'menu_biglie_f' );
 // Thumbnail sizes
 add_image_size( 'bones-thumb-600', 600, 150, true );
 add_image_size( 'bones-thumb-300', 300, 100, true );
+add_image_size( 'marbles-thumb', 350, 350, true );
 
 /*
 to add more sizes, simply copy a line from above

@@ -157,14 +157,13 @@ HEADER STYLES
 
 	
 #inner-header {
-	margin-top: 30px;
-	max-height: 50px;
+	margin-top: 3rem;
 }
 	
 #site-logo img {
 	float: left;
 	opacity: .8;
-	max-height: 48px;
+	height: 4.8rem;
 }
 	
 #site-info {
@@ -342,24 +341,20 @@ and more scalable.
 	opacity: 1;
 }
 
-.three-row .marble {
-	width: 29%;
+.larger-size .marble {
+	width: 30%;
 }
 
-.four-row .marble {
-	width: 23%;
+.large-size .marble {
+	width: 26%;
 }
 
-/* first elements of a row */
-.three-row .marble:nth-child(3n+1),
-.four-row .marble:nth-child(4n+1) {
-	margin-left: 0px;
+.medium-size .marble {
+	width: 20%;
 }
 
-/* last elements of a row */
-.three-row .marble:nth-child(3n+3),
-.four-row .marble:nth-child(4n+4) {
-	margin-right: 0px;
+.small-size .marble {
+	width: 15%;
 }
 
 .marble-image {
@@ -385,13 +380,14 @@ and more scalable.
 }
 
 .marble-title {
-	font-size: 23px;
+	font-size: 21px;
+	font-size: 2.1rem;
 	text-align: center;
 	word-wrap: break-word;
-	width: 90%;
+	margin: 1rem 0;
+	padding: 0 5%;
 	color: #444;
 	text-shadow: none;
-	margin-top: 5px;
 }
 
 
