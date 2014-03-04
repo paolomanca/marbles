@@ -45,9 +45,73 @@ require_once( 'library/custom-post-type.php' ); // you can disable this if you l
 */
 // require_once( 'library/translation/translation.php' ); // this comes turned off by default
 
+/******************* WALKERS *******************/
+
+class marbles_walker extends Walker_Nav_Menu
+{
+	function start_lvl( &$output, $depth = 0, $args = array() ) {}
+	
+	function end_lvl( &$output, $depth = 0, $args = array() ) {}
+		
+	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+								
+		$output .= '<div class="marble">';
+		$output .= '<a href="'. $item->url .'" title="'. $item->url .'" rel="bookmark">';
+		$output .= '<div class="marble-image">';
+		$output .= get_the_post_thumbnail( $item->object_id, 'medium' );
+		$output .= '</div><!-- .marble-image -->';
+		$output .= '<span class="marble-title">' . $item->title . '</span>';
+		$output .= '</a>';
+		$output .= '</div><!-- .marble -->';
+	}
+}
+
+
 /*************** REGISTERING MENUS ***************/
 
 register_nav_menu('social-links', 'Social Links');
+
+function register_marble_menus() {
+	$pages = get_pages(array(
+		'meta_key' => '_wp_page_template',
+		'meta_value' => 'page-marbles.php',
+		'hierarchical' => 0
+	));
+	
+	foreach($pages as $page){
+		register_nav_menu( $page->post_name, 'Biglie '. $page->post_title );
+	}
+}
+add_action( 'after_setup_theme', 'register_marble_menus' );
+
+
+/************** SHORTCODES **************/
+
+function menu_biglie_f( $atts ) {
+	extract( shortcode_atts( array(
+		'per_riga' => 3,
+	), $atts ) );
+	
+	$page = get_post( $post );
+	
+	$number = array(
+		3 => 'three',
+		4 => 'four'
+	);
+	
+	$n_marbles = $number[$per_riga];
+				
+	return wp_nav_menu( array(
+		'echo'				=>	0,
+		'items_wrap' 		=>	'%3$s',
+		'walker'			=>	new marbles_walker(),
+		'theme_location'	=>	$page->post_name,
+		'container'			=>	'nav',
+		'container_class'	=>	'marbles marbles-'. $page->post_name .' '. $n_marbles .'-row' )
+	);
+	
+}
+add_shortcode( 'menu_biglie', 'menu_biglie_f' );
 
 
 /************* THUMBNAIL SIZE OPTIONS *************/
