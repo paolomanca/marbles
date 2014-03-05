@@ -699,7 +699,7 @@ a, a:visited {
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #4d9bb3; }
+    color: #4a95ac; }
   a:link, a:visited:link {
     /*
     this highlights links on iPhones/iPads.
@@ -1204,7 +1204,16 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 .footer {
-  clear: both; }
+  width: 100%;
+  clear: both;
+  position: absolute;
+  bottom: 0; }
+  .footer p {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    text-align: center; }
+  .footer a[href*="wp-admin"] {
+    color: #565656; }
 
 /*
 if you checked out the link above:

@@ -912,7 +912,20 @@ FOOTER STYLES
 *********************/
 
 .footer {
+	width: 100%;
 	clear: both;
+	position: absolute;
+	bottom: 0;
+	
+	p {
+		font-size: 1.3rem;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	
+	a[href*="wp-admin"] {
+		color: $text-color;
+	}
 }
 
 	/*

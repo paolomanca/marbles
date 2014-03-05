@@ -2,11 +2,7 @@
 
 				<div id="inner-footer" class="wrap clearfix">
 
-					<nav role="navigation">
-							<?php bones_footer_links(); ?>
-					</nav>
-
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+					<p><?php printf( __( 'Le attività del Teatro delle Biglie sono realizzate col contributo dei %s e del %s', 'marblestheme' ), '<a href="'. admin_url() .'" title="login">volontari</a>', '<a href="http://www.polimi.it">Politecnico di Milano</a>' ); ?></p>
 
 				</div>
 
