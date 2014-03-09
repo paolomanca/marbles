@@ -171,7 +171,7 @@ function bones_theme_support() {
 	add_theme_support( 'post-thumbnails' );
 
 	// default thumb size
-	set_post_thumbnail_size(125, 125, true);
+	//set_post_thumbnail_size(125, 125, true);
 
 	// wp custom background (thx to @bransonwerner for update)
 	add_theme_support( 'custom-background',
@@ -191,7 +191,7 @@ function bones_theme_support() {
 	add_theme_support('custom-header');
 
 	// adding post format support
-	add_theme_support( 'post-formats',
+	/*add_theme_support( 'post-formats',
 		array(
 			'aside',             // title less blurb
 			'gallery',           // gallery of images
@@ -203,18 +203,18 @@ function bones_theme_support() {
 			'audio',             // audio
 			'chat'               // chat transcript
 		)
-	);
+	);*/
 
 	// wp menus
 	add_theme_support( 'menus' );
 
 	// registering wp3+ menus
-	register_nav_menus(
+	/*register_nav_menus(
 		array(
 			'main-nav' => __( 'The Main Menu', 'bonestheme' ),   // main nav in header
 			'footer-links' => __( 'Footer Links', 'bonestheme' ) // secondary nav in footer
 		)
-	);
+	);*/
 } /* end bones theme support */
 
 
