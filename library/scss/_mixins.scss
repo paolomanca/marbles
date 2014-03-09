@@ -67,6 +67,9 @@ $text-color:		#565656;
 $link-color:        #71afc2;
 $link-hover:        darken($link-color, 12%);
 
+$back-color:		#fcfcfc;
+
+
 /*
 Here's a great tutorial on how to
 use color variables properly:
@@ -89,7 +92,7 @@ $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
          url('../fonts/opensans/OpenSans-Light-webfont.woff') format('woff'),
          url('../fonts/opensans/OpenSans-Light-webfont.ttf') format('truetype'),
          url('../fonts/opensans/OpenSans-Light-webfont.svg#genericonsregular') format('svg');
-    font-weight: normal;
+    font-weight: 300;
     font-style: normal;
 }
 
@@ -100,8 +103,8 @@ $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
          url('../fonts/opensans/OpenSans-Regular-webfont.woff') format('woff'),
          url('../fonts/opensans/OpenSans-Regular-webfont.ttf') format('truetype'),
          url('../fonts/opensans/OpenSans-Regular-webfont.svg#genericonsregular') format('svg');
-    font-weight: bold;
-    font-style: bold;
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
@@ -111,8 +114,8 @@ $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
          url('../fonts/opensans/OpenSans-SemiBold-webfont.woff') format('woff'),
          url('../fonts/opensans/OpenSans-SemiBold-webfont.ttf') format('truetype'),
          url('../fonts/opensans/OpenSans-SemiBold-webfont.svg#genericonsregular') format('svg');
-    font-weight: bolder;
-    font-style: bolder;
+    font-weight: 600;
+    font-style: normal;
 }
 
 @font-face {
@@ -263,6 +266,7 @@ GENERICONS
 		}
 	}
 }
+
 
 
 /*********************

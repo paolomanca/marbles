@@ -16,7 +16,17 @@ upon your base.scss styles.
 ******************************************************************/
 
 
+body {
 	
+}	
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+
+
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -76,7 +86,7 @@ POSTS & CONTENT STYLES
 			
 	
 	/* at this larger size, we can start to align images */
-	.alignleft, img.alignleft { 
+	/*.alignleft, img.alignleft { 
 		margin-right: 1.5em; 
 		display: inline; 
 		float: left; 
@@ -91,9 +101,16 @@ POSTS & CONTENT STYLES
 		margin-left: auto; 
 		display: block; 
 		clear: both; 
-	}
+	}*/
 			
 } /* end .entry-content */
+
+
+/********************
+MARBLES
+********************/
+
+
 
 /*********************
 FOOTER STYLES

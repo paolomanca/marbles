@@ -94,7 +94,7 @@ function menu_biglie_f( $atts ) {
 		'size'		=> 'medium',
 	), $atts ) );
 	
-	$page = get_post( $post );
+	$page = get_post();
 					
 	$output = wp_nav_menu( array(
 		'echo'				=>	0,
@@ -238,6 +238,10 @@ function bones_comments( $comment, $args, $depth ) {
 <?php
 } // don't remove this bracket!
 
+
+if ( ! isset( $content_width ) ) $content_width = 900;
+
+
 /************* SEARCH FORM LAYOUT *****************/
 
 // Search Form
@@ -249,6 +253,7 @@ function bones_wpsearch($form) {
 	</form>';
 	return $form;
 } // don't remove this bracket!
+
 
 
 ?>

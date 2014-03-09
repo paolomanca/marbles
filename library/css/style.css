@@ -439,30 +439,26 @@ TYPOGRAPHY
   font-family: 'OpenSans';
   src: url("../fonts/opensans/OpenSans-Light-webfont.eot");
   src: url("../fonts/opensans/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans/OpenSans-Light-webfont.woff") format("woff"), url("../fonts/opensans/OpenSans-Light-webfont.ttf") format("truetype"), url("../fonts/opensans/OpenSans-Light-webfont.svg#genericonsregular") format("svg");
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal; }
-
 @font-face {
   font-family: 'OpenSans';
   src: url("../fonts/opensans/OpenSans-Regular-webfont.eot");
   src: url("../fonts/opensans/OpenSans-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans/OpenSans-Regular-webfont.woff") format("woff"), url("../fonts/opensans/OpenSans-Regular-webfont.ttf") format("truetype"), url("../fonts/opensans/OpenSans-Regular-webfont.svg#genericonsregular") format("svg");
-  font-weight: bold;
-  font-style: bold; }
-
+  font-weight: 400;
+  font-style: normal; }
 @font-face {
   font-family: 'OpenSans';
   src: url("../fonts/opensans/OpenSans-SemiBold-webfont.eot");
   src: url("../fonts/opensans/OpenSans-SemiBold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans/OpenSans-SemiBold-webfont.woff") format("woff"), url("../fonts/opensans/OpenSans-SemiBold-webfont.ttf") format("truetype"), url("../fonts/opensans/OpenSans-SemiBold-webfont.svg#genericonsregular") format("svg");
-  font-weight: bolder;
-  font-style: bolder; }
-
+  font-weight: 600;
+  font-style: normal; }
 @font-face {
   font-family: 'Genericons';
   src: url("../fonts/genericons-regular-webfont.eot");
   src: url("../fonts/genericons-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/genericons-regular-webfont.woff") format("woff"), url("../fonts/genericons-regular-webfont.ttf") format("truetype"), url("../fonts/genericons-regular-webfont.svg#genericonsregular") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 /* 	To embed your own fonts, use this syntax
 	and place your fonts inside the
 	library/fonts folder. For more information
@@ -638,10 +634,15 @@ html {
   font-size: 62.5%; }
 
 body {
+  font-size: 1.8rem;
+  font-weight: 300;
   font-family: "OpenSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.6rem;
-  line-height: 1.5;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
   color: #565656; }
+
+#content {
+  line-height: 1.7; }
 
 /********************
 WORDPRESS BODY CLASSES
@@ -711,39 +712,26 @@ a, a:visited {
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-  font-family: "OpenSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-rendering: optimizelegibility;
-  font-weight: 500;
-  /*
-  if you're going to use webfonts, be sure to check your weights
-  http://css-tricks.com/watch-your-font-weight/
-  */
-  /* removing text decoration from all headline links */ }
-  h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
-    text-decoration: none; }
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-weight: 300; }
 
 h1, .h1 {
-  font-size: 2.5rem;
-  line-height: 1.333rem; }
+  font-size: 3.2rem; }
 
 h2, .h2 {
-  font-size: 1.75rem;
-  line-height: 1.4rem;
-  margin-bottom: 0.375rem; }
+  font-size: 2.8rem; }
 
 h3, .h3 {
-  font-size: 1.125rem; }
+  font-size: 2.4rem; }
 
 h4, .h4 {
-  font-size: 1.1rem;
-  font-weight: 700; }
+  font-size: 2.0rem; }
 
 h5, .h5 {
-  font-size: 0.846rem;
-  line-height: 2.09rem;
-  text-transform: uppercase;
-  letter-spacing: 2px; }
+  font-size: 1.6rem; }
+
+h6, .h6 {
+  font-size: 1.2rem; }
 
 /*********************
 HEADER STYLES
@@ -760,10 +748,11 @@ HEADER STYLES
   float: center;
   display: inline-block;
   margin: 0 15px;
-  padding-top: 17px; }
+  padding-top: .4em; }
 
 #site-name {
   font-size: 2.25rem;
+  font-weight: 300;
   letter-spacing: 1.3px;
   margin: 0; }
   #site-name a {
@@ -773,19 +762,24 @@ HEADER STYLES
 
 #site-description, #site-email {
   color: #303030;
-  margin-top: .85em;
   padding-left: .4em;
-  font-size: .9rem;
+  font-size: .93rem;
   text-transform: uppercase;
-  letter-spacing: .5px;
-  display: block;
-  font-weight: bolder; }
+  letter-spacing: .1rem;
+  display: block; }
 
 .header .social-links {
   color: #898989;
   font-size: 1.3rem;
   display: inline;
-  float: right; }
+  float: right;
+  /*a {
+  	color: $link-hover;
+  	
+  	&:hover {
+  		color: $link-color;
+  	}
+  }*/ }
   .header .social-links span:first-child {
     text-transform: uppercase;
     margin-right: .4rem; }
@@ -825,56 +819,19 @@ HEADER STYLES
     content: "\f212"; }
 
 /*********************
-NAVIGATION STYLES
+MARBLES
 *********************/
-/*
-all navs have a .nav class applied via
-the wp_menu function; this is so we can
-easily write one group of styles for
-the navs on the site so our css is cleaner
-and more scalable.
-*/
-.nav {
-  border: 1px solid #ccc;
-  border-bottom: 0;
-  /* end .menu li */
-  /* highlight current page */
-  /* end current highlighters */ }
-  .nav li {
-    /*
-    so you really have to rethink your dropdowns for mobile.
-    you don't want to have it expand too much because the
-    screen is so small. How you manage your menu should
-    depend on the project. Here's some great info on it:
-    http://www.alistapart.com/articles/organizing-mobile/
-    */ }
-    .nav li a {
-      display: block;
-      text-decoration: none;
-      padding: 10px 10px;
-      background-color: #eee;
-      border-bottom: 1px solid #ccc;
-      /*
-      remember this is for mobile ONLY, so there's no need
-      to even declare hover styles here, you can do it in
-      the style.scss file where it's relevant. We want to
-      keep this file as small as possible!
-      */ }
-    .nav li ul.sub-menu li a,
-    .nav li ul.children li a {
-      padding-left: 30px; }
-
-/* end .nav */
-/*
- * MARBLES
- */
 .marbles {
   width: 100%;
   text-align: center;
   display: inline-block;
-  margin: 0 auto; }
+  margin: 0 -1rem;
+  padding: 4rem 0; }
 
 .marble, .marble:hover {
+  display: inline-block;
+  margin: 1rem;
+  border-radius: 100%;
   transition: all .3s ease-in-out;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
@@ -882,58 +839,47 @@ and more scalable.
   -ms-transition: all .3s ease-in-out; }
 
 .marble {
-  display: inline-block;
-  margin: 10px;
-  opacity: .75;
-  border-radius: 100%; }
+  opacity: .75; }
+  .marble:hover {
+    filter: grayscale(0);
+    -webkit-filter: none;
+    -moz-filter: none;
+    -o-filter: none;
+    -ms-filter: none;
+    opacity: 1; }
 
-.marble:hover {
-  filter: grayscale(0);
-  -webkit-filter: none;
-  -moz-filter: none;
-  -o-filter: none;
-  -ms-filter: none;
-  opacity: 1; }
-
-.larger-size .marble {
-  width: 30%; }
-
-.large-size .marble {
-  width: 26%; }
-
-.medium-size .marble {
-  width: 20%; }
-
+.larger-size .marble,
+.large-size .marble,
+.medium-size .marble,
 .small-size .marble {
-  width: 15%; }
+  width: 100%; }
 
 .marble-image {
   background: #444;
   border-radius: 100%;
   position: relative;
-  width: 100%; }
-
-.marble-image:before {
-  /* a little hack to keep the ratio */
-  content: "";
-  display: block;
-  padding-top: 100%;
-  /* change here the ratio 1:1 = 100% */ }
-
-.marble-image img {
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  /* following lines are needed for the ratio thing */
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0; }
+  width: inherit; }
+  .marble-image:before {
+    /* a little hack to keep the ratio */
+    content: "";
+    display: block;
+    padding-top: 100%;
+    /* change here the ratio 1:1 = 100% */ }
+  .marble-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    /* following lines are needed for the ratio thing */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; }
 
 .marble-title {
   font-size: 21px;
   font-size: 2.1rem;
+  font-weight: 300;
   text-align: center;
   word-wrap: break-word;
   margin: 1rem 0;
@@ -945,7 +891,13 @@ and more scalable.
 POSTS & CONTENT STYLES
 *********************/
 #content {
-  margin-top: 2.2em; }
+  margin-top: 3rem; }
+
+#inner-content {
+  padding: 0 4rem; }
+
+.hentry header h1 {
+  margin: 0; }
 
 /* end .hentry */
 /* want to style individual post classes? Booya! */
@@ -963,12 +915,73 @@ POSTS & CONTENT STYLES
 
 /* entry content */
 .entry-content {
+  text-align: justify;
   /*
   image alignment on a screen this size may be
   a bit difficult. It's set to start aligning
   and floating images at the next breakpoint,
   but it's up to you. Feel free to change it up.
-  */ }
+  */
+  /* at this larger size, we can start to align images */ }
+  .entry-content h1, .entry-content .h1, .entry-content h2, .entry-content .h2, .entry-content h3, .entry-content .h3, .entry-content h4, .entry-content .h4, .entry-content h5, .entry-content .h5, .entry-content h6, .entry-content .h6 {
+    margin: 4rem 0 .5rem 0; }
+  .entry-content p {
+    margin: 0 0 2rem 0; }
+  .entry-content mark {
+    color: #3d3d3d;
+    background-color: #ff7;
+    padding: 0 .5rem; }
+  .entry-content ul, .entry-content ol {
+    margin-left: 2rem;
+    list-style-position: inside; }
+  .entry-content ul {
+    list-style-type: square; }
+    .entry-content ul ul {
+      list-style-type: circle; }
+      .entry-content ul ul ul {
+        list-style-type: disc; }
+        .entry-content ul ul ul ul {
+          list-style-type: circle; }
+  .entry-content ol {
+    list-style-type: decimal; }
+    .entry-content ol ol {
+      list-style-type: lower-latin; }
+      .entry-content ol ol ol {
+        list-style-type: lower-roman; }
+        .entry-content ol ol ol ol {
+          list-style-type: lower-greek; }
+  .entry-content table {
+    font-size: 85%;
+    text-align: left;
+    margin: 3rem; }
+    .entry-content table tr {
+      border-bottom: 1px solid #e3e3e3; }
+    .entry-content table th, .entry-content table td {
+      padding: .5rem 1rem;
+      border-right: 1px solid #fcfcfc; }
+    .entry-content table th {
+      text-transform: uppercase;
+      background-color: #eaeaea; }
+    .entry-content table tbody tr:nth-child(even) td {
+      background-color: #f7f7f7; }
+    .entry-content table tfoot tr {
+      border: 0;
+      background-color: #efefef; }
+  .entry-content blockquote {
+    margin: 2rem 0;
+    padding: .5rem 1rem;
+    border-left: 3px solid #b0b0b0;
+    background-color: #f7f7f7;
+    font-style: italic;
+    font-size: 90%; }
+    .entry-content blockquote p {
+      margin: 0; }
+    .entry-content blockquote cite {
+      font-size: 90%;
+      font-style: normal; }
+      .entry-content blockquote cite:before {
+        content: "-";
+        padding: 0 .5rem; }
   .entry-content dd {
     margin-left: 0;
     font-size: 0.9em;
@@ -978,6 +991,20 @@ POSTS & CONTENT STYLES
     margin: 0 0 1.5em 0;
     max-width: 100%;
     height: auto; }
+  .entry-content .alignleft, .entry-content img.alignleft {
+    margin-right: 1rem;
+    margin-top: .5rem;
+    display: inline;
+    float: left; }
+  .entry-content .alignright, .entry-content img.alignright {
+    margin-left: 1rem;
+    margin-top: .5rem;
+    display: inline;
+    float: right; }
+  .entry-content .aligncenter, .entry-content img.aligncenter {
+    float: center;
+    margin: .5rem auto;
+    display: block; }
   .entry-content video, .entry-content object {
     max-width: 100%;
     height: auto; }
@@ -985,6 +1012,10 @@ POSTS & CONTENT STYLES
     background: #eee;
     border: 1px solid #cecece;
     padding: 10px; }
+  .entry-content var {
+    font-size: 90%;
+    font-family: monospace, "Georgia", Cambria, Times New Roman, Times, serif;
+    font-style: normal; }
 
 /* end .entry-content */
 .wp-caption {
@@ -1195,19 +1226,11 @@ COMMENT FORM STYLES
   margin: 0 20px 1.1em; }
 
 /*********************
-SIDEBARS & ASIDES
-*********************/
-.widget ul li {
-  /* deep nesting */ }
-
-/*********************
 FOOTER STYLES
 *********************/
 .footer {
-  width: 100%;
   clear: both;
-  position: absolute;
-  bottom: 0; }
+  margin-top: 3rem; }
   .footer p {
     font-size: 1.3rem;
     text-transform: uppercase;
@@ -1251,6 +1274,9 @@ tweeners.
   /*********************
   NAVIGATION STYLES
   *********************/
+  /*********************
+  NAVIGATION STYLES
+  *********************/
   /* .menu is clearfixed inside mixins.scss */
   .menu {
     /* end .menu ul */ }
@@ -1274,22 +1300,28 @@ tweeners.
   *********************/
   /* entry content */
   .entry-content {
-    /* at this larger size, we can start to align images */ }
-    .entry-content .alignleft, .entry-content img.alignleft {
-      margin-right: 1.5em;
-      display: inline;
-      float: left; }
-    .entry-content .alignright, .entry-content img.alignright {
-      margin-left: 1.5em;
-      display: inline;
-      float: right; }
-    .entry-content .aligncenter, .entry-content img.aligncenter {
-      margin-right: auto;
-      margin-left: auto;
-      display: block;
-      clear: both; }
+    /* at this larger size, we can start to align images */
+    /*.alignleft, img.alignleft { 
+    	margin-right: 1.5em; 
+    	display: inline; 
+    	float: left; 
+    }
+    .alignright, img.alignright { 
+    	margin-left: 1.5em; 
+    	display: inline; 
+    	float: right; 
+    }
+    .aligncenter, img.aligncenter { 
+    	margin-right: auto; 
+    	margin-left: auto; 
+    	display: block; 
+    	clear: both; 
+    }*/ }
 
   /* end .entry-content */
+  /********************
+  MARBLES
+  ********************/
   /*********************
   FOOTER STYLES
   *********************/
@@ -1406,70 +1438,8 @@ you can add resource intensive styles.
   LAYOUT & GRID STYLES
   *********************/
   .wrap {
-    max-width: 1140px; }
+    max-width: 740px; }
 
-  /*********************
-  HEADER STYLES
-  *********************/
-  /*********************
-  NAVIGATION STYLES
-  *********************/
-  .nav {
-    background: #eee;
-    border: 0;
-    /* end .menu ul li */
-    /* highlight current page */
-    /* end current highlighters */ }
-    .nav ul {
-      margin-top: 0; }
-    .nav li {
-      float: left;
-      position: relative;
-      /*
-      plan your menus and drop-downs wisely.
-      */
-      /* showing sub-menus */ }
-      .nav li a {
-        border-bottom: 0;
-        /*
-        you can use hover styles here even though this size
-        has the possibility of being a mobile device.
-        */ }
-        .nav li a:hover, .nav li a:focus {
-          background-color: #dedede; }
-      .nav li ul.sub-menu,
-      .nav li ul.children {
-        margin-top: 0;
-        border: 1px solid #ccc;
-        border-top: 0;
-        position: absolute;
-        overflow: hidden;
-        visibility: hidden;
-        z-index: 8999;
-        /* highlight sub-menu current page */ }
-        .nav li ul.sub-menu li,
-        .nav li ul.children li {
-          /*
-          if you need to go deeper, go nuts
-          just remember deeper menus suck
-          for usability. k, bai.
-          */ }
-          .nav li ul.sub-menu li a,
-          .nav li ul.children li a {
-            padding-left: 10px;
-            border-right: 0;
-            display: block;
-            width: 180px;
-            border-bottom: 1px solid #ccc; }
-          .nav li ul.sub-menu li:last-child a,
-          .nav li ul.children li:last-child a {
-            border-bottom: 0; }
-      .nav li:hover ul {
-        top: auto;
-        overflow: visible;
-        visibility: visible; }
-
-  /* end .nav */
   /*********************
   SIDEBARS & ASIDES
   *********************/
@@ -1516,7 +1486,21 @@ you can add resource intensive styles.
     the footer.
     */ }
 
-  /* end .footer-links */ }
+  /* end .footer-links */
+  /********************
+  MARBLES
+  ********************/
+  .larger-size .marble {
+    width: 275px; }
+
+  .large-size .marble {
+    width: 205px; }
+
+  .medium-size .marble {
+    width: 160px; }
+
+  .small-size .marble {
+    width: 160px; } }
 /*
 DESKTOP
 This is the average viewing window. So Desktops, Laptops, and
@@ -1528,7 +1512,7 @@ you can add resource intensive styles.
   Site Name: 
   Author: 
   
-  Stylesheet: Desktop Stylsheet
+  Stylesheet: Desktop Stylesheet
   
   This is the desktop size. It's larger than an iPad so it will only
   be seen on the Desktop. 
@@ -1538,7 +1522,22 @@ you can add resource intensive styles.
   LAYOUT & GRID STYLES
   *********************/
   .wrap {
-    max-width: 1000px; } }
+    max-width: 1000px; }
+
+  /********************
+  MARBLES
+  ********************/
+  .larger-size .marble {
+    width: 325px; }
+
+  .large-size .marble {
+    width: 275px; }
+
+  .medium-size .marble {
+    width: 205px; }
+
+  .small-size .marble {
+    width: 160px; } }
 /*
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
@@ -1658,7 +1657,6 @@ be set to display none.
 
   @page {
     margin: 0.5cm; }
-
   p, h2, h3 {
     orphans: 3;
     widows: 3; }
