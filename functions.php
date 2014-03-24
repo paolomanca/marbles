@@ -254,6 +254,23 @@ function bones_wpsearch($form) {
 	return $form;
 } // don't remove this bracket!
 
+/*
+This is a modification of a function found in the
+twentythirteen theme where we can declare some
+external fonts. If you're using Google Fonts, you
+can replace these fonts, change it in your scss files
+and be up and running in seconds.
+*/
+function bones_fonts() {
+  // wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
+  // wp_enqueue_style( 'googleFonts');
+  
+  wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,200italic,300italic,400italic,600italic');
+  wp_enqueue_style( 'googleFonts');
+}
+
+add_action('wp_print_styles', 'bones_fonts');
+
 
 
 ?>

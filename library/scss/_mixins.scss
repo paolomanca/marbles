@@ -62,7 +62,7 @@ $white:             #fff;
 $bones-pink:        #f01d4f;
 $bones-blue:        #1990db;
 
-$text-color:		#565656;
+$text-color:		#4a4a4a;
 
 $link-color:        #71afc2;
 $link-hover:        darken($link-color, 12%);
@@ -81,42 +81,8 @@ http://sachagreif.com/sass-color-variables/
 TYPOGRAPHY
 *********************/
 
-$sans-serif:        'OpenSans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans-serif:        "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
-
-
-@font-face {
-    font-family: 'OpenSans';
-    src: url('../fonts/opensans/OpenSans-Light-webfont.eot');
-    src: url('../fonts/opensans/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/opensans/OpenSans-Light-webfont.woff') format('woff'),
-         url('../fonts/opensans/OpenSans-Light-webfont.ttf') format('truetype'),
-         url('../fonts/opensans/OpenSans-Light-webfont.svg#genericonsregular') format('svg');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'OpenSans';
-    src: url('../fonts/opensans/OpenSans-Regular-webfont.eot');
-    src: url('../fonts/opensans/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/opensans/OpenSans-Regular-webfont.woff') format('woff'),
-         url('../fonts/opensans/OpenSans-Regular-webfont.ttf') format('truetype'),
-         url('../fonts/opensans/OpenSans-Regular-webfont.svg#genericonsregular') format('svg');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'OpenSans';
-    src: url('../fonts/opensans/OpenSans-SemiBold-webfont.eot');
-    src: url('../fonts/opensans/OpenSans-SemiBold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/opensans/OpenSans-SemiBold-webfont.woff') format('woff'),
-         url('../fonts/opensans/OpenSans-SemiBold-webfont.ttf') format('truetype'),
-         url('../fonts/opensans/OpenSans-SemiBold-webfont.svg#genericonsregular') format('svg');
-    font-weight: 600;
-    font-style: normal;
-}
 
 @font-face {
     font-family: 'Genericons';
@@ -209,7 +175,7 @@ USAGE: @include transition(all 0.2s ease-in-out);
 
 @mixin transition($transition...) {
 	// defining prefixes so we can use them in mixins below
-	$prefixes:      ("-webkit",  "");
+	$prefixes:      ("-webkit", "-moz", "-o", "-ms");
   @each $prefix in $prefixes {
     #{$prefix}-transition: $transition;
   }
@@ -266,6 +232,7 @@ GENERICONS
 		}
 	}
 }
+
 
 
 
