@@ -13,6 +13,13 @@ Special Thanks for code & inspiration to:
 @jackmcconnell - http://www.voltronik.co.uk/
 Digging into WP - http://digwp.com/2010/10/customize-wordpress-dashboard/
 
+
+	- removing some default WordPress dashboard widgets
+	- an example custom dashboard widget
+	- adding custom login css
+	- changing text in footer of admin
+
+
 */
 
 /************* DASHBOARD WIDGETS *****************/
@@ -54,7 +61,7 @@ http://digwp.com/2010/10/customize-wordpress-dashboard/
 // RSS Dashboard Widget
 function bones_rss_dashboard_widget() {
 	if ( function_exists( 'fetch_feed' ) ) {
-		include_once( ABSPATH . WPINC . '/feed.php' );               // include the required file
+		// include_once( ABSPATH . WPINC . '/feed.php' );               // include the required file
 		$feed = fetch_feed( 'http://themble.com/feed/rss/' );        // specify the source feed
 		$limit = $feed->get_item_quantity(7);                        // specify number of items
 		$items = $feed->get_items(0, $limit);                        // create an array of items

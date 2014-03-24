@@ -45,7 +45,7 @@
 
 			<header class="header" role="banner">
 
-				<div id="inner-header" class="wrap clearfix">
+				<div id="inner-header" class="wrap cf">
 
 					<?php if ( ! empty( get_header_image() ) ) { ?>
 					<div id="site-logo">

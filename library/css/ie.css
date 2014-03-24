@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name: 
-Author: 
+Site Name:
+Author:
 
 Stylesheet: IE Stylesheet
 
@@ -10,53 +10,25 @@ Here, we import all the styles the standard stylesheet gets, only
 without the media queries. No need to worry about editing anything!
 
 ******************************************************************/
-/*
+/******************************************************************
+IMPORTS & DEPENDENCIES
 Remember, all the BASE styles are called already since IE can
-read those. Below, we need to import only the stuff IE can't 
+read those. Below, we need to import only the stuff IE can't
 understand (what's inside the media queries). We also need to
 import the mixins file so SASS can understand the variables.
-*/
-/* import mixins */
+******************************************************************/
 /******************************************************************
 Site Name:
 Author:
 
-Stylesheet: Mixins & Constants Stylesheet
+Stylesheet: Variables
 
-This is where you can take advantage of Sass' great features:
-Mixins & Constants. I won't go in-depth on how they work exactly,
-there are a few articles below that will help do that. What I will
-tell you is that this will help speed up simple changes like
-changing a color or adding CSS3 techniques gradients.
-
-A WORD OF WARNING: It's very easy to overdo it here. Be careful and
-remember less is more.
+Here is where we declare all our variables like colors, fonts,
+base values, and defaults. We want to make sure this file ONLY
+contains variables that way our files don't get all messy.
+No one likes a mess.
 
 ******************************************************************/
-/*********************
-CLEARFIXIN'
-*********************/
-.clearfix {
-  zoom: 1; }
-  .clearfix:before, .clearfix:after {
-    content: "";
-    display: table; }
-  .clearfix:after {
-    clear: both; }
-
-/*********************
-TOOLS
-*********************/
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-.image-replacement {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden; }
-
 /*********************
 COLORS
 Need help w/ choosing your colors? Try this site out:
@@ -67,71 +39,27 @@ Here's a great tutorial on how to
 use color variables properly:
 http://sachagreif.com/sass-color-variables/
 */
-/*********************
-TYPOGRAPHY
-*********************/
-@font-face {
-  font-family: 'Genericons';
-  src: url("../fonts/genericons-regular-webfont.eot");
-  src: url("../fonts/genericons-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/genericons-regular-webfont.woff") format("woff"), url("../fonts/genericons-regular-webfont.ttf") format("truetype"), url("../fonts/genericons-regular-webfont.svg#genericonsregular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-/* 	To embed your own fonts, use this syntax
-	and place your fonts inside the
-	library/fonts folder. For more information
-	on embedding fonts, go to:
-	http://www.fontsquirrel.com/
-	Be sure to remove the comment brackets.
-*/
-/*	@font-face {
-    	font-family: 'Font Name';
-    	src: url('library/fonts/font-name.eot');
-    	src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
-             url('library/fonts/font-name.woff') format('woff'),
-             url('library/fonts/font-name.ttf') format('truetype'),
-             url('library/fonts/font-name.svg#font-name') format('svg');
-    	font-weight: normal;
-    	font-style: normal;
-	}
-*/
-/*
-use the best ampersand
-http://simplebits.com/notebook/2008/08/14/ampersands-2/
-*/
-span.amp {
-  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
-  font-style: italic; }
+/******************************************************************
+Site Name:
+Author:
 
-.text-left {
-  text-align: left; }
+Stylesheet: Mixins Stylesheet
 
-.text-center {
-  text-align: center; }
+This is where you can take advantage of Sass' great features: Mixins.
+I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques gradients.
 
-.text-right {
-  text-align: right; }
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
 
-.alert-help, .alert-info, .alert-error, .alert-success {
-  margin: 10px;
-  padding: 5px 18px;
-  border: 1px solid; }
+Helpful:
+http://sachagreif.com/useful-sass-mixins/
+http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
+http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
 
-.alert-help {
-  border-color: #e8dc59;
-  background: #ebe16f; }
-
-.alert-info {
-  border-color: #bfe4f4;
-  background: #d5edf8; }
-
-.alert-error {
-  border-color: #f8cdce;
-  background: #fbe3e4; }
-
-.alert-success {
-  border-color: #deeaae;
-  background: #e6efc2; }
-
+******************************************************************/
 /*********************
 TRANSITION
 *********************/
@@ -156,176 +84,42 @@ probably best not to use it. I mean, were you going to anyway? */
 /********************
 GENERICONS
 ********************/
-/*********************
-BUTTONS
-*********************/
-.button, .button:visited {
-  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  border: 1px solid #4892a8;
-  border-top-color: #58a1b7;
-  border-left-color: #58a1b7;
-  padding: 4px 12px;
-  color: white;
-  display: inline-block;
-  font-size: 11px;
-  font-weight: bold;
-  text-decoration: none;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.75);
-  cursor: pointer;
-  margin-bottom: 20px;
-  line-height: 21px;
-  border-radius: 4px;
-  background-color: #5fa5ba;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#71afc2), to(#5fa5ba));
-  background-image: -webkit-linear-gradient(top, #71afc2, #5fa5ba);
-  background-image: -moz-linear-gradient(top, #71afc2, #5fa5ba);
-  background-image: -o-linear-gradient(top, #71afc2, #5fa5ba);
-  background-image: linear-gradient(to bottom, #71afc2, #5fa5ba); }
-  .button:hover, .button:focus, .button:visited:hover, .button:visited:focus {
-    color: white;
-    border: 1px solid #4892a8;
-    border-top-color: #3e7c8f;
-    border-left-color: #3e7c8f;
-    background-color: #4d9bb3;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#5fa5ba), to(#4d9bb3));
-    background-image: -webkit-linear-gradient(top, #5fa5ba, #4d9bb3);
-    background-image: -moz-linear-gradient(top, #5fa5ba, #4d9bb3);
-    background-image: -o-linear-gradient(top, #5fa5ba, #4d9bb3);
-    background-image: linear-gradient(to bottom, #5fa5ba, #4d9bb3); }
-  .button:active, .button:visited:active {
-    background-color: #71afc2;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#5fa5ba), to(#71afc2));
-    background-image: -webkit-linear-gradient(top, #5fa5ba, #71afc2);
-    background-image: -moz-linear-gradient(top, #5fa5ba, #71afc2);
-    background-image: -o-linear-gradient(top, #5fa5ba, #71afc2);
-    background-image: linear-gradient(to bottom, #5fa5ba, #71afc2); }
-
-.blue-button, .blue-button:visited {
-  border-color: #1472ad;
-  text-shadow: 0 1px 1px #1472ad;
-  background-color: #1681c4;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#1990db), to(#1681c4));
-  background-image: -webkit-linear-gradient(top, #1990db, #1681c4);
-  background-image: -moz-linear-gradient(top, #1990db, #1681c4);
-  background-image: -o-linear-gradient(top, #1990db, #1681c4);
-  background-image: linear-gradient(to bottom, #1990db, #1681c4);
-  box-shadow: inset 0 0 3px #59b3ec; }
-  .blue-button:hover, .blue-button:focus, .blue-button:visited:hover, .blue-button:visited:focus {
-    border-color: #116396;
-    background-color: #1472ad;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#1784c9), to(#1472ad));
-    background-image: -webkit-linear-gradient(top, #1784c9, #1472ad);
-    background-image: -moz-linear-gradient(top, #1784c9, #1472ad);
-    background-image: -o-linear-gradient(top, #1784c9, #1472ad);
-    background-image: linear-gradient(to bottom, #1784c9, #1472ad); }
-  .blue-button:active, .blue-button:visited:active {
-    background-color: #1990db;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#1681c4), to(#1990db));
-    background-image: -webkit-linear-gradient(top, #1681c4, #1990db);
-    background-image: -moz-linear-gradient(top, #1681c4, #1990db);
-    background-image: -o-linear-gradient(top, #1681c4, #1990db);
-    background-image: linear-gradient(to bottom, #1681c4, #1990db); }
-
 /******************************************************************
 Site Name:
 Author:
 
-Stylesheet: Grid Stylesheet
+Stylesheet: IE Grid Styles
 
-I've seperated the grid so you can swap it out easily. It's
-called at the top the style.scss stylesheet.
+Since the example grid is based on media queries, so rather than
+setup some js library that would make IE8 and below understand
+media queries, let's just add some styles that serves a fixed grid.
 
-There are a ton of grid solutions out there. You should definitely
-experiment with your own. Here are some recommendations:
-
-http://gridsetapp.com - Love this site. Responsive Grids made easy.
-http://susy.oddbird.net/ - Grids using Compass. Very elegant.
-http://gridpak.com/ - Create your own responsive grid.
-
-The grid below is a combination of the 1140 grid and Twitter Boostrap. 
-I liked 1140 but Boostrap's grid was way more detailed so I merged them 
-together, let's see how this works out. If you want to use 1140, the original 
-values are commented out on each line.
+Again, if you want to roll your own, just remove this junk and put
+whatever you use in here.
 
 ******************************************************************/
-.onecol {
-  width: 5.801104972%; }
-
-/* 4.85%;  } /* grid_1  */
-.twocol {
-  width: 14.364640883%; }
-
-/* 13.45%; } /* grid_2  */
-.threecol {
-  width: 22.928176794%; }
-
-/* 22.05%; } /* grid_3  */
-.fourcol {
-  width: 31.491712705%; }
-
-/* 30.75%; } /* grid_4  */
-.fivecol {
-  width: 40.055248616%; }
-
-/* 39.45%; } /* grid_5  */
-.sixcol {
-  width: 48.618784527%; }
-
-/* 48%;    } /* grid_6  */
-.sevencol {
-  width: 57.182320438000005%; }
-
-/* 56.75%; } /* grid_7  */
-.eightcol {
-  width: 65.74585634900001%; }
-
-/* 65.4%;  } /* grid_8  */
-.ninecol {
-  width: 74.30939226%; }
-
-/* 74.05%; } /* grid_9  */
-.tencol {
-  width: 82.87292817100001%; }
-
-/* 82.7%;  } /* grid_10 */
-.elevencol {
-  width: 91.436464082%; }
-
-/* 91.35%; } /* grid_11 */
-.twelvecol {
-  width: 99.999999993%; }
-
-/* 100%;   } /* grid_12 */
-.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol {
-  position: relative;
-  float: left;
-  margin-left: 2.762430939%; }
-
-.first {
-  margin-left: 0; }
-
-.last {
-  float: right; }
-
 /******************************************************************
-Site Name: 
-Author: 
+Site Name:
+Author:
 
 Stylesheet: 481px and Up Stylesheet
 
-This stylesheet is loaded for larger devices. It's set to 
+This stylesheet is loaded for larger devices. It's set to
 481px because at 480px it would load on a landscaped iPhone.
 This isn't ideal because then you would be loading all those
-extra styles on that same mobile connection. 
+extra styles on that same mobile connection.
 
 A word of warning. This size COULD be a larger mobile device,
 so you still want to keep it pretty light and simply expand
 upon your base.scss styles.
 
 ******************************************************************/
-/*********************
-NAVIGATION STYLES
-*********************/
+/*
+IMPORTANT NOTE ABOUT SASS 3.3 & UP
+You can't use @extend within media queries
+anymore, so just be aware that if you drop
+them in here, they won't work.
+*/
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -353,15 +147,15 @@ POSTS & CONTENT STYLES
 /* entry content */
 .entry-content {
   /* at this larger size, we can start to align images */
-  /*.alignleft, img.alignleft { 
-  	margin-right: 1.5em; 
-  	display: inline; 
-  	float: left; 
+  /*.alignleft, img.alignleft {
+  	margin-right: 1.5em;
+  	display: inline;
+  	float: left;
   }
-  .alignright, img.alignright { 
-  	margin-left: 1.5em; 
-  	display: inline; 
-  	float: right; 
+  .alignright, img.alignright {
+  	margin-left: 1.5em;
+  	display: inline;
+  	float: right;
   }
   .aligncenter, img.aligncenter { 
   	margin-right: auto; 
@@ -371,9 +165,6 @@ POSTS & CONTENT STYLES
   }*/ }
 
 /* end .entry-content */
-/********************
-MARBLES
-********************/
 /*********************
 FOOTER STYLES
 *********************/
@@ -402,7 +193,7 @@ GENERAL STYLES
 LAYOUT & GRID STYLES
 *********************/
 .wrap {
-  max-width: 740px; }
+  width: 760px; }
 
 /*********************
 SIDEBARS & ASIDES
@@ -467,13 +258,13 @@ MARBLES
   width: 160px; }
 
 /******************************************************************
-Site Name: 
-Author: 
+Site Name:
+Author:
 
-Stylesheet: Desktop Stylesheet
+Stylesheet: Desktop Stylsheet
 
 This is the desktop size. It's larger than an iPad so it will only
-be seen on the Desktop. 
+be seen on the Desktop.
 
 ******************************************************************/
 /*********************
@@ -497,8 +288,8 @@ MARBLES
 .small-size .marble {
   width: 160px; }
 
-/* 
-you can call the larger styles if you want, but there's really no need 
+/*
+you can call the larger styles if you want, but there's really no need
 */
 /******************************************************************
 ADDITIONAL IE FIXES
