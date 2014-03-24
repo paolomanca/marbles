@@ -23,7 +23,7 @@ html {
 body {
 	
 	font: {
-		size: 1.8rem;
+		size: 1.7rem;
 		weight: 300;
 		family: $sans-serif;
 	}
@@ -34,7 +34,7 @@ body {
 }
 
 #content {
-	line-height: 1.7;
+	line-height: 1.6;
 }
 
 
@@ -48,36 +48,36 @@ style a page via class
 .blog {}                          /* blog template page */
 .archive {}                       /* archive page */
 .date {}                          /* date archive page */
-	.date-paged-1 {}                /* replace the number to the corresponding page number */
+.date-paged-1 {}                /* replace the number to the corresponding page number */
 .search {}                        /* search page */
-	.search-results {}              /* search result page */
-	.search-no-results {}           /* no results search page */
-	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
+.search-results {}              /* search result page */
+.search-no-results {}           /* no results search page */
+.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
 .error404 {}                      /* 404 page */
 .single {}                        /* single post page */
-	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
-	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
+.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
+.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
 .attachment {}                    /* attatchment page */
-	.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
-	.attachment-mime-type {}        /* style mime type pages */
+.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
+.attachment-mime-type {}        /* style mime type pages */
 .author {}                        /* author page */
-	.author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
-	.author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
+.author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
+.author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
 .category {}                      /* category page */
-	.category-1 {}                  /* individual category page (i.e. body.category-6) */
-	.category-paged-1 {}            /* replace the number to the corresponding page number */
+.category-1 {}                  /* individual category page (i.e. body.category-6) */
+.category-paged-1 {}            /* replace the number to the corresponding page number */
 .tag {}                           /* tag page */
-	.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
-	.tag-paged-1 {}                 /* replace the number to the corresponding page number */
+.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
+.tag-paged-1 {}                 /* replace the number to the corresponding page number */
 .page-template {}                 /* custom page template page */
-	.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
-	.page-paged-1 {}                /* replace the number to the corresponding page number */
-	.page-parent {}                 /* parent page template */
-	.page-child {}                  /* child page template */
-	.parent-pageid-1 {}             /* replace the number to the corresponding page number */
+.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
+.page-paged-1 {}                /* replace the number to the corresponding page number */
+.page-parent {}                 /* parent page template */
+.page-child {}                  /* child page template */
+.parent-pageid-1 {}             /* replace the number to the corresponding page number */
 .logged-in {}                     /* if user is logged in */
 .paged {}                         /* paged items like search results or archives */
-	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
+.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
 
 /*********************
 LAYOUT & GRID STYLES
@@ -168,37 +168,60 @@ HEADER STYLES
 	float: center;
 	display: inline-block;
 	margin: 0 15px;
-	padding-top: .4em;
+	padding-top: .3em;
 }
 
 #site-name {
-	font-size: 2.25rem;
-	font-weight: 300;
-	letter-spacing: 1.3px;
+	
+	font: {
+		size: 25px;
+		size: 2.5rem;
+		weight: 200;
+	}
+	
+	letter-spacing: .2rem;
 	margin: 0;
 	
 	a {
-		color: $text-color;
+		color: lighten($text-color, 10%);
 	}
 	
 	a:hover {
-		color: lighten($text-color, 10%);
+		color: $text-color;
 	}
 }
 
 #site-description, #site-email {
-	color: darken($text-color, 15%);
+	
+	font: {
+		size: 10px;
+		size: 1rem;
+		weight: 400;
+	}
+	
+	color: darken($text-color, 10%);
 	padding-left: .4em;
-	font-size: .93rem;
 	text-transform: uppercase;
 	letter-spacing: .1rem;
 	display: block;
+	
+	a {
+		color: darken($text-color, 10%);
+	}
+	
+	a:hover {
+		color: $text-color;
+	}
 }
 
 .header .social-links {
 
+	font: {
+		size: 14px;
+		size: 1.4rem;
+	}
+	
 	color: lighten($text-color, 20%);
-	font-size: 1.3rem;
 	display: inline;
 	float: right;
 
@@ -214,16 +237,287 @@ HEADER STYLES
 	}
 	
 	/*a {
-		color: $link-hover;
+	color: $link-hover;
 		
-		&:hover {
-			color: $link-color;
-		}
+	&:hover {
+	color: $link-color;
+	}
 	}*/
 	
 	@include social-icons(2.6rem);
 
 }
+
+
+
+
+
+
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+#content {
+	margin-top: 3rem;
+}
+
+#inner-content {
+	padding: 0 4rem;
+}
+
+.hentry {
+
+	header {
+		h1 {
+			margin: 0;
+		}
+	}
+
+	footer {}
+
+} /* end .hentry */
+
+.single-title,
+.page-title {}
+
+.single-title {}
+
+.page-title {}
+
+.archive-title { }
+
+/* want to style individual post classes? Booya! */
+.post-id {}         /* post by id (i.e. post-3) */
+.post {}            /* general post style */
+.page {}            /* general article on a page style */
+.attachment {}      /* general style on an attatchment */
+.sticky {}          /* sticky post style */
+.hentry {}          /* hentry class */
+.category-slug {}   /* style by category (i.e. category-videos) */
+.tag-slug {}        /* style by tag (i.e. tag-news) */
+
+/* post meta */
+.byline {
+	color: #999;
+
+	time {}
+}
+
+/* entry content */
+.entry-content {
+			
+	text-align: justify;
+			
+	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+		margin: 4rem 0 .5rem 0;
+	}
+			
+	p {
+		margin: 0 0 2rem 0;
+	}
+			
+	strong, b {
+		font-weight: 400;
+	}
+			
+	mark {
+		color: darken($text-color, 10%);
+		background-color: #ff7;
+		padding: 0 .5rem;
+	}
+
+	ul, ol, table, dl {}
+
+	ul, ol {
+		margin-left: 2rem;
+		list-style-position: inside;
+	}
+
+	ul {
+		list-style-type: square;
+		ul {
+			list-style-type: circle;
+			ul {
+				list-style-type: disc;
+				ul {
+					list-style-type: circle;
+				}
+			}
+		}
+	}
+
+	ol {
+		list-style-type: decimal;
+		ol {
+			list-style-type: lower-latin;
+			ol {
+				list-style-type: lower-roman;
+				ol {
+					list-style-type: lower-greek;
+				}
+			}
+		}
+	}
+
+			
+	table {
+		font-size: 85%;
+		text-align: left;
+		margin: 3rem;
+				
+		tr {
+			border-bottom: 1px solid darken($back-color, 10%);
+		}
+								
+		th, td {
+			padding: .5rem 1rem;
+			border-right: 1px solid $back-color;
+		}
+				
+		th {
+			text-transform: uppercase;
+			background-color: darken($back-color, 7%);
+		}
+				
+		tbody tr:nth-child(even) td {
+			background-color: darken($back-color, 2%);
+		}
+				
+		tfoot tr {
+			border: 0;
+			background-color: darken($back-color, 5%);
+		}
+				
+	}
+
+	blockquote {
+		margin: 2rem 0;
+		padding: .5rem 1rem;
+		border-left: 3px solid darken($back-color, 30%);
+		background-color: darken($back-color, 2%);
+		font-style: italic;
+		font-size: 90%;
+
+		p {
+			margin: 0;
+		}
+				
+		cite {
+			font-size: 90%;
+			font-style: normal;
+			&:before{
+				content: "-";
+				padding: 0 .5rem;
+			}
+		}
+	}
+
+	dl {}
+
+	dt {}
+
+	dd {
+		margin-left: 0;
+		font-size: 0.9em;
+		color: #787878;
+		margin-bottom: 1.5em;
+	}
+
+	img {
+		margin: 0 0 1.5em 0;
+		max-width: 100%;
+		height: auto;
+	}
+
+	/*
+	image alignment on a screen this size may be
+	a bit difficult. It's set to start aligning
+	and floating images at the next breakpoint,
+	but it's up to you. Feel free to change it up.
+	*/
+	/* at this larger size, we can start to align images */
+	.alignleft, img.alignleft { 
+		margin-right: 1rem;
+		margin-top: .5rem;
+		display: inline; 
+		float: left; 
+	}
+	.alignright, img.alignright { 
+		margin-left: 1rem;
+		margin-top: .5rem;
+		display: inline; 
+		float: right; 
+	}
+	.aligncenter, img.aligncenter { 
+		float: center;
+		margin: .5rem auto;
+		display: block; 
+	}
+
+	video, object {
+		max-width: 100%;
+		height: auto;
+	}
+
+	pre {
+		background: #eee;
+		border: 1px solid #cecece;
+		padding: 10px;
+	}
+			
+	var {
+		font-size: 90%;
+		font-family: monospace, $serif;
+		font-style: normal;
+	}
+
+} /* end .entry-content */
+
+.wp-caption {
+	max-width: 100%;
+	background: #eee;
+	padding: 5px;
+
+	/* images inside wp-caption */
+	img {
+		max-width: 100%;
+		margin-bottom: 0;
+		width: 100%;
+	}
+
+	p.wp-caption-text {
+		font-size: 0.85em;
+		margin: 4px 0 7px;
+		text-align: center;
+	}
+
+} /* end .wp-caption */
+
+/* image gallery styles */
+.gallery {
+
+	dl {
+
+		a {}
+
+		img {}
+
+	}
+
+	dt {}
+
+	dd {}
+
+} /* end .gallery */
+
+/* gallery caption styles */
+.gallery-caption {}
+
+.size-full {}
+.size-large {}
+.size-medium {}
+.size-thumbnail {}
 
 
 
@@ -239,29 +533,10 @@ MARBLES
 	padding: 4rem 0;
 }
 
-.marble, .marble:hover {
+.marble {
 	display: inline-block;
 	margin: 1rem;
-	border-radius: 100%;
-	transition: all .3s ease-in-out;
-	-webkit-transition: all .3s ease-in-out;
-	-moz-transition: all .3s ease-in-out;
-	-o-transition: all .3s ease-in-out;
-	-ms-transition: all .3s ease-in-out;
-}
-
-.marble {
-	opacity: .75;
-
-
-	&:hover {
-		filter: grayscale(0);
-		-webkit-filter: none;
-		-moz-filter: none;
-		-o-filter: none;
-		-ms-filter: none;
-		opacity: 1;
-	}
+	border-radius: 100%;	
 }
 
 .larger-size .marble,
@@ -293,11 +568,11 @@ MARBLES
 	}
 }
 
-.marble-title {
+h2.marble-title {
 	
 	font: {
-		size: 21px;
-		size: 2.1rem;
+		size: 22px;
+		size: 2.2rem;
 		weight: 300;
 	}
 	
@@ -305,273 +580,34 @@ MARBLES
 	word-wrap: break-word;
 	margin: 1rem 0;
 	padding: 0 5%;
-	color: #444;
-	text-shadow: none;
+
 }
 
-
-
-/*********************
-POSTS & CONTENT STYLES
-*********************/
-
-#content {
-	margin-top: 3rem;
-}
-
-#inner-content {
-	padding: 0 4rem;
-}
-
-		.hentry {
-
-			header {
-				h1 {
-					margin: 0;
-				}
-			}
-
-			footer {}
-
-		} /* end .hentry */
-
-		.single-title,
-		.page-title {}
-
-		.single-title {}
-
-		.page-title {}
-
-		.archive-title { }
-
-		/* want to style individual post classes? Booya! */
-		.post-id {}         /* post by id (i.e. post-3) */
-		.post {}            /* general post style */
-		.page {}            /* general article on a page style */
-		.attachment {}      /* general style on an attatchment */
-		.sticky {}          /* sticky post style */
-		.hentry {}          /* hentry class */
-		.category-slug {}   /* style by category (i.e. category-videos) */
-		.tag-slug {}        /* style by tag (i.e. tag-news) */
-
-		/* post meta */
-		.byline {
-			color: #999;
-
-			time {}
+.marble { /* managing the hover effect */
+	
+	.marble-image {
+		opacity: .75;
+		@include transition(all .4s ease-in-out);
+	}
+	
+	a {
+		color: lighten($text-color, 10%);
+	}
+		
+	&:hover {
+		
+		.marble-image {
+			opacity: 1;
 		}
+		
+		a {
+			color: $text-color;
+		}
+		
+	}
+}
 
-		/* entry content */
-		.entry-content {
-			
-			text-align: justify;
-			
-			h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-				margin: 4rem 0 .5rem 0;
-			}
-			
-			
-			p {
-				margin: 0 0 2rem 0;
-			}
-			
-			mark {
-				color: darken($text-color, 10%);
-				background-color: #ff7;
-				padding: 0 .5rem;
-			}
 
-			ul, ol, table, dl {}
-
-			ul, ol {
-				margin-left: 2rem;
-				list-style-position: inside;
-			}
-
-			ul {
-				list-style-type: square;
-				ul {
-					list-style-type: circle;
-					ul {
-						list-style-type: disc;
-						ul {
-							list-style-type: circle;
-						}
-					}
-				}
-			}
-
-			ol {
-				list-style-type: decimal;
-				ol {
-					list-style-type: lower-latin;
-					ol {
-						list-style-type: lower-roman;
-						ol {
-							list-style-type: lower-greek;
-						}
-					}
-				}
-			}
-
-			
-			table {
-				font-size: 85%;
-				text-align: left;
-				margin: 3rem;
-				
-				tr {
-					border-bottom: 1px solid darken($back-color, 10%);
-				}
-								
-				th, td {
-					padding: .5rem 1rem;
-					border-right: 1px solid $back-color;
-				}
-				
-				th {
-					text-transform: uppercase;
-					background-color: darken($back-color, 7%);
-				}
-				
-				tbody tr:nth-child(even) td {
-					background-color: darken($back-color, 2%);
-				}
-				
-				tfoot tr {
-					border: 0;
-					background-color: darken($back-color, 5%);
-				}
-				
-			}
-
-			blockquote {
-				margin: 2rem 0;
-				padding: .5rem 1rem;
-				border-left: 3px solid darken($back-color, 30%);
-				background-color: darken($back-color, 2%);
-				font-style: italic;
-				font-size: 90%;
-
-				p {
-					margin: 0;
-				}
-				
-				cite {
-					font-size: 90%;
-					font-style: normal;
-					&:before{
-						content: "-";
-						padding: 0 .5rem;
-					}
-				}
-			}
-
-			dl {}
-
-			dt {}
-
-			dd {
-				margin-left: 0;
-				font-size: 0.9em;
-				color: #787878;
-				margin-bottom: 1.5em;
-			}
-
-			img {
-				margin: 0 0 1.5em 0;
-				max-width: 100%;
-				height: auto;
-			}
-
-			/*
-			image alignment on a screen this size may be
-			a bit difficult. It's set to start aligning
-			and floating images at the next breakpoint,
-			but it's up to you. Feel free to change it up.
-			*/
-			/* at this larger size, we can start to align images */
-			.alignleft, img.alignleft { 
-				margin-right: 1rem;
-				margin-top: .5rem;
-				display: inline; 
-				float: left; 
-			}
-			.alignright, img.alignright { 
-				margin-left: 1rem;
-				margin-top: .5rem;
-				display: inline; 
-				float: right; 
-			}
-			.aligncenter, img.aligncenter { 
-				float: center;
-				margin: .5rem auto;
-				display: block; 
-			}
-
-			video, object {
-				max-width: 100%;
-				height: auto;
-			}
-
-			pre {
-				background: #eee;
-				border: 1px solid #cecece;
-				padding: 10px;
-			}
-			
-			var {
-				font-size: 90%;
-				font-family: monospace, $serif;
-				font-style: normal;
-			}
-
-		} /* end .entry-content */
-
-		.wp-caption {
-			max-width: 100%;
-			background: #eee;
-			padding: 5px;
-
-			/* images inside wp-caption */
-			img {
-				max-width: 100%;
-				margin-bottom: 0;
-				width: 100%;
-			}
-
-			p.wp-caption-text {
-				font-size: 0.85em;
-				margin: 4px 0 7px;
-				text-align: center;
-			}
-
-		} /* end .wp-caption */
-
-		/* image gallery styles */
-		.gallery {
-
-			dl {
-
-				a {}
-
-				img {}
-
-			}
-
-			dt {}
-
-			dd {}
-
-		} /* end .gallery */
-
-		/* gallery caption styles */
-		.gallery-caption {}
-
-		.size-full {}
-		.size-large {}
-		.size-medium {}
-		.size-thumbnail {}
 
 /******************************************************************
 PAGE NAVI STYLES
@@ -581,55 +617,55 @@ PAGE NAVI STYLES
 .wp-prev-next {
 	margin: 1.1em 0 2.2em;
 }
-	.pagination{
-        text-align: center;
-        ul {
-            display: inline-block;
-            white-space: nowrap;
-            padding:0;
-            clear: both;
-            margin: 1px;
-            li {
-                padding: 0;
-                margin: 0;
-                float: left;
-                display: inline;
-                overflow: hidden;
-                a, span {
-                    margin: 0;
-                    text-decoration: none;
-                    padding: 0;
-                    line-height: 1em;
-                    font-size: 1em;
-                    font-weight: normal;
-                    padding: .5em;
-                    min-width: 1em;
-                    display: block;
-                }
-                span.current{
-                	font-weight: bold;
-                }
-                a:hover, a:focus {
-                    
-                }
-            }
-        }
-    } /* end .bones_page_navi */
-
-	/* fallback previous & next links */
-	.wp-prev-next {
-
-		ul {}
-
-		.prev-link {
+.pagination{
+	text-align: center;
+	ul {
+		display: inline-block;
+		white-space: nowrap;
+		padding:0;
+		clear: both;
+		margin: 1px;
+		li {
+			padding: 0;
+			margin: 0;
 			float: left;
+			display: inline;
+			overflow: hidden;
+			a, span {
+				margin: 0;
+				text-decoration: none;
+				padding: 0;
+				line-height: 1em;
+				font-size: 1em;
+				font-weight: normal;
+				padding: .5em;
+				min-width: 1em;
+				display: block;
+			}
+			span.current{
+				font-weight: bold;
+			}
+			a:hover, a:focus {
+                    
+			}
 		}
+	}
+} /* end .bones_page_navi */
 
-		.next-link {
-			float: right;
-		}
+/* fallback previous & next links */
+.wp-prev-next {
 
-	} /* end .wp-prev-next */
+	ul {}
+
+	.prev-link {
+		float: left;
+	}
+
+	.next-link {
+		float: right;
+	}
+
+} /* end .wp-prev-next */
 
 /******************************************************************
 COMMENT STYLES
@@ -852,9 +888,9 @@ COMMENT FORM STYLES
 				border-color: #fbc2c4;
 				background-color: #f6e7eb;
 				-webkit-box-shadow: none;
-				   -moz-box-shadow: none;
-				    -ms-box-shadow: none;
-						box-shadow: none;
+				-moz-box-shadow: none;
+				-ms-box-shadow: none;
+				box-shadow: none;
 			}
 		}
 
@@ -874,31 +910,31 @@ COMMENT FORM STYLES
 	}
 }
 
-	/* comment submit button */
-	#submit {}
+/* comment submit button */
+#submit {}
 
-	/* comment form title */
-	#comment-form-title {
-		margin: 0 0 1.1em;
-	}
+/* comment form title */
+#comment-form-title {
+	margin: 0 0 1.1em;
+}
 
-	/* cancel comment reply link */
-	#cancel-comment-reply {
-		a {}
-	}
+/* cancel comment reply link */
+#cancel-comment-reply {
+	a {}
+}
 
-	/* logged in comments */
-	.comments-logged-in-as {}
+/* logged in comments */
+.comments-logged-in-as {}
 
-	/* allowed tags */
-	#allowed_tags {
-		margin: 1.5em 10px 0.7335em 0;
-	}
+/* allowed tags */
+#allowed_tags {
+	margin: 1.5em 10px 0.7335em 0;
+}
 
-	/* no comments */
-	.nocomments {
-		margin: 0 20px 1.1em;
-	}
+/* no comments */
+.nocomments {
+	margin: 0 20px 1.1em;
+}
 
 
 /*********************
@@ -906,7 +942,7 @@ FOOTER STYLES
 *********************/
 
 .footer {
-    clear: both;
+	clear: both;
 	margin-top: 3rem;
 	
 	p {
@@ -920,25 +956,25 @@ FOOTER STYLES
 	}
 }
 
-	/*
-	if you checked out the link above:
-	http://www.alistapart.com/articles/organizing-mobile/
-	you'll want to style the footer nav
-	a bit more in-depth. Remember to keep
-	it simple because you'll have to
-	override these styles for the desktop
-	view.
-	*/
-	.footer-links {
+/*
+if you checked out the link above:
+http://www.alistapart.com/articles/organizing-mobile/
+you'll want to style the footer nav
+a bit more in-depth. Remember to keep
+it simple because you'll have to
+override these styles for the desktop
+view.
+*/
+.footer-links {
 
-		ul {
+	ul {
 
-			li {}
+		li {}
 
-		}
+	}
 
-	} /* end .footer-links */
+} /* end .footer-links */
 
 
-	.copyright {}
+.copyright {}
 

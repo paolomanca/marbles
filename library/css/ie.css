@@ -71,24 +71,6 @@ http://sachagreif.com/sass-color-variables/
 TYPOGRAPHY
 *********************/
 @font-face {
-  font-family: 'OpenSans';
-  src: url("../fonts/opensans/OpenSans-Light-webfont.eot");
-  src: url("../fonts/opensans/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans/OpenSans-Light-webfont.woff") format("woff"), url("../fonts/opensans/OpenSans-Light-webfont.ttf") format("truetype"), url("../fonts/opensans/OpenSans-Light-webfont.svg#genericonsregular") format("svg");
-  font-weight: 300;
-  font-style: normal; }
-@font-face {
-  font-family: 'OpenSans';
-  src: url("../fonts/opensans/OpenSans-Regular-webfont.eot");
-  src: url("../fonts/opensans/OpenSans-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans/OpenSans-Regular-webfont.woff") format("woff"), url("../fonts/opensans/OpenSans-Regular-webfont.ttf") format("truetype"), url("../fonts/opensans/OpenSans-Regular-webfont.svg#genericonsregular") format("svg");
-  font-weight: 400;
-  font-style: normal; }
-@font-face {
-  font-family: 'OpenSans';
-  src: url("../fonts/opensans/OpenSans-SemiBold-webfont.eot");
-  src: url("../fonts/opensans/OpenSans-SemiBold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans/OpenSans-SemiBold-webfont.woff") format("woff"), url("../fonts/opensans/OpenSans-SemiBold-webfont.ttf") format("truetype"), url("../fonts/opensans/OpenSans-SemiBold-webfont.svg#genericonsregular") format("svg");
-  font-weight: 600;
-  font-style: normal; }
-@font-face {
   font-family: 'Genericons';
   src: url("../fonts/genericons-regular-webfont.eot");
   src: url("../fonts/genericons-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/genericons-regular-webfont.woff") format("woff"), url("../fonts/genericons-regular-webfont.ttf") format("truetype"), url("../fonts/genericons-regular-webfont.svg#genericonsregular") format("svg");
@@ -178,7 +160,7 @@ GENERICONS
 BUTTONS
 *********************/
 .button, .button:visited {
-  font-family: "OpenSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   border: 1px solid #4892a8;
   border-top-color: #58a1b7;
   border-left-color: #58a1b7;
@@ -504,13 +486,13 @@ LAYOUT & GRID STYLES
 MARBLES
 ********************/
 .larger-size .marble {
-  width: 325px; }
+  width: 320px; }
 
 .large-size .marble {
-  width: 275px; }
+  width: 260px; }
 
 .medium-size .marble {
-  width: 205px; }
+  width: 200px; }
 
 .small-size .marble {
   width: 160px; }
