@@ -60,7 +60,7 @@
 						<?php if ( !empty( get_bloginfo('description') ) ) {
 							printf('<span id="site-description">%s</span>', get_bloginfo('description'));
 						} else {
-							printf('<span id="site-email"><a href="mailto:%s">%s</a></span>', get_bloginfo( 'admin_email'));
+							printf('<span id="site-email"><a href="mailto:%s">%s</a></span>', get_bloginfo( 'admin_email'), get_bloginfo( 'admin_email'));
 						} ?>
 
 					</div>
