@@ -654,19 +654,31 @@ FULL CALENDAR STYLE
 			@extend .cf;
 			
 			font: {
-				size: 18px;
-				size: 1.8rem;
-				weight: 400;
+				size: 16px;
+				size: 1.6rem;
+				weight: 300;
 			}
 			
-			color: lighten($text-color, 20%);
+			color: lighten($text-color, 25%);
 			text-align: right;
 			
 		}
 	}
 	
 	.fc-event {
+		font: {
+			size: 13px;
+			size: 1.3rem;
+			weight: 400;
+		}
 		
+		.fc-event-inner {
+			padding: .3rem;
+		}
+		
+		.fc-event-time {
+			display: block;
+		}
 	}
 }
 	

@@ -1694,11 +1694,19 @@ FULL CALENDAR STYLE
 .fc-grid .fc-day {
   vertical-align: baseline; }
   .fc-grid .fc-day .fc-day-number {
-    font-size: 18px;
-    font-size: 1.8rem;
-    font-weight: 400;
-    color: #7d7d7d;
+    font-size: 16px;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #8a8a8a;
     text-align: right; }
+.fc-grid .fc-event {
+  font-size: 13px;
+  font-size: 1.3rem;
+  font-weight: 400; }
+  .fc-grid .fc-event .fc-event-inner {
+    padding: .3rem; }
+  .fc-grid .fc-event .fc-event-time {
+    display: block; }
 
 /******************************************************************
 PAGE NAVI STYLES
