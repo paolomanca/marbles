@@ -251,9 +251,6 @@ HEADER STYLES
 
 
 
-
-
-
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -372,15 +369,15 @@ POSTS & CONTENT STYLES
 	table {
 		font-size: 85%;
 		text-align: left;
-		margin: 3rem;
+		margin: 3rem 0;
 				
 		tr {
-			border-bottom: 1px solid darken($back-color, 10%);
+			//border-bottom: 1px solid darken($back-color, 10%);
 		}
 								
 		th, td {
 			padding: .5rem 1rem;
-			border-right: 1px solid $back-color;
+			//border-right: 1px solid $back-color;
 		}
 				
 		th {
@@ -615,16 +612,65 @@ h2.marble-title {
 	}
 }
 
-		.size-full {}
-		.size-large {}
-		.size-medium {}
-		.size-thumbnail {}
+.size-full {}
+.size-large {}
+.size-medium {}
+.size-thumbnail {}
 
-	// the tag output
-	.tags {
+// the tag output
+.tags {
+	margin: 0;
+}
+
+/******************************************************************
+FULL CALENDAR STYLE
+******************************************************************/
+	
+.fc {
+	
+	margin: 2rem 0;
+	
+	table {
+		
+		thead {
+			font: {
+				size: 17px;
+				size: 1.7rem;
+			}
+			text-align: center;
+		}
+		
 		margin: 0;
 	}
+}
 
+.fc-grid {
+	
+	.fc-day {
+		
+		vertical-align: baseline;
+		
+		.fc-day-number {
+			@extend .cf;
+			
+			font: {
+				size: 18px;
+				size: 1.8rem;
+				weight: 400;
+			}
+			
+			color: lighten($text-color, 20%);
+			text-align: right;
+			
+		}
+	}
+	
+	.fc-event {
+		
+	}
+}
+	
+	
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
