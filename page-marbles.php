@@ -1,22 +1,16 @@
-<?php
-/*
-Template name: Biglie
-*/
-?>
-	
 <?php get_header(); ?>
 
 			<div id="content">
 
-				<div id="inner-content" class="wrap clearfix">
+				<div id="inner-content" class="wrap cf">
 
-						<div id="main" class="twelvecol first clearfix" role="main">
+						<div id="main" class="m-all t-all d-all cf" role="main">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-								<section class="entry-content clearfix" itemprop="articleBody">
+								<section class="entry-content cf" itemprop="articleBody">
 									<?php the_content(); ?>
 							    </section>
 
