@@ -592,6 +592,7 @@ h2.marble-title {
 	
 	.marble-image {
 		opacity: .75;
+		
 		@include transition(all .4s ease-in-out);
 	}
 	
@@ -622,65 +623,7 @@ h2.marble-title {
 	margin: 0;
 }
 
-/******************************************************************
-FULL CALENDAR STYLE
-******************************************************************/
-	
-.fc {
-	
-	margin: 2rem 0;
-	
-	table {
-		
-		thead {
-			font: {
-				size: 17px;
-				size: 1.7rem;
-			}
-			text-align: center;
-		}
-		
-		margin: 0;
-	}
-}
 
-.fc-grid {
-	
-	.fc-day {
-		
-		vertical-align: baseline;
-		
-		.fc-day-number {
-			@extend .cf;
-			
-			font: {
-				size: 16px;
-				size: 1.6rem;
-				weight: 300;
-			}
-			
-			color: lighten($text-color, 25%);
-			text-align: right;
-			
-		}
-	}
-	
-	.fc-event {
-		font: {
-			size: 13px;
-			size: 1.3rem;
-			weight: 400;
-		}
-		
-		.fc-event-inner {
-			padding: .3rem;
-		}
-		
-		.fc-event-time {
-			display: block;
-		}
-	}
-}
 	
 	
 /******************************************************************
