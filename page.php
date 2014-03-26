@@ -12,7 +12,12 @@
 
 								<header class="article-header">
 
+								<?php if( function_exists('get_field') && get_field('course_name') ) : ?>
+									<h1 class="page-title course-name" itemprop="headline"><?php the_field('course_name') ?></h1>
+									<div class="course-type"><?php the_title(); ?></div>
+								<?php else : ?>
 									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
+								<?php endif; ?>
 
 								</header> <?php // end article header ?>
 
