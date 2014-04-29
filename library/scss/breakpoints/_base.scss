@@ -21,6 +21,7 @@ html {
 }
 
 body {
+	background-color: $back-color;
 	
 	font: {
 		size: 1.7rem;
@@ -476,6 +477,7 @@ POSTS & CONTENT STYLES
 		font-family: monospace, $serif;
 		font-style: normal;
 	}
+	
 
 } /* end .entry-content */
 

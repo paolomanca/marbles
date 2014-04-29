@@ -27,7 +27,6 @@ $white:             #fff;
 
 $light-gray:        #f8f9fa;
 $gray:              #eaedf2;
-$text-color:        #4a4a4a;
 $meta-gray:         #9fa6b4;
 
 $tan:               #eceee5;
@@ -45,7 +44,10 @@ $link-hover:        darken($link-color, 12%);
 $border-color:      #ccc;
 $disabled-gray:     #cfcfcf;
 
-$back-color:		#fcfcfc;
+$back-color:		lighten(desaturate($brand-color, 39), 39);
+$text-color:		darken($back-color, 63);
+$text-color-light:	lighten($text-color, 20);
+$text-color-dark:	darken($text-color, 80);
 
 
 /*
