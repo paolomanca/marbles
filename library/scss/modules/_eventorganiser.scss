@@ -1,0 +1,74 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Event Organiser Plugin Styles
+
+******************************************************************/
+
+
+@import "modules/eventorganiser-front-end";
+
+@import "modules/fullcalendar";
+
+/***********************
+
+************************/
+
+.event-infos {
+	margin-top: 2rem;
+}
+
+.eventorganiser-event-meta {
+	
+	color: $text-color-light;
+	
+	border: {
+		top: 3px solid lighten($text-color-light, 23);
+		bottom: 7px solid lighten($text-color-light, 23);
+	}
+	
+	font: {
+		size: 14px;
+		size: 1.4rem;
+	}	
+	
+	h4 {
+		border: {
+			bottom: 3px dashed lighten($text-color-light, 25);
+		}
+		
+		font: {
+			size: 14px;
+			size: 1.6rem;
+			weight: bold;
+		}
+		
+		margin: 0;
+		padding: 3px 2px;
+		text-transform: uppercase;
+	}
+	
+	hr {
+		display: none;
+	}	
+}
+
+.eo-event-meta {
+	margin: 1.5rem;
+	
+	li strong:first-child {
+		text-transform: uppercase;
+	}
+}
+
+.eo-event-venue-map {
+	@extend .cf;
+	
+	float: none;
+	width: 100%;
+	
+
+	
+	
+}
