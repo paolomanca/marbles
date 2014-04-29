@@ -47,9 +47,15 @@
 
 				<div id="inner-header" class="wrap cf">
 
-					<?php if ( ! empty( get_header_image() ) ) { ?>
+					<?php
+					
+					$logo_img = trim(get_header_image());
+					
+					if ( !empty( $logo_img ) ) {
+							
+					?>
 					<div id="site-logo">
-						<?php printf('<a href="%s" rel="nofollow"><img src="%s" alt="TdB" /></a>', home_url(), get_header_image()); ?>
+						<?php printf('<a href="%s" rel="nofollow"><img src="%s" alt="TdB" /></a>', home_url(), $logo_img); ?>
 					</div>
 					<?php } ?>
 
@@ -57,11 +63,17 @@
 													
 						<h1 id="site-name"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo( 'name' ); ?></a></h1>
 						
-						<?php if ( !empty( get_bloginfo('description') ) ) {
-							printf('<span id="site-description">%s</span>', get_bloginfo('description'));
+						<?php
+						
+						$site_description = get_bloginfo('description');
+						
+						if ( !empty( $site_description ) ) {
+							printf('<span id="site-description">%s</span>', $site_description);
 						} else {
 							printf('<span id="site-email"><a href="mailto:%s">%s</a></span>', get_bloginfo( 'admin_email'), get_bloginfo( 'admin_email'));
-						} ?>
+						}
+						
+						?>
 
 					</div>
 					
