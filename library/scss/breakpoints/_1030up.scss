@@ -1,0 +1,39 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap {
+	width: 1000px;
+}
+
+
+/********************
+MARBLES
+********************/
+
+.larger-size .marble { // two per row
+	width: 320px;
+}
+
+.large-size .marble { // three per row
+	width: 260px;
+}
+
+.medium-size .marble { // four per row
+	width: 200px;
+}
+
+.small-size .marble { // five per row
+	width: 160px;
+}
