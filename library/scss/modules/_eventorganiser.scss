@@ -54,19 +54,19 @@ Stylesheet: Event Organiser Plugin Styles
 	}	
 
 
-.eo-event-meta {
-	margin: 1.5rem;
+	.eo-event-meta {
+		margin: 1.5rem;
 	
-	li strong:first-child {
-		text-transform: uppercase;
+		li strong:first-child {
+			text-transform: uppercase;
+		}
 	}
-}
 
-.eo-event-venue-map {
-	@extend .cf;
+	.eo-event-venue-map {
+		@extend .cf;
 	
-	float: none;
-	width: 100%;
+		float: none;
+		width: 100%;
 	
-}
+	}
 }

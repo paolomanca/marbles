@@ -6,6 +6,10 @@ Author: Paolo Manca
 
 *******************************************************************
 
+/* 1.0.2 update */
+- Event Organiser: some styles were lost, now they've found their way home
+- Event Organiser: template for venues, categories
+
 /* 1.0.1 update */
 - Using empty( foo() ) in PHP<=5.5
 
