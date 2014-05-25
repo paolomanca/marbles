@@ -279,4 +279,88 @@ function menu_biglie_f( $atts ) {
 }
 add_shortcode( 'menu_biglie', 'menu_biglie_f' );
 
+
+function biglie_f( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+		'size'		=> 'medium',
+		'style'		=> '',
+	), $atts ) );
+	
+	$m_style = '';
+	
+	if ( !empty($style) ) {
+		$m_style = ' style="'. $style .'"';
+	}
+	
+	$output = '<nav class="marbles '. $size .'-size"'. $m_style .'>';
+		
+	$output .= do_shortcode( wp_kses($content, null) );
+		
+	$output .= '</nav><!-- .marbles -->';
+	
+	return $output;
+	
+}
+add_shortcode( 'biglie', 'biglie_f' );
+
+
+function biglia_f( $atts ) {
+	extract( shortcode_atts( array(
+		'page'		=>	'',
+		'link'		=>	'',
+		'title'		=>	'',
+		'image'		=> 	'',
+	), $atts ) );
+	
+	
+	if ( !empty($page) ) {
+		
+		$m_page = get_page_by_path($page);
+								
+		if ( empty($m_page) ) {
+			return 'Not a page';
+		}
+		
+		$m_link = get_page_link($m_page->ID);
+		$m_image = get_the_post_thumbnail( $m_page->ID, 'marbles-thumb' );
+		$m_title = $m_page->post_title;
+	}
+	
+	if ( !empty($link) ) {
+		$m_link = $link;
+	}
+	
+	if ( !empty($title) ) {
+		$m_title = $title;
+	}
+	
+	if ( !empty($image) ) {
+		$m_image = '<img src="'. $image .'" title="'. $m_title .'" />';
+	}
+	
+	
+	
+	$output = '<div class="marble">';
+	
+	$output .= '<a href="'. $m_link .'">';
+	
+	$output .= '<div class="marble-image" role="presentation">';
+	
+	$output .= $m_image;
+	
+	$output .= '</div><!-- .marble-image -->';
+	
+	$output .= '<h2 class="marble-title">'. $m_title .'</h2>';
+	
+	$output .= '</a>';
+	
+	$output .= '</div><!-- .marble -->';
+	
+	return $output;
+	
+}
+add_shortcode( 'biglia', 'biglia_f' );
+
+
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>

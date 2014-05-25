@@ -9,10 +9,12 @@ Author: Paolo Manca
 /* 1.0.2 update */
 - Event Organiser: some styles were lost, now they've found their way home
 - Event Organiser: template for venues, categories
+- Event Organiser: styles for eo_events shortcode
+- With the new shortcode [biglie] inserting marbles it's easier and more flexible.
 
 /* 1.0.1 update */
 - Using empty( foo() ) in PHP<=5.5
 
 /* 1.0 release */
 - The theme does what the child theme did
-- And som little improvements
+- And some little improvements
