@@ -133,8 +133,8 @@ FULL CALENDAR STYLE
 	
 }
 
-.fc-header {
-	
+.entry-content table.fc-header {
+	margin: 0;	
 	td {
 		white-space: nowrap;
 	}
@@ -181,11 +181,13 @@ FULL CALENDAR STYLE
 	h2 {
 		margin-top: 0;
 		white-space: nowrap;
+		font-size: 2.3rem;
 	}
 }
 
 .fc-content {
 	@extend .cf;
+	margin-top: -30px;
 }
 
 .fc-view {

@@ -26,12 +26,11 @@
 								</header> <?php // end event header ?>
 
 								<section class="entry-content venue-description cf" itemprop="articleBody">
-									<?php if( $venue_description = eo_get_venue_description( $venue_id ) ){
-										 echo '<div class="venue-archive-meta">'.$venue_description.'</div>';
-									} ?>
-		
-									<!-- Display the venue map. If you specify a class, ensure that class has height/width dimensions-->
-									<?php echo eo_get_venue_map( $venue_id, array('width'=>"100%") ); ?>
+									
+									<?php if ( have_posts() ) : ?>
+										
+									<?php endif; ?>
+
 								</section> <?php // end article section ?>
 
 								<footer class="article-footer event-infos cf">
