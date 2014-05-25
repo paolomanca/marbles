@@ -70,3 +70,66 @@ Stylesheet: Event Organiser Plugin Styles
 	
 	}
 }
+
+/************************
+ * eo_events shortcode
+ ************************/
+
+.eo-events-shortcode {
+	
+	border-radius: 1rem;
+	border: $dark-gray 1px solid;
+	padding: .8rem;
+	
+	li {
+		vertical-align: top;
+		display:inline-block;
+		width: 33%;
+		
+		p {
+			display: none;
+		}
+	}
+	
+	.event-date {
+		width: 6rem;
+		height: 6rem;
+		background-color: $text-color;
+		border-radius: 100%;
+		float: left;
+		text-align: center;
+		color: $back-color;
+		padding: 1rem;
+		
+		div {
+			position: relative;
+			line-height: 90%;
+		}
+	}
+	
+	.event-day {
+		font-size: 3rem;
+	}
+	
+	.event-month {		
+		opacity: .7;
+	}
+	
+	.event-description {
+		
+		display: inline-block;
+		padding: 0 1rem;
+		line-height: 130%;
+		
+		a {
+			font-weight: 400;
+		}
+		
+		span {
+			display: block;
+			font-size: 85%;
+			line-height: 110%;
+			padding: 0 .3rem;
+		}
+	}
+}
