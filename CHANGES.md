@@ -6,6 +6,9 @@ Author: Paolo Manca
 
 *******************************************************************
 
+/* 1.0.3 update */
+- Added support for title hiding in pages
+
 /* 1.0.2 update */
 - Event Organiser: some styles were lost, now they've found their way home
 - Event Organiser: template for venues, categories

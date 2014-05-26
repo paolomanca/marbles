@@ -10,7 +10,7 @@
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-								<header class="article-header">
+								<header class="article-header"<?php if( function_exists('get_field') && get_field('hide_title') && the_field('hide_title') ) echo ' style="display:none;"' ?>>
 
 								<?php if( function_exists('get_field') && get_field('course_name') ) : ?>
 									<h1 class="page-title course-name" itemprop="headline"><?php the_field('course_name') ?></h1>
