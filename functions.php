@@ -362,5 +362,46 @@ function biglia_f( $atts ) {
 add_shortcode( 'biglia', 'biglia_f' );
 
 
+function tdb_events_f( $atts ) {
+	extract( shortcode_atts( array(
+		'event_category' => '',
+		'numberposts' => -1,
+	), $atts ) );
+	
+	$events = eo_get_events(array(
+		'event-category'	=>	$event_category,
+		'numberposts'		=>	$numberposts,
+	));
+	
+	
+	$output = '<ul class="tdb-events">';
+	
+	foreach ( $events as $event ) {
+				
+		$output .= '<li>';
+		$output .= '<div class="event-date" style="background-color: '. eo_get_event_color($event->ID) .'">';
+		$output .= '<div class="event-day">'. eo_get_the_start('j', $event->ID, null, $event->occurrence_id) .'</div>';
+		$output .= '<div class="event-month">'. eo_get_the_start('M', $event->ID, null, $event->occurrence_id) .'</div>';
+		$output .= '</div>';
+		$output .= '<div class="event-description">';
+		$output .= '<a href="'. get_the_permalink($event->ID) .'">'. get_the_title($event->ID) .'</a>';
+		
+		$output .= '<span>'. eo_get_the_start('G:i', $event->ID, null, $event->occurrence_id) .'-'. eo_get_the_end('G:i', $event->ID, null, $event->occurrence_id) .'</span>';
+		
+		$venue_name = eo_get_venue_name(eo_get_venue($event->ID));
+		
+		if ( !empty($venue_name) ) {
+			$output .= '<span>'. $venue_name .'</span></div>';
+		}
+		
+		$output .= '</li>';
+		
+	}
+	
+	$output .= '</ul>';
+	
+	return $output;
+}
+add_shortcode( 'tdb_events', 'tdb_events_f' );
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
