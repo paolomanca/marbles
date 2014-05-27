@@ -5,6 +5,9 @@ http://teatrodellebiglie.org
 Author: Paolo Manca
 
 *******************************************************************
+/* 1.0.4 update */
+- Fix: title hiding not working because of wrong function usage
+- New: shortcode [tdb_events]
 
 /* 1.0.3 update */
 - Added support for title hiding in pages
