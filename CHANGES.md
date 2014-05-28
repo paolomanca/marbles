@@ -5,6 +5,11 @@ http://teatrodellebiglie.org
 Author: Paolo Manca
 
 *******************************************************************
+
+/* 1.1 update */
+- Marbles Walker isn't anymore supported, use the shortcode instead
+- [tdb_events] directly passes attributes to the function eo_get_events allowing for a wider support
+
 /* 1.0.4 update */
 - Fix: title hiding not working because of wrong function usage
 - New: shortcode [tdb_events]
