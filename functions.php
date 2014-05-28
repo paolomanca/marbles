@@ -257,11 +257,14 @@ function biglie_f( $atts, $content = null ) {
 			'post_status' => 'publish',
 		));
 		
+		
+		
 		foreach ( $children as $child ) :
+			$thumb_img = wp_get_attachment_image_src( get_post_thumbnail_id($child->ID), $thumb_size);
 			
 			$output .= print_marble(array(
 				'link' 	=>	get_page_link($child->ID),
-				'image'	=>	wp_get_attachment_image_src( get_post_thumbnail_id($child->ID), $thumb_size )[0],// [0] => url
+				'image'	=>	$thumb_img[0],
 				'title'	=>	$child->post_title,
 			));
 			
@@ -316,7 +319,9 @@ function biglia_f( $atts ) {
 		}
 		
 		$marble['link'] = get_page_link($marble['page']->ID);
-		$marble['image'] = wp_get_attachment_image_src( get_post_thumbnail_id($marble['page']->ID), $thumb_size )[0];// [0] => url
+		
+		$thumb_img = wp_get_attachment_image_src( get_post_thumbnail_id($marble['page']->ID), $thumb_size );
+		$marble['image'] = $thumb_img[0];// [0] => url
 		$marble['title'] = $marble['page']->post_title;
 	}
 	
