@@ -218,20 +218,57 @@ register_nav_menu('social-links', 'Social Links');
 
 
 function biglie_f( $atts, $content = null ) {
-	extract( shortcode_atts( array(
-		'size'		=> 'medium',
-		'style'		=> '',
-	), $atts ) );
 	
-	$m_style = '';
+	global $thumb_size;
 	
-	if ( !empty($style) ) {
-		$m_style = ' style="'. $style .'"';
+	$m_style = null;
+	
+	$default = array(
+		'size'	=>	'medium',
+	);
+
+	$atts = array_merge($default, $atts);
+	
+	if ( !empty($atts['style']) ) {
+		$m_style = ' style="'. $atts['style'] .'"';
 	}
 	
-	$output = '<nav class="marbles '. $size .'-size"'. $m_style .'>';
+	$output = '<nav class="marbles '. $atts['size'] .'-size"'. $m_style .'>';
 		
-	$output .= do_shortcode( wp_kses($content, null) );
+	if ( !empty($content) )	:
+		
+		$output .= do_shortcode( wp_kses($content, null) );
+		
+	else:
+		
+		if ( empty($atts['children_of']) ) {
+			return 'No marbles to show';
+		}
+		
+		$parent = get_page_by_path($atts['children_of']);
+		
+		if ( empty($parent) ) {
+			return 'Not a page';
+		}
+		
+		$children = get_pages(array(
+			'child_of' => $parent->ID,
+			'parent' => $parent->ID,
+			'post_status' => 'publish',
+		));
+		
+		foreach ( $children as $child ) :
+			
+			$output .= print_marble(array(
+				'link' 	=>	get_page_link($child->ID),
+				'image'	=>	wp_get_attachment_image_src( get_post_thumbnail_id($child->ID), $thumb_size )[0],// [0] => url
+				'title'	=>	$child->post_title,
+			));
+			
+		endforeach;
+		
+	endif;
+	
 		
 	$output .= '</nav><!-- .marbles -->';
 	
@@ -241,59 +278,62 @@ function biglie_f( $atts, $content = null ) {
 add_shortcode( 'biglie', 'biglie_f' );
 
 
-function biglia_f( $atts ) {
-	extract( shortcode_atts( array(
-		'page'		=>	'',
-		'link'		=>	'',
-		'title'		=>	'',
-		'image'		=> 	'',
-	), $atts ) );
-	
-	
-	if ( !empty($page) ) {
-		
-		$m_page = get_page_by_path($page);
-								
-		if ( empty($m_page) ) {
-			return 'Not a page';
-		}
-		
-		$m_link = get_page_link($m_page->ID);
-		$m_image = get_the_post_thumbnail( $m_page->ID, 'marbles-thumb' );
-		$m_title = $m_page->post_title;
-	}
-	
-	if ( !empty($link) ) {
-		$m_link = $link;
-	}
-	
-	if ( !empty($title) ) {
-		$m_title = $title;
-	}
-	
-	if ( !empty($image) ) {
-		$m_image = '<img src="'. $image .'" title="'. $m_title .'" />';
-	}
-	
-	
+function print_marble( $marble ) {
 	
 	$output = '<div class="marble">';
 	
-	$output .= '<a href="'. $m_link .'">';
+	$output .= '<a href="'. $marble['link'] .'">';
 	
 	$output .= '<div class="marble-image" role="presentation">';
 	
-	$output .= $m_image;
+	$output .= '<img src="'. $marble['image'] .'" title="'. $marble['title'] .'" />';
 	
 	$output .= '</div><!-- .marble-image -->';
 	
-	$output .= '<h2 class="marble-title">'. $m_title .'</h2>';
+	$output .= '<h2 class="marble-title">'. $marble['title'] .'</h2>';
 	
 	$output .= '</a>';
 	
 	$output .= '</div><!-- .marble -->';
 	
 	return $output;
+}
+
+
+function biglia_f( $atts ) {
+	
+	global $thumb_size;
+	
+	$marble = array();
+	
+	
+	if ( !empty($atts['page']) ) {
+		
+		$marble['page'] = get_page_by_path($atts['page']);
+								
+		if ( empty($marble['page']) ) {
+			return 'Not a page';
+		}
+		
+		$marble['link'] = get_page_link($marble['page']->ID);
+		$marble['image'] = wp_get_attachment_image_src( get_post_thumbnail_id($marble['page']->ID), $thumb_size )[0];// [0] => url
+		$marble['title'] = $marble['page']->post_title;
+	}
+	
+	if ( !empty($atts['link']) ) {
+		$marble['link'] = $atts['link'];
+	}
+	
+	if ( !empty($atts['title']) ) {
+		$marble['title'] = $atts['title'];
+	}
+	
+	if ( !empty($atts['image']) ) {
+		$marble['image'] = $atts['image'];
+	}
+	
+	
+	return print_marble($marble);
 	
 }
 add_shortcode( 'biglia', 'biglia_f' );
