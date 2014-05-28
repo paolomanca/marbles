@@ -1,6 +1,6 @@
 <?php
 /*
- Template Name: Custom Page Example
+ T*emplate Name: Custom Page Example
  *
  * This is your custom page template. You can create as many of these as you need.
  * Simply name is "page-whatever.php" and in add the "Template Name" title at the

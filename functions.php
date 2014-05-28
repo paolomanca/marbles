@@ -209,74 +209,12 @@ function bones_fonts() {
 add_action('wp_print_styles', 'bones_fonts');
 
 
-/******************* WALKERS *******************/
-
-class marbles_walker extends Walker_Nav_Menu
-{
-	function start_lvl( &$output, $depth = 0, $args = array() ) {}
-	
-		function end_lvl( &$output, $depth = 0, $args = array() ) {}
-		
-			function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-								
-				$item_output = '<div class="marble">';
-				$item_output .= '<a href="'. $item->url .'" title="'. $item->url .'" rel="bookmark">';
-				$item_output .= '<div class="marble-image" role="presentation">';
-				$item_output .= get_the_post_thumbnail( $item->object_id, 'marbles-thumb' );
-				$item_output .= '</div><!-- .marble-image -->';
-				$item_output .= '<h2 class="marble-title">' . $item->title . '</h2>';
-				$item_output .= '</a>';
-				$item_output .= '</div><!-- .marble -->';
-				
-				$output .= $item_output;
-			}
-}
-
-
 /*************** REGISTERING MENUS ***************/
 
 register_nav_menu('social-links', 'Social Links');
 
-function register_marble_menus() {
-	$pages = get_pages(array(
-		'meta_key' => '_wp_page_template',
-		'meta_value' => 'page-marbles.php',
-		'hierarchical' => 0
-	));
-	
-	foreach($pages as $page){
-		register_nav_menu( $page->post_name, $page->post_title );
-	}
-}
-add_action( 'after_setup_theme', 'register_marble_menus' );
-
 
 /************** SHORTCODES **************/
-
-function menu_biglie_f( $atts ) {
-	extract( shortcode_atts( array(
-		'size'		=> 'medium',
-	), $atts ) );
-	
-	$page = get_post();
-					
-	$output = wp_nav_menu( array(
-		'echo'				=>	0,
-		'items_wrap' 		=>	'%3$s',
-		'walker'			=>	new marbles_walker(),
-		'theme_location'	=>	$page->post_name,
-		'container'			=>	'nav',
-		'container_class'	=>	'marbles marbles-'. $page->post_name .' '. $size .'-size' )
-	);
-	
-	if ( empty($output) ) {
-		echo 'Menù biglie vuoto';
-	}
-	
-	return $output;
-	
-}
-add_shortcode( 'menu_biglie', 'menu_biglie_f' );
 
 
 function biglie_f( $atts, $content = null ) {
