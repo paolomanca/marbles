@@ -300,16 +300,18 @@ add_shortcode( 'biglia', 'biglia_f' );
 
 
 function tdb_events_f( $atts ) {
-	extract( shortcode_atts( array(
-		'event_category' => '',
-		'numberposts' => -1,
-	), $atts ) );
+		
+	if ( !empty($atts['event_category']) ) {
+		$atts['event-category'] = $atts['event_category'];
+		unset($atts['event_category']);
+	}
 	
-	$events = eo_get_events(array(
-		'event-category'	=>	$event_category,
-		'numberposts'		=>	$numberposts,
-	));
-	
+	if ( !empty($atts['event_venue']) ) {
+		$atts['event-venue'] = $atts['event-venue'];
+		unset($atts['event_venue']);
+	}
+
+	$events = eo_get_events($atts);
 	
 	$output = '<ul class="tdb-events">';
 	
