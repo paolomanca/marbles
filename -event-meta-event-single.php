@@ -34,18 +34,9 @@
 		 } ?>
 
 		<?php if( eo_get_venue() ){ ?>
-			<li><strong><?php _e('Venue','eventorganiser'); ?>:</strong> <a href="<?php eo_venue_link(); ?>"> <?php eo_venue_name(); ?></a></li>
+			<li><strong><?php _e('Venue','eventorganiser'); ?>:</strong> <!--<a href="<?php eo_venue_link(); ?>">--> <?php eo_venue_name(); ?><!--</a>--></li>
 		<?php } ?>
 
-
-		<?php if( get_the_terms(get_the_ID(),'event-category') ){ ?>
-			<li><strong><?php _e('Categories','eventorganiser'); ?>:</strong> <?php echo get_the_term_list( get_the_ID(),'event-category', '', ', ', '' ); ?></li>
-		<?php } ?>
-
-	
-		<?php if( get_the_terms(get_the_ID(),'event-tag') && !is_wp_error( get_the_terms(get_the_ID(),'event-tag') ) ){ ?>
-			<li><strong><?php _e('Tags','eventorganiser'); ?>:</strong> <?php echo get_the_term_list( get_the_ID(),'event-tag', '', ', ', '' ); ?></li>
-		<?php } ?>
 
 		<?php if( eo_reoccurs() ){ 			
 				//Event reoccurs - display dates. 
