@@ -545,10 +545,15 @@ MARBLES
     display: -ms-flexbox;      /* TWEENER - IE 10 */
     display: -webkit-flex;     /* NEW - Chrome */
     display: flex;
+
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+	
 	width: 100%;
 	margin: 0 -1rem;
 	padding: 4rem 0;
-	justify-content: center;
 }
 
 .marble {
