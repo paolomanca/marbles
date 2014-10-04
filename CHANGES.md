@@ -1,5 +1,9 @@
 ### MARBLES THEME CHANGE LOG & HISTORY
 
+#### 1.1.3
+* Fix: not cross-browser justify content for marbles
+* Improved: styling of type course in course pages
+
 #### 1.1.2
 * Fix: nasty bug with the index of a returned array (PHP version dependent?)
 
