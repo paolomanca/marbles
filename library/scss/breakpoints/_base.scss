@@ -124,6 +124,7 @@ H1, H2, H3, H4, H5 STYLES
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	font-weight: 300;
+	letter-spacing: .08em;
 }
 
 h1, .h1 {
@@ -277,7 +278,13 @@ POSTS & CONTENT STYLES
 } /* end .hentry */
 
 .single-title,
-.page-title {}
+.page-title {
+	.course-type {
+		text-transform: lowercase;
+		font-size: 2rem;
+		opacity: .7;
+	}
+}
 
 .single-title {}
 

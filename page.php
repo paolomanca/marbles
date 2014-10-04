@@ -10,11 +10,12 @@
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-								<header class="article-header"<?php if( function_exists('get_field') && get_field('hide_title') ) echo ' style="display:none"'; ?>>
+								<header class="page-header"<?php if( function_exists('get_field') && get_field('hide_title') ) echo ' style="display:none"'; ?>>
 
 								<?php if( function_exists('get_field') && get_field('course_name') ) : ?>
-									<h1 class="page-title course-name" itemprop="headline"><?php the_field('course_name') ?></h1>
-									<div class="course-type"><?php the_title(); ?></div>
+									<h1 class="page-title" itemprop="headline">
+										<?php the_field('course_name') ?><span class="course-type">_<?php the_title(); ?></span>
+									</h1>
 								<?php else : ?>
 									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 								<?php endif; ?>
