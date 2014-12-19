@@ -218,9 +218,7 @@ register_nav_menu('social-links', 'Social Links');
 
 
 function biglie_f( $atts, $content = null ) {
-	
-	global $thumb_size;
-	
+
 	$m_style = null;
 	
 	$default = array(
@@ -260,7 +258,7 @@ function biglie_f( $atts, $content = null ) {
 		
 		
 		foreach ( $children as $child ) :
-			$thumb_img = wp_get_attachment_image_src( get_post_thumbnail_id($child->ID), $thumb_size);
+			$thumb_img = wp_get_attachment_image_src( get_post_thumbnail_id($child->ID), 'marbles-thumb');
 			
 			$output .= print_marble(array(
 				'link' 	=>	get_page_link($child->ID),
@@ -308,11 +306,8 @@ function print_marble( $marble ) {
 
 
 function biglia_f( $atts ) {
-	
-	global $thumb_size;
-	
-	$marble = array();
-	
+
+	$marble = [];
 	
 	if ( !empty($atts['page']) ) {
 		
@@ -324,7 +319,7 @@ function biglia_f( $atts ) {
 		
 		$marble['link'] = get_page_link($marble['page']->ID);
 		
-		$thumb_img = wp_get_attachment_image_src( get_post_thumbnail_id($marble['page']->ID), $thumb_size );
+		$thumb_img = wp_get_attachment_image_src( get_post_thumbnail_id($marble['page']->ID), 'marbles-thumb' );
 		$marble['image'] = $thumb_img[0];// [0] => url
 		$marble['title'] = $marble['page']->post_title;
 
