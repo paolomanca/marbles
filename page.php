@@ -12,13 +12,11 @@
 
 								<header class="page-header"<?php if( function_exists('get_field') && get_field('hide_title') ) echo ' style="display:none"'; ?>>
 
-								<?php if( function_exists('get_field') && get_field('course_name') ) : ?>
-									<h1 class="page-title" itemprop="headline">
-										<?php the_field('course_name') ?><span class="course-type">_<?php the_title(); ?></span>
-									</h1>
-								<?php else : ?>
+								<?php if ( function_exists('get_field') && get_field('course_type') ) { ?>
+									<h1 class="page-title" itemprop="headline"><?php the_title(); ?><span class="course-type">_<?php the_field('course_type'); ?></span></h1>
+								<?php } else { ?>
 									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
-								<?php endif; ?>
+								<?php } ?>
 
 								</header> <?php // end article header ?>
 

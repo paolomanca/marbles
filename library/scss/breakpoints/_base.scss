@@ -167,7 +167,7 @@ HEADER STYLES
 }
 	
 #site-info {
-	float: center;
+	float: none;
 	display: inline-block;
 	margin: 0 15px;
 	padding-top: .3em;
@@ -470,7 +470,7 @@ POSTS & CONTENT STYLES
 		float: right; 
 	}
 	.aligncenter, img.aligncenter { 
-		float: center;
+		float: none;
 		margin: .5rem auto;
 		display: block; 
 	}
@@ -605,12 +605,28 @@ h2.marble-title {
 		size: 2.2rem;
 		weight: 300;
 	}
-	
+
 	text-align: center;
 	word-wrap: break-word;
 	margin: 1rem 0;
 	padding: 0 5%;
 
+}
+
+h3.marble-subtitle {
+
+  color: $text-color-light;
+
+  font: {
+	size: 12px;
+	size: 1.2rem;
+  }
+  text-transform: uppercase;
+
+  text-align: center;
+  word-wrap: break-word;
+  margin: -1.3rem 0;
+  padding: 0 5%;
 }
 
 .marble { /* managing the hover effect */

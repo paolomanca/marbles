@@ -294,6 +294,10 @@ function print_marble( $marble ) {
 	$output .= '</div><!-- .marble-image -->';
 	
 	$output .= '<h2 class="marble-title">'. $marble['title'] .'</h2>';
+
+	if( isset($marble['subtitle']) && !empty($marble['subtitle']) ) {
+		$output .= '<h3 class="marble-subtitle">'. $marble['subtitle'] .'</h3>';
+	}
 	
 	$output .= '</a>';
 	
@@ -323,6 +327,11 @@ function biglia_f( $atts ) {
 		$thumb_img = wp_get_attachment_image_src( get_post_thumbnail_id($marble['page']->ID), $thumb_size );
 		$marble['image'] = $thumb_img[0];// [0] => url
 		$marble['title'] = $marble['page']->post_title;
+
+		if( function_exists('get_field') && !empty($marble['page']->course_type) ) {
+			$marble['subtitle'] = $marble['page']->course_type;
+		}
+
 	}
 	
 	if ( !empty($atts['link']) ) {
@@ -331,6 +340,10 @@ function biglia_f( $atts ) {
 	
 	if ( !empty($atts['title']) ) {
 		$marble['title'] = $atts['title'];
+	}
+
+	if ( !empty($atts['subtitle']) ) {
+		$marble['subtitle'] = $atts['subtitle'];
 	}
 	
 	if ( !empty($atts['image']) ) {
