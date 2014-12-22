@@ -279,79 +279,88 @@ function biglie_f( $atts, $content = null ) {
 add_shortcode( 'biglie', 'biglie_f' );
 
 
-function print_marble( $marble ) {
-	
-	$output = '<div class="marble">';
-	
-	$output .= '<a href="'. $marble['link'] .'">';
-	
-	$output .= '<div class="marble-image" role="presentation">';
-	
-	$output .= '<img src="'. $marble['image'] .'" title="'. $marble['title'] .'" />';
-	
-	$output .= '</div><!-- .marble-image -->';
-	
-	$output .= '<h2 class="marble-title">'. $marble['title'] .'</h2>';
-
-	if( isset($marble['subtitle']) && !empty($marble['subtitle']) ) {
-		$output .= '<h3 class="marble-subtitle">'. $marble['subtitle'] .'</h3>';
-	}
-	
-	$output .= '</a>';
-	
-	$output .= '</div><!-- .marble -->';
-	
-	return $output;
-}
-
-
+/**
+ * Translates the shortcode [biglia] to its HTML
+ * @param $atts
+ * @return string
+ */
 function biglia_f( $atts ) {
 
-	$marble = [];
-	
+	// Check whether the user provided a page to link and take data from
 	if ( !empty($atts['page']) ) {
-		
-		$marble['page'] = get_page_by_path($atts['page']);
+
+		// retrieve the page using the provided page name
+		$atts['page'] = get_page_by_path($atts['page']);
 								
-		if ( empty($marble['page']) ) {
+		if ( empty($atts['page']) ) {
 			return 'Not a page';
 		}
 		
-		$marble['link'] = get_page_link($marble['page']->ID);
-		
-		$thumb_img = wp_get_attachment_image_src( get_post_thumbnail_id($marble['page']->ID), 'marbles-thumb' );
-		$marble['image'] = $thumb_img[0];// [0] => url
-		$marble['title'] = $marble['page']->post_title;
+		$atts['link'] = get_page_link($atts['page']->ID);
 
-		if( function_exists('get_field') && !empty($marble['page']->course_type) ) {
-			$marble['subtitle'] = $marble['page']->course_type;
+		// If a link to an image was provided, keep it; otherwise retrieve the page thumbnail
+		if ( !isset($atts['image']) || empty($atts['image']) ) {
+			$thumb_img = wp_get_attachment_image_src(get_post_thumbnail_id($atts['page']->ID), 'marbles-thumb');
+			$atts['image'] = $thumb_img[0];// [0] => url
+		}
+
+		// If a title was provided, keep it; otherwise get the page's title
+		if ( !isset($atts['title']) || empty($atts['title']) ) {
+			$atts['title'] = $atts['page']->post_title;
+		}
+
+		// If a title was provided, keep it; otherwise get the page's custom field course_type
+		if ( !isset($atts['subtitle']) || empty($atts['subtitle']) ) {
+			if (function_exists('get_field') && !empty($atts['page']->course_type)) {
+				$atts['subtitle'] = $atts['page']->course_type;
+			}
 		}
 
 	}
 	
-	if ( !empty($atts['link']) ) {
-		$marble['link'] = $atts['link'];
-	}
-	
-	if ( !empty($atts['title']) ) {
-		$marble['title'] = $atts['title'];
-	}
-
-	if ( !empty($atts['subtitle']) ) {
-		$marble['subtitle'] = $atts['subtitle'];
-	}
-	
-	if ( !empty($atts['image']) ) {
-		$marble['image'] = $atts['image'];
-	}
-	
-	
-	return print_marble($marble);
+	return print_marble($atts);
 	
 }
 add_shortcode( 'biglia', 'biglia_f' );
 
 
+/**
+ * @param $marble
+ * @return string
+ */
+function print_marble( $marble ) {
+
+
+	$output = '<div class="marble">';
+
+	$output .= '<a href="'. $marble['link'] .'">';
+
+	$output .= '<div class="marble-image" role="presentation">';
+
+	$output .= '<img src="'. $marble['image'] .'" title="'. $marble['title'] .'" />';
+
+	$output .= '</div><!-- .marble-image -->';
+
+	if (!isset($marble['notitle'])) {
+		$output .= '<h2 class="marble-title">' . $marble['title'] . '</h2>';
+	}
+
+	if (!isset($marble['nosubtitle'])) {
+		$output .= '<h3 class="marble-subtitle">' . $marble['subtitle'] . '</h3>';
+	}
+
+	$output .= '</a>';
+
+	$output .= '</div><!-- .marble -->';
+
+	return $output;
+}
+
+
+/**
+ * @param $atts
+ * @return string
+ */
 function tdb_events_f( $atts ) {
 		
 	if ( !empty($atts['event_category']) ) {
