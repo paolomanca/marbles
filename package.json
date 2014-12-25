@@ -1,0 +1,29 @@
+{
+  "name": "marbles",
+  "title": "Marbles Theme",
+  "description": "Marbles ('Biglie') is a custom theme realized for Teatro delle Biglie (TdB), a student-run theatre association at Politecnico di Milano.",
+  "version": "2.0.0",
+  "homepage": "http://teatrodellebiglie.org",
+  "author": {
+    "name": "Paolo Manca",
+    "email": "paolo@manca.eu",
+    "url": "http://paolo.manca.eu"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paolomanca/marbles.git"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "matchdep": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-imagemin": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-compass": "*",
+    "jpegtran-bin": "*",
+    "grunt-contrib-concat": "*"
+  },
+  "keywords": []
+}
