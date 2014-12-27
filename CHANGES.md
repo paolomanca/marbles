@@ -1,5 +1,11 @@
 ### MARBLES THEME CHANGE LOG & HISTORY
 
+
+### 1.1.4
+* Added: subtitles for marbles
+* Fix: marbles getting the full resolution image, instead of the resized one
+* Housekeeping: marbles code
+
 #### 1.1.3
 * Fix: not cross-browser justify content for marbles
 * Improved: styling of type course in course pages
