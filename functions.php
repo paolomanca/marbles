@@ -337,7 +337,7 @@ function print_marble( $marble ) {
 
 	$output .= '<div class="marble-image" role="presentation">';
 
-	$output .= '<img src="'. $marble['image'] .'" title="'. $marble['title'] .'" />';
+	$output .= '<img class="grayscale" src="'. $marble['image'] .'" title="'. $marble['title'] .'" />';
 
 	$output .= '</div><!-- .marble-image -->';
 
