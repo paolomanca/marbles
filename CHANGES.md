@@ -1,7 +1,10 @@
 ### MARBLES THEME CHANGE LOG & HISTORY
 
+### 1.1.6
+* Added: common class to grayscale images
+
 ### 1.1.5
-* Added: 
+* Added: grayscale for marbles
 
 ### 1.1.4
 * Added: subtitles for marbles
