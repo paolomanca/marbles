@@ -1,50 +1,76 @@
 <?php
-/*
-The comments page for Bones
-*/
-
-// don't load it if you can't comment
-if ( post_password_required() ) {
-  return;
-}
-
+/**
+ * The template for displaying Comments.
+ *
+ * The area of the page that contains both current comments
+ * and the comment form. The actual display of comments is
+ * handled by a callback to soblossom_comment() which is
+ * located in the inc/soblossom.php file.
+ *
+ * @package soblossom
+ * @since SO Blossom 140526 
+ */
 ?>
-
-<?php // You can start editing here. ?>
-
-  <?php if ( have_comments() ) : ?>
-
-    <h3 id="comments-title" class="h2"><?php comments_number( __( '<span>No</span> Comments', 'bonestheme' ), __( '<span>One</span> Comment', 'bonestheme' ), _n( '<span>%</span> Comments', '<span>%</span> Comments', get_comments_number(), 'bonestheme' ) );?></h3>
-
-    <section class="commentlist">
-      <?php
-        wp_list_comments( array(
-          'style'             => 'div',
-          'short_ping'        => true,
-          'avatar_size'       => 40,
-          'callback'          => bones_comments,
-          'type'              => 'all',
-          'reply_text'        => 'Reply',
-          'page'              => '',
-          'per_page'          => '',
-          'reverse_top_level' => null,
-          'reverse_children'  => ''
-        ) );
-      ?>
-    </section>
-
-    <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-    	<nav class="navigation comment-navigation" role="navigation">
-      	<div class="comment-nav-prev"><?php previous_comments_link( __( '&larr; Previous Comments', 'bonestheme' ) ); ?></div>
-      	<div class="comment-nav-next"><?php next_comments_link( __( 'More Comments &rarr;', 'bonestheme' ) ); ?></div>
-    	</nav>
+ 
+<?php
+    /*
+     * If the current post is protected by a password and
+     * the visitor has not yet entered the password we will
+     * return early without loading the comments.
+     */
+    if ( post_password_required() )
+        return;
+?>
+ 
+    <div id="comments" class="comments-area">
+ 
+    <?php // You can start editing here -- including this comment! ?>
+ 
+    <?php if ( have_comments() ) : ?>
+        <h2 class="comments-title">
+            <?php
+                printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'soblossom' ),
+                    number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+            ?>
+        </h2>
+ 
+        <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through? If so, show navigation ?>
+        <nav role="navigation" id="comment-nav-above" class="site-navigation comment-navigation">
+            <h1 class="assistive-text"><?php _e( 'Comment navigation', 'soblossom' ); ?></h1>
+            <div class="nav-previous"><?php previous_comments_link( __( '<i class="fa fa-long-arrow-left"></i> Older Comments', 'soblossom' ) ); ?></div>
+            <div class="nav-next"><?php next_comments_link( __( 'Newer Comments <i class="fa fa-long-arrow-right"></i>', 'soblossom' ) ); ?></div>
+        </nav><!-- #comment-nav-before .site-navigation .comment-navigation -->
+        <?php endif; // check for comment navigation ?>
+ 
+        <ol class="commentlist">
+            <?php
+                /* Loop through and list the comments. Tell wp_list_comments()
+                 * to use soblossom_comment() to format the comments.
+                 * If you want to overload this in a child theme then you can
+                 * define soblossom_comment() and that will be used instead.
+                 * See soblossom_comment() in inc/template-tags.php for more.
+                 */
+                wp_list_comments( array( 'callback' => 'soblossom_comment' ) );
+            ?>
+        </ol><!-- .commentlist -->
+ 
+        <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through? If so, show navigation ?>
+        <nav role="navigation" id="comment-nav-below" class="site-navigation comment-navigation">
+            <h1 class="assistive-text"><?php _e( 'Comment navigation', 'soblossom' ); ?></h1>
+            <div class="nav-previous"><?php previous_comments_link( __( '<i class="fa fa-long-arrow-left"></i> Older Comments', 'soblossom' ) ); ?></div>
+            <div class="nav-next"><?php next_comments_link( __( 'Newer Comments <i class="fa fa-long-arrow-right"></i>', 'soblossom' ) ); ?></div>
+        </nav><!-- #comment-nav-below .site-navigation .comment-navigation -->
+        <?php endif; // check for comment navigation ?>
+ 
+    <?php endif; // have_comments() ?>
+ 
+    <?php
+        // If comments are closed and there are comments, let's leave a little note, shall we?
+        if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+    ?>
+        <p class="nocomments"><?php _e( 'Comments are closed.', 'soblossom' ); ?></p>
     <?php endif; ?>
-
-    <?php if ( ! comments_open() ) : ?>
-    	<p class="no-comments"><?php _e( 'Comments are closed.' , 'bonestheme' ); ?></p>
-    <?php endif; ?>
-
-  <?php endif; ?>
-
-  <?php comment_form(); ?>
-
+ 
+    <?php comment_form(); ?>
+ 
+</div><!-- #comments .comments-area -->

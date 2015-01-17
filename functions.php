@@ -1,408 +1,260 @@
 <?php
-/*
-Author: Eddie Machado
-URL: htp://themble.com/bones/
+/**
+ * functions and definitions
+ *
+ * @package soblossom
+ */
 
-This is where you can drop your custom functions or
-just edit things like thumbnail sizes, header images,
-sidebars, comments, ect.
-*/
+/**
+ * Lineup of all required files:
+ */
 
-// LOAD BONES CORE (if you remove this, the theme will break)
-require_once( 'library/bones.php' );
+/**
+ * inc/soblossom.php - The blossom in soblossom, if you remove this, the sky will come falling down :)
+ *	- theme setup soblossom_bloom()
+ *		- textdomain
+ *		- theme support
+ *		- enqueue scripts and styles
+ *		- add function soblossom_remove_script_version() (get rid of the ? in the script/style URLs)
+ *		- register widget areas
+ *		- register navigation menus
+ *		- general cleanup (incl. injected styling, rss, generator, excerpt more and what not)
+ *		- soblossom search form
+ *
+ *	- add Foundation Features
+ *
+ *	- Template Tags
+ *		- soblossom_featured_image
+ *		- soblossom_posted_in
+ *		- soblossom_paging_nav
+ *		- soblossom_post_nav
+ *		- soblossom_posted_on
+ *		- soblossom_categorized_blog
+ *		- soblossom_comment
+ *
+ * 	- soblossom_body_classes
+ * 	- add functions soblossom_add_favicon
+ *	- add filter soblossom_adjust_title_home
+ */
+require get_template_directory() . '/inc/soblossom.php';
 
-// USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
-// require_once( 'library/custom-post-type.php' );
+/**
+ * inc/iconfont-walker.php - Custom Walker to enable using Font Awesome icon font in navigation menus
+ *	- used for social media menu
+ *
+ * comment out to exclude
+ */
+require get_template_directory() . '/inc/walkers/iconfont-walker.php';
 
-// CUSTOMIZE THE WORDPRESS ADMIN (off by default)
-// require_once( 'library/admin.php' );
+/**
+ * /inc/classes/Mobile_Detect.php - Mobile Detect Library
+ *	- used for tplparts/nav-topbar.php among others
+ *
+ * @link: mobiledetect.net
+ * comment out to exclude
+ */
+//require get_template_directory() . '/inc/classes/Mobile_Detect.php';
+//$soblossom_detect = new Mobile_Detect();
 
-/*********************
-LAUNCH BONES
-Let's get everything up and running.
-*********************/
+/**
+ * /inc/classes/gallery.php - soblossom_clearing_blockgrid_gallery
+ * adapted the output of the WP Gallery shortcode
+ *
+ * comment out to exclude
+ */
+require get_template_directory() . '/inc/classes/gallery.php';
 
-function bones_ahoy() {
+/**
+ * /inc/classes/aq_resizer.php - Aqua Resizer script to dynamically resize images
+ *
+ * @link: github.com/syamilmj/Aqua-Resizer
+ * uncomment to include
+ */
+//require get_template_directory() . '/inc/classes/aq_resizer.php';
 
-	// let's get language support going, if you need it
-	load_theme_textdomain( 'bonestheme', get_template_directory() . '/library/translation' );
+/**
+ * /inc/functions/functionality.php - your own functions file
+ * this file is for you to add your own functions, added with an eye on portability
+ * you can also add your own functions to this main functions.php file or any other place you like
+ * 
+ * uncomment to include
+ */
+//require get_template_directory() . '/inc/functions/functionality.php';
 
-	// launching operation cleanup
-	add_action( 'init', 'bones_head_cleanup' );
-	// A better title
-	add_filter( 'wp_title', 'rw_title', 10, 3 );
-	// remove WP version from RSS
-	add_filter( 'the_generator', 'bones_rss_version' );
-	// remove pesky injected css for recent comments widget
-	add_filter( 'wp_head', 'bones_remove_wp_widget_recent_comments_style', 1 );
-	// clean up comment styles in the head
-	add_action( 'wp_head', 'bones_remove_recent_comments_style', 1 );
-	// clean up gallery output in wp
-	add_filter( 'gallery_style', 'bones_gallery_style' );
+/**
+ * /inc/functions/cpt.php - Custom Post Type registration file
+ * /inc/functions/cmb.php - Custom Meta Box registration file
+ *
+ * 	sample custom post type included, generated with generatewp.com/post-type/; generate custom taxonomies with generatewp.com/taxonomy/
+ * 	sample custom meta box included, generated from github.com/rilwis/meta-box/blob/master/demo/demo.php
+ *
+ * uncomment to include
+ */
+//require get_template_directory() . '/inc/functions/cpt.php';
+//require get_template_directory() . '/inc/functions/cmb.php';
 
-	// enqueue base scripts and styles
-	add_action( 'wp_enqueue_scripts', 'bones_scripts_and_styles', 999 );
-	// ie conditional wrapper
-
-	// launching this stuff after theme setup
-	bones_theme_support();
-
-	// adding sidebars to Wordpress (these are created in functions.php)
-	add_action( 'widgets_init', 'bones_register_sidebars' );
-
-	// cleaning up random code around images
-	add_filter( 'the_content', 'bones_filter_ptags_on_images' );
-	// cleaning up excerpt
-	add_filter( 'excerpt_more', 'bones_excerpt_more' );
-
-} /* end bones ahoy */
-
-// let's get this party started
-add_action( 'after_setup_theme', 'bones_ahoy' );
-
-
-/************* OEMBED SIZE OPTIONS *************/
-
-if ( ! isset( $content_width ) ) {
-	$content_width = 640;
-}
-
-/************* THUMBNAIL SIZE OPTIONS *************/
-
-// Thumbnail sizes
-add_image_size( 'bones-thumb-600', 600, 150, true );
-add_image_size( 'bones-thumb-300', 300, 100, true );
-add_image_size( 'marbles-thumb', 350, 350, true );
-
-/*
-to add more sizes, simply copy a line from above
-and change the dimensions & name. As long as you
-upload a "featured image" as large as the biggest
-set width or height, all the other sizes will be
-auto-cropped.
-
-To call a different size, simply change the text
-inside the thumbnail function.
-
-For example, to call the 300 x 300 sized image,
-we would use the function:
-<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
-for the 600 x 100 image:
-<?php the_post_thumbnail( 'bones-thumb-600' ); ?>
-
-You can change the names and dimensions to whatever
-you like. Enjoy!
-*/
-
-add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
-
-function bones_custom_image_sizes( $sizes ) {
-	return array_merge( $sizes, array(
-		'bones-thumb-600' => __('600px by 150px'),
-		'bones-thumb-300' => __('300px by 100px'),
-	));
-}
-
-/*
-The function above adds the ability to use the dropdown menu to select
-the new images sizes you have just created from within the media manager
-when you add media to your content blocks. If you add more image sizes,
-duplicate one of the lines in the array and name it according to your
-new image size.
-*/
-
-/************* ACTIVE SIDEBARS ********************/
-
-// Sidebars & Widgetizes Areas
-function bones_register_sidebars() {
-	register_sidebar(array(
-		'id' => 'sidebar1',
-		'name' => __( 'Sidebar 1', 'bonestheme' ),
-		'description' => __( 'The first (primary) sidebar.', 'bonestheme' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
-	));
-
-	/*
-	to add more sidebars or widgetized areas, just copy
-	and edit the above sidebar code. In order to call
-	your new sidebar just use the following code:
-
-	Just change the name to whatever your new
-	sidebar's id is, for example:
-
-	register_sidebar(array(
-	'id' => 'sidebar2',
-	'name' => __( 'Sidebar 2', 'bonestheme' ),
-	'description' => __( 'The second (secondary) sidebar.', 'bonestheme' ),
-	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-	'after_widget' => '</div>',
-	'before_title' => '<h4 class="widgettitle">',
-	'after_title' => '</h4>',
-	));
-
-	To call the sidebar in your template, you can just copy
-	the sidebar.php file and rename it to your sidebar's name.
-	So using the above example, it would be:
-	sidebar-sidebar2.php
-
-	*/
-} // don't remove this bracket!
-
-
-/************* COMMENT LAYOUT *********************/
-
-// Comment Layout
-function bones_comments( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment; ?>
-	<div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf'); ?>>
-		<article  class="cf">
-			<header class="comment-author vcard">
-				<?php
-				/*
-				this is the new responsive optimized comment image. It used the new HTML5 data-attribute to display comment gravatars on larger screens only. What this means is that on larger posts, mobile sites don't have a ton of requests for comment images. This makes load time incredibly fast! If you'd like to change it back, just replace it with the regular wordpress gravatar call:
-				echo get_avatar($comment,$size='32',$default='<path_to_url>' );
-				*/
-				?>
-				<?php // custom gravatar call ?>
-				<?php
-				// create variable
-				$bgauthemail = get_comment_author_email();
-				?>
-				<img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
-				<?php // end custom gravatar call ?>
-				<?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'bonestheme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'bonestheme' ),'  ','') ) ?>
-				<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'bonestheme' )); ?> </a></time>
-
-			</header>
-			<?php if ($comment->comment_approved == '0') : ?>
-				<div class="alert alert-info">
-					<p><?php _e( 'Your comment is awaiting moderation.', 'bonestheme' ) ?></p>
-				</div>
-			<?php endif; ?>
-			<section class="comment_content cf">
-				<?php comment_text() ?>
-			</section>
-			<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-		</article>
-<?php // </li> is added by WordPress automatically ?>
-<?php
-} // don't remove this bracket!
-
-
-/*
-This is a modification of a function found in the
-twentythirteen theme where we can declare some
-external fonts. If you're using Google Fonts, you
-can replace these fonts, change it in your scss files
-and be up and running in seconds.
-*/
-function bones_fonts() {
-	// wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
-	// wp_enqueue_style( 'googleFonts');
-  
-	wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,200italic,300italic,400italic,600italic');
-	wp_enqueue_style( 'googleFonts');
-}
-add_action('wp_print_styles', 'bones_fonts');
-
-
-/*************** REGISTERING MENUS ***************/
-
-register_nav_menu('social-links', 'Social Links');
-
-
-/************** SHORTCODES **************/
-
-
-function biglie_f( $atts, $content = null ) {
-
-	$m_style = null;
-	
-	$default = array(
-		'size'	=>	'medium',
-	);
-
-	$atts = array_merge($default, $atts);
-	
-	if ( !empty($atts['style']) ) {
-		$m_style = ' style="'. $atts['style'] .'"';
-	}
-	
-	$output = '<nav class="marbles '. $atts['size'] .'-size"'. $m_style .'>';
-		
-	if ( !empty($content) )	:
-		
-		$output .= do_shortcode( wp_kses($content, null) );
-		
-	else:
-		
-		if ( empty($atts['children_of']) ) {
-			return 'No marbles to show';
-		}
-		
-		$parent = get_page_by_path($atts['children_of']);
-		
-		if ( empty($parent) ) {
-			return 'Not a page';
-		}
-		
-		$children = get_pages(array(
-			'child_of' => $parent->ID,
-			'parent' => $parent->ID,
-			'post_status' => 'publish',
-		));
-		
-		
-		
-		foreach ( $children as $child ) :
-			$thumb_img = wp_get_attachment_image_src( get_post_thumbnail_id($child->ID), 'marbles-thumb');
-			
-			$output .= print_marble(array(
-				'link' 	=>	get_page_link($child->ID),
-				'image'	=>	$thumb_img[0],
-				'title'	=>	$child->post_title,
-			));
-			
-		endforeach;
-		
-	endif;
-	
-		
-	$output .= '</nav><!-- .marbles -->';
-	
-	return $output;
-	
-}
-add_shortcode( 'biglie', 'biglie_f' );
+/**
+ * /inc/functions/dashboard-functions.php - specific backend functions
+ *	- change howdy into something more appropriate
+ *	- change dashboard footer
+ *	- remove number of default dashboard widgets
+ *	- remove number of default WordPress widgets
+ *	- custom login
+ *	- always remove adminbar from frontend
+ *	- remove 3 custom columns added by Yoast WordPress SEO plugin
+ * 
+ * uncomment to include
+ */
+//require get_template_directory() . '/inc/functions/dashboard-functions.php';
 
 
 /**
- * Translates the shortcode [biglia] to its HTML
- * @param $atts
- * @return string
+ * /inc/functions/misc.php - Miscellaneous functions that you might or might not use for your theme
+ * 	- function to make it possible to query on is_post_type()
+ *	- remove widget title function
+ * 	- enable page excerpts
+ * 	- enable shortcode in text widgets
+ * 	- function that sets the authordata global when viewing an author archive
+ * 	- add hook soblossom_body_open (to add 3rd party scripts like GA)
+ *
+ * uncomment to include
  */
-function biglia_f( $atts ) {
-
-	// Check whether the user provided a page to link and take data from
-	if ( !empty($atts['page']) ) {
-
-		// retrieve the page using the provided page name
-		$atts['page'] = get_page_by_path($atts['page']);
-								
-		if ( empty($atts['page']) ) {
-			return 'Not a page';
-		}
-		
-		$atts['link'] = get_page_link($atts['page']->ID);
-
-		// If a link to an image was provided, keep it; otherwise retrieve the page thumbnail
-		if ( !isset($atts['image']) || empty($atts['image']) ) {
-			$thumb_img = wp_get_attachment_image_src(get_post_thumbnail_id($atts['page']->ID), 'marbles-thumb');
-			$atts['image'] = $thumb_img[0];// [0] => url
-		}
-
-		// If a title was provided, keep it; otherwise get the page's title
-		if ( !isset($atts['title']) || empty($atts['title']) ) {
-			$atts['title'] = $atts['page']->post_title;
-		}
-
-		// If a title was provided, keep it; otherwise get the page's custom field course_type
-		if ( !isset($atts['subtitle']) || empty($atts['subtitle']) ) {
-			if (function_exists('get_field') && !empty($atts['page']->course_type)) {
-				$atts['subtitle'] = $atts['page']->course_type;
-			}
-		}
-
-	}
-	
-	return print_marble($atts);
-	
-}
-add_shortcode( 'biglia', 'biglia_f' );
+// require get_template_directory() . '/inc/functions/misc.php';
 
 
 /**
- * @param $marble
- * @return string
+ * NAVIGATION MENUS FUNCTIONS
+ *
+ * Top Navigation and Footer Navigation Menus
+ * Registration of the menus takes place in soblossom_setup in inc/soblossom.php
  */
-function print_marble( $marble ) {
 
+// topnav-menu
+function soblossom_top_nav() {
+    wp_nav_menu( array(
+    	'container' => false,
+    	'container_class' => '',
+    	'menu' => __( 'Top Navigation', 'soblossom' ),
+    	'menu_class' => 'right',
+    	'theme_location' => 'topnav',
+    	'before' => '',
+        'after' => '',
+        'link_before' => '',
+        'link_after' => '',
+        'fallback_cb' => 'soblossom_topnav_fallback', // workaround to show a message to set up a menu (copied from required)
+	));
+} /* end soblossom_top_nav */
 
-	$output = '<div class="marble">';
+// social-media-menu (optional)
+function soblossom_social_media_links() {
+    wp_nav_menu( array(
+    	'container' => '',
+    	'container_class' => 'socialmedia clearfix',
+    	'menu' => __( 'Social Media', 'soblossom' ),
+       	'menu_class' => 'social-links',
+    	'theme_location' => 'social',
+    	'depth' => '1',
+    	'before' => '',
+        'after' => '',
+        'link_before' => '',
+        'link_after' => '',
+        'walker' => new iconfont_walker(), // custom walker located in inc/walkers/iconfont-walker.php - add social media name to description
+        'fallback_cb' => 'soblossom_socialmedia_fallback' // workaround to show a message to set up a menu (copied from required)
+	));
+} /* end soblossom_social_media_links */
 
-	$output .= '<a href="'. $marble['link'] .'">';
-
-	$output .= '<div class="marble-image" role="presentation">';
-
-	$output .= '<img class="grayscale" src="'. $marble['image'] .'" title="'. $marble['title'] .'" />';
-
-	$output .= '</div><!-- .marble-image -->';
-
-	if (!isset($marble['notitle'])) {
-		$output .= '<h2 class="marble-title">' . $marble['title'] . '</h2>';
-	}
-
-	if (!isset($marble['nosubtitle'])) {
-		$output .= '<h3 class="marble-subtitle">' . $marble['subtitle'] . '</h3>';
-	}
-
-	$output .= '</a>';
-
-	$output .= '</div><!-- .marble -->';
-
-	return $output;
-}
-
+// footer-menu (optional)
+function soblossom_footer_nav() {
+    wp_nav_menu( array(
+    	'container' => false,
+    	'container_class' => '',
+    	'menu' => __( 'Footer Links', 'soblossom' ),
+    	'menu_class' => 'footer-nav inline-list right',
+    	'theme_location' => 'footer',
+    	'before' => '',
+        'after' => '',
+        'link_before' => '',
+        'link_after' => '',
+        'depth' => 0,
+        'fallback_cb' => 'soblossom_footer_fallback', // workaround to show a message to set up a menu (copied from required)
+	));
+} /* end soblossom_footer_nav */
 
 /**
- * @param $atts
- * @return string
+ * A fallback when no navigation is selected by default, otherwise it throws some nasty errors.
+ * From required+ Foundation http://themes.required.ch
  */
-function tdb_events_f( $atts ) {
-		
-	if ( !empty($atts['event_category']) ) {
-		$atts['event-category'] = $atts['event_category'];
-		unset($atts['event_category']);
+if( ! function_exists( 'soblossom_topnav_fallback' ) ) {
+	function soblossom_topnav_fallback() {
+		echo '<div class="alert-box warning">';
+		// Translators 1: Link to Menus, 2: Link to Customize
+	  	printf( __( 'Add your Top Navigation Menu by adding a %1$s or %2$s the design.', 'soblossom' ),
+	  		sprintf(  __( '<a href="%s">Menu</a>', 'soblossom' ),
+	  			get_admin_url( get_current_blog_id(), 'nav-menus.php' )
+	  		),
+	  		sprintf(  __( '<a href="%s">Customizing</a>', 'soblossom' ),
+	  			get_admin_url( get_current_blog_id(), 'customize.php' )
+	  		)
+	  	);
+	  	echo '</div>';
 	}
-	
-	if ( !empty($atts['event_venue']) ) {
-		$atts['event-venue'] = $atts['event-venue'];
-		unset($atts['event_venue']);
-	}
-
-	$events = eo_get_events($atts);
-	
-	$output = '<ul class="tdb-events">';
-	
-	foreach ( $events as $event ) {
-				
-		$output .= '<li>';
-		$output .= '<div class="event-date" style="background-color: '. eo_get_event_color($event->ID) .'">';
-		$output .= '<div class="event-day">'. eo_get_the_start('j', $event->ID, null, $event->occurrence_id) .'</div>';
-		$output .= '<div class="event-month">'. eo_get_the_start('M', $event->ID, null, $event->occurrence_id) .'</div>';
-		$output .= '</div>';
-		$output .= '<div class="event-description">';
-		$output .= '<a href="'. get_the_permalink($event->ID) .'">'. get_the_title($event->ID) .'</a>';
-		
-		$output .= '<span>'. eo_get_the_start('G:i', $event->ID, null, $event->occurrence_id) .'-'. eo_get_the_end('G:i', $event->ID, null, $event->occurrence_id) .'</span>';
-		
-		$venue_name = eo_get_venue_name(eo_get_venue($event->ID));
-		
-		if ( !empty($venue_name) ) {
-			$output .= '<span>'. $venue_name .'</span></div>';
-		}
-		
-		$output .= '</li>';
-		
-	}
-	
-	$output .= '</ul>';
-	
-	return $output;
 }
-add_shortcode( 'tdb_events', 'tdb_events_f' );
 
-/* DON'T DELETE THIS CLOSING TAG */ ?>
+if( ! function_exists( 'soblossom_socialmedia_fallback' ) ) {
+	function soblossom_socialmedia_fallback() {
+		echo '<div class="alert-box info">';
+		// Translators 1: Link to Menus, 2: Link to Customize
+	  	printf( __( 'Add a %1$s and use FontAwesome names for the descriptions to show your own Social Links. Alternatively use the %2$s.', 'soblossom' ),
+	  		sprintf(  __( '<a href="%s">Social Media menu</a>', 'soblossom' ),
+	  			get_admin_url( get_current_blog_id(), 'nav-menus.php' )
+	  		),
+	  		sprintf(  __( '<a href="%s">Customizer</a>', 'soblossom' ),
+	  			get_admin_url( get_current_blog_id(), 'customize.php' )
+	  		)
+	  	);
+	  	echo '</div>';
+	}
+}
+
+if( ! function_exists( 'soblossom_footer_fallback' ) ) {
+	function soblossom_footer_fallback() {
+		echo '<div class="alert-box alert">';
+		// Translators 1: Link to Menus, 2: Link to Customize
+	  	printf( __( 'Add your own Footer Links by adding a %1$s or %2$s the design.', 'soblossom' ),
+	  		sprintf(  __( '<a href="%s">Menu</a>', 'soblossom' ),
+	  			get_admin_url( get_current_blog_id(), 'nav-menus.php' )
+	  		),
+	  		sprintf(  __( '<a href="%s">Customizing</a>', 'soblossom' ),
+	  			get_admin_url( get_current_blog_id(), 'customize.php' )
+	  		)
+	  	);
+	  	echo '</div>';
+	}
+}
+
+/**
+ * WIDGET AREAS FUNCTIONS
+ *
+ * Sidebars & Widgetised Areas
+ * Registration of the areas takes place in soblossom_setup in inc/soblossom.php
+ */
+function soblossom_register_widget_areas() {
+	register_sidebar( array(
+		'name'          => __( 'Sidebar Widget Area', 'soblossom' ),
+		'id'            => 'sidebar-widget-area',
+		'description'   => __( 'Appears on the side (right by default) of the site.', 'soblossom' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer Widget Area', 'soblossom' ),
+		'id'            => 'footer-widget-area',
+		'description'   => __( 'Appears in the footer section of the site.', 'soblossom' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s small-12 medium-3 columns">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+}

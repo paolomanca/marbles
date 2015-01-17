@@ -1,21 +1,20 @@
-				<div id="sidebar1" class="sidebar m-all t-1of3 d-2of7 last-col cf" role="complementary">
-
-					<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
-
-						<?php dynamic_sidebar( 'sidebar1' ); ?>
-
-					<?php else : ?>
-
-						<?php
-							/*
-							 * This content shows up if there are no widgets defined in the backend.
-							*/
-						?>
-
-						<div class="no-widgets">
-							<p><?php _e( 'This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
-						</div>
-
-					<?php endif; ?>
-
-				</div>
+<?php
+/**
+ * The Sidebar containing the main widget areas.
+ *
+ * @package soblossom
+ */
+?>
+	<div id="sidebar" class="widget-area small-12 medium-4 large-3 columns" role="complementary">
+		
+		<?php if ( is_active_sidebar( 'sidebar-widget-area' ) ) {
+			
+			dynamic_sidebar( 'sidebar-widget-area' );
+		
+		} else {
+		
+			echo '<div class="alert help"><p>' . __( 'Go to Appearance <i class="fa fa-long-arrow-right"></i> Widgets in your Dashboard to add some widgets', 'soblossom' ) . '</p></div>';
+			
+		} //endif/else sidebar-widget-area ?>
+	
+	</div><!-- #sidebar -->

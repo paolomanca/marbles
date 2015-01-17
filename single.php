@@ -1,54 +1,37 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The Template for displaying all single posts.
+ *
+ * @package soblossom
+ */
 
-			<div id="content">
+get_header(); ?>
 
-				<div id="inner-content" class="wrap cf">
+	<div id="content" class="contentarea-wrap">
 
-					<div id="main" class="m-all t-2of3 d-5of7 cf" role="main">
+		<div id="inner-content" class="row">
+	
+			<main id="main" class="site-main small-12 medium-8 large-9 columns clearfix" role="main">
 
-						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<?php while ( have_posts() ) { the_post();
+		
+					get_template_part( 'tplparts/content', 'single' );
+		
+					soblossom_post_nav(); // defined in inc/soblossom.php
+		
+					// If comments are open or we have at least one comment, load up the comment template
+					if ( comments_open() || get_comments_number() ) {
+						comments_template();
+					} //endif
+		
+				} //endwhile end of the loop. ?>
 
-							<?php
-								/*
-								 * Ah, post formats. Nature's greatest mystery (aside from the sloth).
-								 *
-								 * So this function will bting in the needed template file depending on what the post
-								 * format is. The different post formats are located in the post-formats folder.
-								 *
-								 *
-								 * REMEMBER TO ALWAYS HAVE A DEFAULT ONE NAMED "format.php" FOR POSTS THAT AREN'T
-								 * A SPECIFIC POST FORMAT.
-								 *
-								 * If you want to remove post formats, just delete the post-formats folder and
-								 * replace the function below with the contents of the "format.php" file.
-								*/
-								get_template_part( 'post-formats/format', get_post_format() );
-							?>
-
-						<?php endwhile; ?>
-
-						<?php else : ?>
-
-							<article id="post-not-found" class="hentry cf">
-									<header class="article-header">
-										<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-									</header>
-									<section class="entry-content">
-										<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-									</section>
-									<footer class="article-footer">
-											<p><?php _e( 'This is the error message in the single.php template.', 'bonestheme' ); ?></p>
-									</footer>
-							</article>
-
-						<?php endif; ?>
-
-					</div>
-
-					<?php get_sidebar(); ?>
-
-				</div>
-
-			</div>
+			</main><!-- #main.site-main -->
+	
+			<?php get_sidebar(); ?>
+			
+		</div> <!-- end #inner-content -->
+	
+	</div> <!-- end #content.contentarea-wrap -->
 
 <?php get_footer(); ?>

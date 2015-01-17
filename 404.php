@@ -1,43 +1,56 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying 404 pages (Not Found).
+ *
+ * @package soblossom
+ */
 
-			<div id="content">
+get_header(); ?>
 
-				<div id="inner-content" class="wrap cf">
+	<div id="content" class="contentarea-wrap">
+		
+		<div id="inner-content" class="row">
+	
+			<main id="main" class="site-main small-12 medium-8 large-9 columns clearfix" role="main">
 
-					<div id="main" class="m-all t-2of3 d-5of7 cf" role="main">
+				<article id="404-notfound" class="error-404 not-found clearfix">
+				
+					<header class="entry-header">
+						<h1 class="page-title"><?php _e( 'Nothing Here.', 'soblossom' ); ?></h1>
+					</header><!-- .entry-header -->
+				
+					<section class="entry-content">
+						<?php echo '<p>' . __( 'Apologies, there is nothing here. Maybe try a search or one of the links below or in the sidebar?', 'soblossom' ) . '</p>'; ?>
+					</section><!-- .entry-content -->
 
-						<article id="post-not-found" class="hentry cf">
-
-							<header class="article-header">
-
-								<h1><?php _e( 'Epic 404 - Article Not Found', 'bonestheme' ); ?></h1>
-
-							</header>
-
-							<section class="entry-content">
-
-								<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'bonestheme' ); ?></p>
-
-							</section>
-
-							<section class="search">
-
-									<p><?php get_search_form(); ?></p>
-
-							</section>
-
-							<footer class="article-footer">
-
-									<p><?php _e( 'This is the 404.php template.', 'bonestheme' ); ?></p>
-
-							</footer>
-
-						</article>
-
-					</div>
-
-				</div>
-
-			</div>
+					<section class="search-form">
+						<?php get_search_form(); ?>
+					</section><!-- .search -->
+					
+					<section class="suggested-content row">
+						
+						<div class="pages medium-6 columns">
+							<?php
+								echo '<h2>' . __( 'Pages', 'soblossom' ) . '</h2><ul>';
+								wp_list_pages( 'title_li=' );
+								echo '</ul>';
+							?>
+						</div> <!-- end .pages -->
+						
+						<div class="posts medium-6 columns">
+							<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+						</div> <!-- end .posts -->
+						
+					</section> <!-- end .suggested-content -->
+									
+				</article><!-- #404-notfound -->
+	
+			</main><!-- #main.site-main -->
+	
+			<?php get_sidebar(); ?>
+			
+		</div> <!-- end #inner-content -->
+	
+	</div> <!-- end #content.contentarea-wrap -->
 
 <?php get_footer(); ?>
