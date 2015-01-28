@@ -58,24 +58,31 @@
 
 				<header id="masthead" class="site-header" role="banner">
 
-					<div class="inner-header row">
+					<div class="inner-header row collapse">
 
-						<div class="site-branding small-12 medium-6 columns">
+						<div class="site-branding small-12 medium-7 columns">
+								<div class="site-logo">
+									<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+									   title="<?php esc_attr( bloginfo( 'name' ) ); ?>, <?php esc_attr( bloginfo( 'description' ) ); ?>"
+									   rel="home">
+										<img src="<?php echo get_template_directory_uri(); ?>/images/logo.png"
+										     width="100px" height="50px" alt="<?php esc_attr( bloginfo( 'name' ) ); ?> logo"/>
+									</a>
+								</div>
 
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr( bloginfo( 'name' ) ); ?>, <?php  esc_attr( bloginfo( 'description' ) ); ?>" rel="home">
-								<img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php esc_attr( bloginfo( 'name' ) ); ?> logo" />
-							</a>
+								<div class="site-info">
+									<h1 class="site-title">
+										<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+										   rel="home"><?php esc_attr( bloginfo( 'name' ) ); ?></a>
+									</h1>
 
-							<h1 class="site-title">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_attr( bloginfo( 'name' ) ); ?></a>
-							</h1>
+									<h2 class="site-description"><?php esc_attr( bloginfo( 'description' ) ); ?>
+										info@teatrodellebiglie.org</h2>
+								</div>
+						</div>
+						<!-- end .site-branding -->
 
-
-							<h2 class="site-description"><?php esc_attr( bloginfo( 'description' ) ); ?>asdasd</h2>
-
-						</div> <!-- end .site-branding -->
-
-						<div class="social-media small-12 medium-6 columns">
+						<div class="social-media small-12 medium-5 columns">
 							<?php soblossom_social_media_links(); ?>
 						</div> <!-- end .social-media -->
 
@@ -97,40 +104,5 @@
 						
 					</div><!-- end .inner-header -->
 					*/?>
-
-					<nav id="site-navigation" class="main-navigation row" role="navigation">
-
-						<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'soblossom' ); ?></a>
-
-						<?php
-							/**
-							 * A couple of different ways to call the top navigation menu
-							 *
-							 * 1. DEFAULT top navigation with mobile off-canvas (soblossom is basically designed to have this,
-							 * 	if you don't want this, then you can also remove the off-canvas-wrap and inner-wrap classes
-							 * 	from both header and footer templates)
-							 *
-							 * 2. a simple top navigation menu with mobile dropdown
-							 *
-							 * 3. call the menu directly
-							 *
-							 * 4. anything else, customise it by yourself
-							 */
-						
-							// 1. top navigation with mobile off-canvas (
-							get_template_part( 'tplparts/nav', 'offcanvas' );
-
-							// 2. a simple top navigation menu with mobile dropdown
-							//get_template_part( 'tplparts/nav', 'topbar' );
-							
-							// 3. call the menu directly (you'll need to figure sth out for mobile)
-							//wp_nav_menu( array( 'theme_location' => 'primary' ) );
-							
-							// 4. anything else, customise it by yourself
-							//get_template_part( 'tplparts/nav', 'name-menu' );
-						
-						?>
-
-					</nav> <!-- end .main-navigation -->
 
 				</header> <!-- end header -->

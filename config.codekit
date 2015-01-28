@@ -326,7 +326,7 @@
 		"syntaxCheckerStyle": 1
 		},
 	"\/bower_components\/foundation\/scss\/foundation.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -342,7 +342,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/_functions.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -358,7 +358,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/_settings.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -374,7 +374,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_accordion.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -390,7 +390,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_alert-boxes.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -406,7 +406,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_block-grid.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -422,7 +422,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_breadcrumbs.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -438,7 +438,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_button-groups.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -454,7 +454,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_buttons.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -470,7 +470,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_clearing.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -486,7 +486,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_dropdown-buttons.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -502,7 +502,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_dropdown.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -518,7 +518,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_flex-video.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -534,7 +534,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_forms.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -550,7 +550,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_global.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -566,7 +566,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_grid.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -582,7 +582,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_icon-bar.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -598,7 +598,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_inline-lists.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -614,7 +614,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_joyride.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -630,7 +630,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_keystrokes.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -646,7 +646,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_labels.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -662,7 +662,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_magellan.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -678,7 +678,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_offcanvas.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -694,7 +694,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_orbit.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -710,7 +710,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_pagination.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -726,7 +726,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_panels.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -742,7 +742,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_pricing-tables.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -758,7 +758,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_progress-bars.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -774,7 +774,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_range-slider.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -790,7 +790,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_reveal.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -806,7 +806,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_side-nav.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -822,7 +822,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_split-buttons.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -838,7 +838,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_sub-nav.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -854,7 +854,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_switches.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -870,7 +870,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_tables.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -886,7 +886,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_tabs.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -902,7 +902,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_thumbs.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -918,7 +918,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_toolbar.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -934,7 +934,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_tooltips.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -950,7 +950,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_top-bar.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -966,7 +966,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_type.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -982,7 +982,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/foundation\/components\/_visibility.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -998,7 +998,7 @@
 		"useLibsass": 0
 		},
 	"\/bower_components\/foundation\/scss\/normalize.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -1019,6 +1019,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/bower_components\/jquery-placeholder\/jquery.placeholder.js",
 		"outputAbbreviatedPath": "\/bower_components\/jquery-placeholder\/min\/jquery.placeholder-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/bower_components\/jquery-placeholder\/jquery.placeholder.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/jquery-placeholder\/jquery.placeholder.min.js",
+		"outputAbbreviatedPath": "\/bower_components\/jquery-placeholder\/min\/jquery.placeholder.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3602,6 +3613,33 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/css\/ie.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/ie.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/css\/print.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/print.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/css\/screen.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/screen.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/css\/style.css": {
 		"fileType": 16,
 		"ignore": 1,
@@ -3686,7 +3724,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 8085,
+		"initialSize": 9459,
 		"inputAbbreviatedPath": "\/images\/logo.png",
 		"outputAbbreviatedPath": "\/images\/logo.png",
 		"outputPathIsOutsideProject": 0,
@@ -3882,7 +3920,7 @@
 		"processed": 0
 		},
 	"\/scss\/_comments.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -3898,7 +3936,7 @@
 		"useLibsass": 0
 		},
 	"\/scss\/_gallery.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -3914,7 +3952,7 @@
 		"useLibsass": 0
 		},
 	"\/scss\/_large.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -3930,7 +3968,7 @@
 		"useLibsass": 0
 		},
 	"\/scss\/_medium.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -3946,7 +3984,7 @@
 		"useLibsass": 0
 		},
 	"\/scss\/_print.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -3971,7 +4009,7 @@
 		"outputPathIsSetByUser": 0
 		},
 	"\/scss\/_settings.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -3987,7 +4025,7 @@
 		"useLibsass": 0
 		},
 	"\/scss\/_small.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -4003,7 +4041,7 @@
 		"useLibsass": 0
 		},
 	"\/scss\/_social-media.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -4019,7 +4057,7 @@
 		"useLibsass": 0
 		},
 	"\/scss\/_underscores.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -4035,7 +4073,7 @@
 		"useLibsass": 0
 		},
 	"\/scss\/_xlarge.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -4051,7 +4089,7 @@
 		"useLibsass": 0
 		},
 	"\/scss\/_xxlarge.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -4067,7 +4105,7 @@
 		"useLibsass": 0
 		},
 	"\/scss\/custom-login.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -4083,7 +4121,7 @@
 		"useLibsass": 0
 		},
 	"\/scss\/style.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -4250,8 +4288,8 @@
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
-	"displayValue": "marbles-foundation",
-	"displayValueWasSetByUser": 0,
+	"displayValue": "marbles-soblossom",
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "compass_gray"
 	},
 "projectSettings": {
@@ -4856,10 +4894,10 @@
 	"slimRailsCompatible": 0,
 	"stylusAutoOutputPathEnabled": 1,
 	"stylusAutoOutputPathFilenamePattern": "*.css",
-	"stylusAutoOutputPathRelativePath": "..\/css",
+	"stylusAutoOutputPathRelativePath": "\/css",
 	"stylusAutoOutputPathReplace1": "stylus",
 	"stylusAutoOutputPathReplace2": "css",
-	"stylusAutoOutputPathStyle": 2,
+	"stylusAutoOutputPathStyle": 1,
 	"stylusCreateSourceMap": 0,
 	"stylusDebugStyle": 0,
 	"stylusImportCSS": 0,

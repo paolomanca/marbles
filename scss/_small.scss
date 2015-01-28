@@ -12,7 +12,8 @@ the idea is to keep it as light/minimal as possible.
 /*********************
 DEFAULT COLOURS
 *********************/
-$primary: #71afc2; /* used on: html */
+$primary: #71afc2;
+/* used on: html */
 
 /*********************
 GENERAL STYLES
@@ -23,8 +24,8 @@ Put the adminbar back where it belongs
 */
 @media screen and (max-width: 600px) {
     #wpadminbar {
-		position: fixed !important;
-	}
+        position: fixed !important;
+    }
 }
 
 // lower the z-index of the adminbar from 999999 to 995, so image overlays will actually overlay the entire screen.
@@ -33,54 +34,157 @@ Put the adminbar back where it belongs
 }
 
 ::selection {
-	background-color: $primary;
+    background-color: $primary;
 }
+
 ::-moz-selection {
-	background-color: $primary;
+    background-color: $primary;
 }
 
-
-body {}
+body {
+}
 
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
 ********************/
 
-.home {}                          /* home page */
-.blog {}                          /* blog template page */
-.archive {}                       /* archive page */
-.date {}                          /* date archive page */
-	.date-paged-1 {}                /* replace the number to the corresponding page number */
-.search {}                        /* search page */
-	.search-results {}              /* search result page */
-	.search-no-results {}           /* no results search page */
-	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
-.error404 {}                      /* 404 page */
-.single {}                        /* single post page */
-	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
-	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
-.attachment {}                    /* attatchment page */
-	.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
-	.attachment-mime-type {}        /* style mime type pages */
-.author {}                        /* author page */
-	.author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
-	.author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
-.category {}                      /* category page */
-	.category-1 {}                  /* individual category page (i.e. body.category-6) */
-	.category-paged-1 {}            /* replace the number to the corresponding page number */
-.tag {}                           /* tag page */
-	.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
-	.tag-paged-1 {}                 /* replace the number to the corresponding page number */
-.page-template {}                 /* custom page template page */
-	.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
-	.page-paged-1 {}                /* replace the number to the corresponding page number */
-	.page-parent {}                 /* parent page template */
-	.page-child {}                  /* child page template */
-	.parent-pageid-1 {}             /* replace the number to the corresponding page number */
-.logged-in {}                     /* if user is logged in */
-.paged {}                         /* paged items like search results or archives */
-	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
+.home {
+}
+
+/* home page */
+.blog {
+}
+
+/* blog template page */
+.archive {
+}
+
+/* archive page */
+.date {
+}
+
+/* date archive page */
+.date-paged-1 {
+}
+
+/* replace the number to the corresponding page number */
+.search {
+}
+
+/* search page */
+.search-results {
+}
+
+/* search result page */
+.search-no-results {
+}
+
+/* no results search page */
+.search-paged-1 {
+}
+
+/* individual paged search (i.e. body.search-paged-3) */
+.error404 {
+}
+
+/* 404 page */
+.single {
+}
+
+/* single post page */
+.postid-1 {
+}
+
+/* individual post page by id (i.e. body.postid-73) */
+.single-paged-1 {
+}
+
+/* individual paged single (i.e. body.single-paged-3) */
+.attachment {
+}
+
+/* attatchment page */
+.attachmentid-1 {
+}
+
+/* individual attatchment page (i.e. body.attachmentid-763) */
+.attachment-mime-type {
+}
+
+/* style mime type pages */
+.author {
+}
+
+/* author page */
+.author-nicename {
+}
+
+/* user nicename (i.e. body.author-samueladams) */
+.author-paged-1 {
+}
+
+/* paged author archives (i.e. body.author-paged-4) for page 4 */
+.category {
+}
+
+/* category page */
+.category-1 {
+}
+
+/* individual category page (i.e. body.category-6) */
+.category-paged-1 {
+}
+
+/* replace the number to the corresponding page number */
+.tag {
+}
+
+/* tag page */
+.tag-slug {
+}
+
+/* individual tag page (i.e. body.tag-news) */
+.tag-paged-1 {
+}
+
+/* replace the number to the corresponding page number */
+.page-template {
+}
+
+/* custom page template page */
+.page-template-page-php {
+}
+
+/* individual page template (i.e. body.page-template-contact-php */
+.page-paged-1 {
+}
+
+/* replace the number to the corresponding page number */
+.page-parent {
+}
+
+/* parent page template */
+.page-child {
+}
+
+/* child page template */
+.parent-pageid-1 {
+}
+
+/* replace the number to the corresponding page number */
+.logged-in {
+}
+
+/* if user is logged in */
+.paged {
+}
+
+/* paged items like search results or archives */
+.paged-1 {
+}
+
+/* individual paged (i.e. body.paged-3) */
 
 /*********************
 LAYOUT & GRID STYLES
@@ -92,43 +196,43 @@ LINK STYLES
 
 a, a:visited {
 
+    /*adds highlight on hover */
+    &:hover, &:focus {
 
-	/*adds highlight on hover */
-	&:hover, &:focus {
+    }
 
-	}
+    /* on click */
+    &:active {
 
-	/* on click */
-	&:active {
+    }
 
-	}
-
-	/* mobile tap color */
-	&:link {
-		/*
-		this highlights links on iPhones/iPads.
-		so it basically works like the :hover selector
-		for mobile devices.
-		*/
-		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
-	}
+    /* mobile tap color */
+    &:link {
+        /*
+        this highlights links on iPhones/iPads.
+        so it basically works like the :hover selector
+        for mobile devices.
+        */
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+    }
 }
 
 /******************************************************************
 H1, H2, H3, H4, H5 P STYLES
 ******************************************************************/
-p {}
+p {
+}
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-	/*
-	if you're going to use webfonts, be sure to check your weights
-	http://css-tricks.com/watch-your-font-weight/
-	*/
+    /*
+    if you're going to use webfonts, be sure to check your weights
+    http://css-tricks.com/watch-your-font-weight/
+    */
 
-	/* removing text decoration from all headline links */
-	a {
-		text-decoration: none;
-	}
+    /* removing text decoration from all headline links */
+    a {
+        text-decoration: none;
+    }
 }
 
 h1, .h1 {
@@ -156,96 +260,98 @@ HEADER STYLES
 *********************/
 
 .site-header {
-	#inner-header {
-		li {
-			list-style: none;
-		}
-	}
+
+    margin-top: 2rem;
+
+    #inner-header {
+        li {
+            list-style: none;
+        }
+    }
+
+    .site-logo {
+        float: left;
+        margin-right: 1rem;
+        display: inline-block;
+    }
+
+    .site-logo img {
+        opacity: .8;
+    }
+
+    .site-info {
+        display: inline-block;
+    }
+
+    .site-title {
+
+        font: {
+            size: 1.6rem;
+            weight: $header-font-weight;
+        }
+
+        letter-spacing: .15rem;
+        margin: .3rem 0 -.6rem 0;
+
+        a {
+            color: lighten($header-font-color, 10%);
+        }
+
+        a:hover {
+            color: $header-font-color;
+        }
+    }
+
+    .site-description, .site-email {
+
+        font: {
+            size: .6rem;
+            weight: 400;
+        }
+
+        color: darken($header-font-color, 10%);
+        margin: -.2rem 0 0 0;
+        padding-left: .35rem;
+        text-transform: uppercase;
+        letter-spacing: .07rem;
+        display: inline;
+
+        a {
+            color: darken($header-font-color, 10%);
+        }
+
+        a:hover {
+            color: $header-font-color;
+        }
+    }
 }
 
-
-#site-logo img {
-  float: left;
-  opacity: .8;
-  height: 4.8rem;
-}
-
-#site-info {
-  float: none;
-  display: inline-block;
-  margin: 0 15px;
-  padding-top: .3em;
-}
-
-#site-title {
-
-  font: {
-	size: 25px;
-	size: 2.5rem;
-	weight: 200;
-  }
-
-  letter-spacing: .2rem;
-  margin: 0;
-
-  a {
-	color: lighten($header-font-color, 10%);
-  }
-
-  a:hover {
-	color: $header-font-color;
-  }
-}
-
-#site-description, #site-email {
-
-  font: {
-	size: 10px;
-	size: 1rem;
-	weight: 400;
-  }
-
-  color: darken($text-color, 10%);
-  padding-left: .4em;
-  text-transform: uppercase;
-  letter-spacing: .1rem;
-  display: block;
-
-  a {
-	color: darken($text-color, 10%);
-  }
-
-  a:hover {
-	color: $text-color;
-  }
-}
-    
 /*********************
 NAVIGATION STYLES
 *********************/
 .top-bar {
-	.title-area {
-		z-index: 1;
-	}
-	
-	.name h1,
-	.top-bar-section ul li > a {
-		font-size: 1rem;
-	}
-} 
+    .title-area {
+        z-index: 1;
+    }
+
+    .name h1,
+    .top-bar-section ul li > a {
+        font-size: 1rem;
+    }
+}
 
 .off-canvas-list {
-	ul {
-		margin-left: 0;
-		li {
-			a {
-				border-bottom: 0px;
-			}
-		}
-		.dropdown {
-			margin-left: 20px;
-		}
-	}
+    ul {
+        margin-left: 0;
+        li {
+            a {
+                border-bottom: 0px;
+            }
+        }
+        .dropdown {
+            margin-left: 20px;
+        }
+    }
 }
 
 .social-links {
@@ -255,7 +361,7 @@ NAVIGATION STYLES
     margin-left: 0;
 
     li {
-	    float: left;
+        float: left;
     }
 }
 
@@ -268,9 +374,9 @@ POSTS & CONTENT STYLES
 *********************/
 
 #content {
-	/*adds highlight on hover */
-	a:hover, a:focus {
-	}
+    /*adds highlight on hover */
+    a:hover, a:focus {
+    }
 }
 
 .contentarea-wrap {
@@ -284,208 +390,267 @@ POSTS & CONTENT STYLES
 }
 
 .single-title,
-.page-title {}
-
-.single-title {}
-
-.page-title {}
-
-.archive-title { }
-
-/* style individual post classes */
-.post-id {}         /* post by id (i.e. post-3) */
-.post {}            /* general post style */
-.page {}            /* general article on a page style */
-.attachment {}      /* general style on an attachment */
-.sticky {}          /* sticky post style */
-.sticky-post { 
-	position: absolute;
-	top: 0;
+.page-title {
 }
 
-.hentry {}          /* hentry class */
-.category-slug {}   /* style by category (i.e. category-videos) */
-.tag-slug {}        /* style by tag (i.e. tag-news) */
+.single-title {
+}
+
+.page-title {
+}
+
+.archive-title {
+}
+
+/* style individual post classes */
+.post-id {
+}
+
+/* post by id (i.e. post-3) */
+.post {
+}
+
+/* general post style */
+.page {
+}
+
+/* general article on a page style */
+.attachment {
+}
+
+/* general style on an attachment */
+.sticky {
+}
+
+/* sticky post style */
+.sticky-post {
+    position: absolute;
+    top: 0;
+}
+
+.hentry {
+}
+
+/* hentry class */
+.category-slug {
+}
+
+/* style by category (i.e. category-videos) */
+.tag-slug {
+}
+
+/* style by tag (i.e. tag-news) */
 
 /* post meta */
 .entry-info {
     margin-bottom: 1.5rem;
 
-	.byline {
-		
-		time {}
-		
-		.vcard {
-		    border: 0 none;
-		    margin: 0;
-		    padding: 0;
-		    
-		    .fn {
-				font-weight: normal;
-				font-size: 1rem;
-		    }
-		}
-	
-	}
-	
-	.posted-on {
-	    color: #888;
-	}
+    .byline {
+
+        time {
+        }
+
+        .vcard {
+            border: 0 none;
+            margin: 0;
+            padding: 0;
+
+            .fn {
+                font-weight: normal;
+                font-size: 1rem;
+            }
+        }
+
+    }
+
+    .posted-on {
+        color: #888;
+    }
 }
 
 /* entry content */
 .entry-content {
 
-	p {}
+    p {
+    }
 
-	ul, ol, table, dl {}
+    ul, ol, table, dl {
+    }
 
-	ul, ol {
+    ul, ol {
 
-		li {}
+        li {
+        }
 
-		}
+    }
 
-	ul {
+    ul {
 
-		li {}
+        li {
+        }
 
-		}
+    }
 
-	ol {
+    ol {
 
-		li {}
+        li {
+        }
 
-		}
+    }
 
-	blockquote {
+    blockquote {
 
-		&:before {}
+        &:before {
+        }
 
-		}
+    }
 
-	dl {}
+    dl {
+    }
 
-	dt {}
+    dt {
+    }
 
-	dd {
-		margin-left: 0;
-		font-size: 0.9em;
-		color: #787878;
-		margin-bottom: 1.5em;
-		}
+    dd {
+        margin-left: 0;
+        font-size: 0.9em;
+        color: #787878;
+        margin-bottom: 1.5em;
+    }
 
-	img {
-		max-width: 100%;
-		height: auto;
-		}
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 
-		/*
-		image alignment on a screen this size may be
-		a bit difficult. It's set to start aligning
-		and floating images at the next breakpoint,
-		but it's up to you. Feel free to change it up.
-		*/
-	.alignleft, img.alignleft {}
-	.alignright, img.alignright {}
-	.aligncenter, img.aligncenter {}
+    /*
+    image alignment on a screen this size may be
+    a bit difficult. It's set to start aligning
+    and floating images at the next breakpoint,
+    but it's up to you. Feel free to change it up.
+    */
+    .alignleft, img.alignleft {
+    }
+    .alignright, img.alignright {
+    }
+    .aligncenter, img.aligncenter {
+    }
 
-	video, object {
-		max-width: 100%;
-		height: auto;
-		}
+    video, object {
+        max-width: 100%;
+        height: auto;
+    }
 
-	pre {
-		background: #eee;
-		border: 1px solid #cecece;
-		overflow: auto;
-		padding: 10px;
-		}
-	
-	form {
-		display: block;
-		min-height: 2.5rem;
-		
-		.search-icon {
-			right: 4%;
-		}
-	}
+    pre {
+        background: #eee;
+        border: 1px solid #cecece;
+        overflow: auto;
+        padding: 10px;
+    }
 
-} /* end .entry-content */
+    form {
+        display: block;
+        min-height: 2.5rem;
+
+        .search-icon {
+            right: 4%;
+        }
+    }
+
+}
+
+/* end .entry-content */
 
 .error-404.not-found {
-	form {
-		.search-icon {
-			right: 4%;
-		}
-	}
+    form {
+        .search-icon {
+            right: 4%;
+        }
+    }
 }
 
 .wp-caption {
-	max-width: 100%;
-	background: #eee;
-	padding: .25rem;
+    max-width: 100%;
+    background: #eee;
+    padding: .25rem;
 
-	/* images inside wp-caption */
-	img {
-		max-width: 100%;
-		margin-bottom: 0;
-		width: 100%;
-		}
+    /* images inside wp-caption */
+    img {
+        max-width: 100%;
+        margin-bottom: 0;
+        width: 100%;
+    }
 
-	p.wp-caption-text {
-		font-size: 0.85em;
-		margin: .25rem 0 .5rem;
-		text-align: center;
-		}
+    p.wp-caption-text {
+        font-size: 0.85em;
+        margin: .25rem 0 .5rem;
+        text-align: center;
+    }
 
-} /* end .wp-caption */
+}
+
+/* end .wp-caption */
 
 /* image gallery styles */
-	.gallery {
+.gallery {
 
-		dl {
+    dl {
 
-			a {}
+        a {
+        }
 
-			img {}
+        img {
+        }
 
-		}
+    }
 
-		dt {}
+    dt {
+    }
 
-		dd {}
+    dd {
+    }
 
-} /* end .gallery */
+}
+
+/* end .gallery */
 
 /* gallery caption styles */
-.gallery-caption {}
-.size-full {}
-.size-large {}
-.size-medium {}
-.size-thumbnail {}
+.gallery-caption {
+}
+
+.size-full {
+}
+
+.size-large {
+}
+
+.size-medium {
+}
+
+.size-thumbnail {
+}
 
 /*********************
 PAGE TEMPLATES STYLES
 *********************/
 .banded-secondary .panel {
-	overflow-y: auto;
-}
-// override global scss img: inline-block for workspace page template
-.page-template-templatesworkspace-php ul > li > img {
-	display: block;
+    overflow-y: auto;
 }
 
+// override global scss img: inline-block for workspace page template
+.page-template-templatesworkspace-php ul > li > img {
+    display: block;
+}
 
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
 .pagination {
-	a {
-		&:hover {
-			color: black;
-		}
-	}
+    a {
+        &:hover {
+            color: black;
+        }
+    }
 }
 
 /*********************
@@ -495,38 +660,43 @@ SIDEBARS & ASIDES
 .sidebar {
 }
 
-	#searchsubmit {
-	}
+#searchsubmit {
+}
 
-	.widgettitle {}
+.widgettitle {
+}
 
-	.widget {
+.widget {
 
-		ul {
-			margin: 0;
+    ul {
+        margin: 0;
 
-			li {
-				list-style: none;
+        li {
+            list-style: none;
 
-				&:first-child {}
+            &:first-child {
+            }
 
-				&:last-child {}
+            &:last-child {
+            }
 
-				a {}
+            a {
+            }
 
-				/* deep nesting */
-				ul {}
+            /* deep nesting */
+            ul {
+            }
 
-			}
+        }
 
-		}
+    }
 
-	}
+}
 
 #sidebar-offcanvas {
-	.widgettitle {
-		color: #fff;
-	}	
+    .widgettitle {
+        color: #fff;
+    }
 }
 
 /*--------------------------------------------------------------
@@ -535,9 +705,11 @@ Search Form Widget
 .widget_search > form {
     position: relative;
 }
+
 #searchform > input#s {
     float: left;
 }
+
 .search-icon {
     background: none;
     border: 0 none;
@@ -552,37 +724,40 @@ FOOTER STYLES
 *********************/
 
 .footer {
-	clear: both;
-	margin-top: 1em;
+    clear: both;
+    margin-top: 1em;
 }
 
-	/*
-	if you checked out the link above:
-	http://www.alistapart.com/articles/organizing-mobile/
-	you'll want to style the footer nav
-	a bit more in-depth. Remember to keep
-	it simple because you'll have to
-	override these styles for the desktop
-	view.
-	*/
-	.footer-links {
+/*
+if you checked out the link above:
+http://www.alistapart.com/articles/organizing-mobile/
+you'll want to style the footer nav
+a bit more in-depth. Remember to keep
+it simple because you'll have to
+override these styles for the desktop
+view.
+*/
+.footer-links {
 
-		ul {
+    ul {
 
-			li {}
+        li {
+        }
 
-		}
+    }
 
-	} /* end .footer-links */
+}
 
+/* end .footer-links */
 
-	.copyright { }
-	
+.copyright {
+}
+
 /*********************
 FOUNDATION STYLES
 *********************/
 .clearing-assembled.clearing-blackout a:hover {
-	background: none;
+    background: none;
 }
 
 /*********************
@@ -590,46 +765,46 @@ PLUGIN STYLES
 *********************/
 // Makes Gravity Forms play nice with Foundation Form styles
 .gform_body {
-	ul {
-	    list-style: none outside none;
-	    margin: 0;
-	}
-	// the validation container needs to be invisible
-	.gfield.gform_validation_container {
-	    clip: rect(1px,1px,1px,1px);
-	    position: absolute;
-	}
-	// Validation Errors
-	.validation_error {
-	    font-weight: 700;
-	    margin-bottom: 0.5rem;
-	    text-align: center;
-	}
-	.gfield_error.gfield_contains_required {
-	    background-color: rgba(255,192,203,.75); // pink #ffc0cb
-	    margin-bottom: 1rem;
-	    padding: .25rem 1rem;
-	    
-	    .validation_message {
-		    font-style: italic;
-		}
-	}
+    ul {
+        list-style: none outside none;
+        margin: 0;
+    }
+    // the validation container needs to be invisible
+    .gfield.gform_validation_container {
+        clip: rect(1px, 1px, 1px, 1px);
+        position: absolute;
+    }
+    // Validation Errors
+    .validation_error {
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+    .gfield_error.gfield_contains_required {
+        background-color: rgba(255, 192, 203, .75); // pink #ffc0cb
+        margin-bottom: 1rem;
+        padding: .25rem 1rem;
+
+        .validation_message {
+            font-style: italic;
+        }
+    }
 }
 
 // Formidable Pro Validation Errors
 .frm_forms {
-	.frm_blank_field {
-	    background-color: rgba(255, 192, 203, 0.75); // pink #ffc0cb
-	    margin-bottom: 1rem;
-	    padding: 1rem 1rem 0.5rem;
-	    
-	    .frm_error {
-		    font-style: italic;
-		}
-	}
+    .frm_blank_field {
+        background-color: rgba(255, 192, 203, 0.75); // pink #ffc0cb
+        margin-bottom: 1rem;
+        padding: 1rem 1rem 0.5rem;
+
+        .frm_error {
+            font-style: italic;
+        }
+    }
 }
 
 // give WordPress SEO breadcrumbs some bottom margin
 .breadcrumbs {
-	margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }

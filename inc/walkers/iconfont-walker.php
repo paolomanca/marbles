@@ -21,6 +21,15 @@ class iconfont_walker extends Walker_Nav_Menu {
 		
 		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
 		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+
+		if ( $item->menu_order == 1 ) {
+			$locations = get_nav_menu_locations();
+
+			$menu = wp_get_nav_menu_object($locations['social']);
+
+			$output .= '<li id="menu-name" class="hide-for-small-only">'. $menu->name .'</li>';
+
+		}
 		
 		$output .= $indent . '<li' . $id . $value . $class_names .'>';
 		
@@ -32,9 +41,10 @@ class iconfont_walker extends Walker_Nav_Menu {
 		$description  = ! empty( $item->description ) ? esc_attr( $item->description ) : '';
 		
 		$item_output = $args->before;
-		$item_output .= '<a' . $attributes . '><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-stack-1x fa-inverse fa-' . $description . '"></i></span> ';
+		$item_output .= '<a' . $attributes . '><i class="fa fa-lg fa-' . $description . '"></i></span> ';
 		$item_output .= '</a>';
 		$item_output .= $args->after;
+		$item_output .= "\r\n";
 		
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}

@@ -170,7 +170,8 @@ function soblossom_supports_wp_features() {
 		$fonts     = array();
 		$subsets   = 'latin,latin-ext';
 	
-		$fonts[] = 'Source Sans Pro:200,300,700,700italic';
+		$fonts[] = 'Source Sans Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic';
+		//$fonts[] = 'Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic';
 	
 		$fonts[] = 'PT Serif:400,400italic';
 		
@@ -194,7 +195,7 @@ function soblossom_supports_wp_features() {
 		wp_enqueue_style( 'fontawesome', soblossom_fontawesome_url(), array(), null );
 	
 		// uncomment to include Google Webfonts (see lines 131-153)
-		//wp_enqueue_style( 'google_webfonts', soblossom_google_webfonts(), array(), null );
+		wp_enqueue_style( 'google_webfonts', soblossom_google_webfonts(), array(), null );
 	
 		/* SCRIPTS */
 		wp_enqueue_script( 'modernizer', get_template_directory_uri() . '/bower_components/modernizr/modernizr.js', array(), null );
