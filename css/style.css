@@ -6455,6 +6455,16 @@ Put the adminbar back where it belongs
 ::-moz-selection {
   background-color: #71afc2; }
 
+.desaturate, .biglie .biglia .biglia-image img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
+  filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale"); }
+
+.font-smooth, .biglie .biglia h3 {
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); }
+
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -6544,20 +6554,20 @@ HEADER STYLES
     letter-spacing: .15rem;
     margin: .3rem 0 -.6rem 0; }
     .site-header .site-title a {
-      color: #727272; }
+      color: #737373; }
     .site-header .site-title a:hover {
       color: #595959; }
   .site-header .site-description, .site-header .site-email {
-    font-size: .6rem;
+    font-size: 0.625rem;
     font-weight: 400;
-    color: #3f3f3f;
+    color: #404040;
     margin: -.2rem 0 0 0;
     padding-left: .35rem;
     text-transform: uppercase;
     letter-spacing: .07rem;
     display: inline; }
     .site-header .site-description a, .site-header .site-email a {
-      color: #3f3f3f; }
+      color: #404040; }
     .site-header .site-description a:hover, .site-header .site-email a:hover {
       color: #595959; }
 
@@ -6777,6 +6787,73 @@ PLUGIN STYLES
 .breadcrumbs {
   margin-bottom: 1rem; }
 
+/*********************
+MARBLES
+*********************/
+.biglie {
+  padding: 0 2rem;
+  text-align: center; }
+  .biglie .biglia {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin: 0 .625rem; }
+    .biglie .biglia:hover .biglia-image {
+      opacity: 1; }
+    .biglie .biglia .biglia-image {
+      -moz-transition: all 0.4s ease-in-out;
+      -o-transition: all 0.4s ease-in-out;
+      -webkit-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
+      background: #e1e1e1;
+      border-radius: 100%;
+      position: relative;
+      width: inherit;
+      opacity: .75; }
+      .biglie .biglia .biglia-image:before {
+        /* a little hack to keep the ratio */
+        content: "";
+        display: block;
+        padding-top: 100%;
+        /* change here the ratio 1:1 = 100% */ }
+      .biglie .biglia .biglia-image img {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        /* following lines are needed for the ratio thing */
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0; }
+    .biglie .biglia h2 {
+      font-size: 1.4375rem;
+      font-weight: 300;
+      letter-spacing: 0.125rem;
+      text-align: center;
+      word-wrap: break-word;
+      margin: 0;
+      padding: 4% 5% 0 5%; }
+    .biglie .biglia h3 {
+      color: gray;
+      font-size: 0.6875rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08125rem;
+      text-align: center;
+      word-wrap: break-word;
+      margin: 0;
+      padding: 0 5%; }
+
+@media only screen and (min-width: 40.0625em) {
+  .biglie.small-size .biglia {
+    width: 8.75rem; }
+  .biglie.medium-size .biglia {
+    width: 12.5rem; }
+  .biglie.large-size .biglia {
+    width: 16.25rem; }
+  .biglie.larger-size .biglia {
+    width: 18.75rem; } }
 /**
  * If you adjust the media queries in the _settings.scss (lines 80-85),
  * then change theme here too (and vice versa)

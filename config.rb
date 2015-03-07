@@ -21,4 +21,4 @@ color_output = false
 
 preferred_syntax = :scss
 
-#disable_warnings = true
+disable_warnings = true
