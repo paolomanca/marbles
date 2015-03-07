@@ -65,6 +65,11 @@ require get_template_directory() . '/inc/walkers/iconfont-walker.php';
 require get_template_directory() . '/inc/classes/gallery.php';
 
 /**
+ * /inc/classes/biglie.php
+ */
+require get_template_directory() . '/inc/classes/biglie.php';
+
+/**
  * /inc/classes/aq_resizer.php - Aqua Resizer script to dynamically resize images
  *
  * @link: github.com/syamilmj/Aqua-Resizer
