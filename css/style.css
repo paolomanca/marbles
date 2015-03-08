@@ -6396,34 +6396,6 @@ COMMENT FORM STYLES
 
 /******************************************************************
 
-Stylesheet: soblossom_social_media_links
-
-link-format-tip via: //justintadlock.com/archives/2013/08/14/social-nav-menus-part-2
-colors via: //paulund.co.uk/social-media-colours
-
-Adjust where necessary
-
-******************************************************************/
-.social-media {
-  margin-top: 1.1rem; }
-  .social-media .social-links {
-    float: right;
-    list-style: none;
-    margin-bottom: 0;
-    margin-left: 0; }
-    .social-media .social-links li#menu-name {
-      font-size: .9rem;
-      font-weight: 200;
-      text-transform: uppercase;
-      margin-right: .6rem; }
-    .social-media .social-links li {
-      float: left;
-      margin-right: .4rem; }
-    .social-media .social-links li:last-child {
-      margin-right: 0; }
-
-/******************************************************************
-
 Stylesheet: Base/Small Stylesheet
 
 Foundation uses the Mobile First approach, therefore the main styling
@@ -6536,18 +6508,20 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 /*********************
 HEADER STYLES
 *********************/
+/******************************************************************
+HEADER STYLESHEETS
+******************************************************************/
 .site-header {
   margin-top: 2rem; }
   .site-header #inner-header li {
     list-style: none; }
-  .site-header .site-logo {
-    float: left;
-    margin-right: 1rem;
-    display: inline-block; }
+  .site-header .site-branding {
+    text-align: center; }
+  .site-header .site-logo, .site-header .site-info {
+    text-align: inherit; }
   .site-header .site-logo img {
+    width: 40%;
     opacity: .8; }
-  .site-header .site-info {
-    display: inline-block; }
   .site-header .site-title {
     font-size: 1.6rem;
     font-weight: 200;
@@ -6558,11 +6532,9 @@ HEADER STYLES
     .site-header .site-title a:hover {
       color: #595959; }
   .site-header .site-description, .site-header .site-email {
-    font-size: 0.625rem;
-    font-weight: 400;
+    font-size: 0.6875rem;
+    font-weight: 300;
     color: #404040;
-    margin: -.2rem 0 0 0;
-    padding-left: .35rem;
     text-transform: uppercase;
     letter-spacing: .07rem;
     display: inline; }
@@ -6570,7 +6542,44 @@ HEADER STYLES
       color: #404040; }
     .site-header .site-description a:hover, .site-header .site-email a:hover {
       color: #595959; }
+  .site-header .social-media {
+    text-align: center;
+    margin-top: 1.1rem; }
+    .site-header .social-media .social-links {
+      display: inline-block;
+      list-style: none;
+      margin-bottom: 0;
+      margin-left: 0; }
+      .site-header .social-media .social-links li#menu-name {
+        font-size: .9rem;
+        font-weight: 200;
+        text-transform: uppercase;
+        margin-right: .6rem; }
+      .site-header .social-media .social-links li {
+        font-size: 1.4375rem;
+        float: left;
+        margin-right: .4rem; }
+      .site-header .social-media .social-links li:last-child {
+        margin-right: 0; }
 
+@media only screen and (min-width: 40.0625em) {
+  .site-header .site-branding {
+    text-align: left; }
+  .site-header .site-logo {
+    float: left;
+    margin-right: 1rem;
+    display: inline-block; }
+    .site-header .site-logo img {
+      width: 6.25rem; }
+  .site-header .site-info {
+    display: inline-block; }
+  .site-header .site-description, .site-header .site-email {
+    margin: -.2rem 0 0 0;
+    padding-left: .35rem; }
+  .site-header .social-media {
+    text-align: right; }
+    .site-header .social-media .social-links li {
+      font-size: 1rem; } }
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -6586,14 +6595,6 @@ NAVIGATION STYLES
     border-bottom: 0px; }
   .off-canvas-list ul .dropdown {
     margin-left: 20px; }
-
-.social-links {
-  float: right;
-  list-style: none;
-  margin-bottom: 0;
-  margin-left: 0; }
-  .social-links li {
-    float: left; }
 
 .inline-list > li:first-child {
   margin-left: 0; }
@@ -6791,13 +6792,15 @@ PLUGIN STYLES
 MARBLES
 *********************/
 .biglie {
-  padding: 0 2rem;
+  margin: 0;
+  padding: 0;
   text-align: center; }
   .biglie .biglia {
     text-align: center;
     display: inline-block;
-    width: 100%;
-    margin: 0 .625rem; }
+    width: 90%;
+    max-width: 21.875rem;
+    margin: 5%; }
     .biglie .biglia:hover .biglia-image {
       opacity: 1; }
     .biglie .biglia .biglia-image {
@@ -6827,7 +6830,7 @@ MARBLES
         bottom: 0;
         right: 0; }
     .biglie .biglia h2 {
-      font-size: 1.4375rem;
+      font-size: 1.75rem;
       font-weight: 300;
       letter-spacing: 0.125rem;
       text-align: center;
@@ -6836,7 +6839,7 @@ MARBLES
       padding: 4% 5% 0 5%; }
     .biglie .biglia h3 {
       color: gray;
-      font-size: 0.6875rem;
+      font-size: 1rem;
       font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 0.08125rem;
@@ -6845,15 +6848,23 @@ MARBLES
       margin: 0;
       padding: 0 5%; }
 
-@media only screen and (min-width: 40.0625em) {
-  .biglie.small-size .biglia {
-    width: 8.75rem; }
-  .biglie.medium-size .biglia {
-    width: 12.5rem; }
-  .biglie.large-size .biglia {
-    width: 16.25rem; }
-  .biglie.larger-size .biglia {
-    width: 18.75rem; } }
+@media only screen and (min-width: 40.0625rem) {
+  .biglie {
+    padding: 0 3%; }
+    .biglie .biglia {
+      margin: 2%; }
+      .biglie .biglia h2 {
+        font-size: 1.4375rem; }
+      .biglie .biglia h3 {
+        font-size: 0.6875rem; }
+    .biglie.small-size .biglia {
+      width: 8.75rem; }
+    .biglie.medium-size .biglia {
+      width: 12.5rem; }
+    .biglie.large-size .biglia {
+      width: 16.25rem; }
+    .biglie.larger-size .biglia {
+      width: 18.75rem; } }
 /**
  * If you adjust the media queries in the _settings.scss (lines 80-85),
  * then change theme here too (and vice versa)
