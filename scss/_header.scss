@@ -1,0 +1,139 @@
+/******************************************************************
+HEADER STYLESHEETS
+******************************************************************/
+
+.site-header {
+
+    margin-top: 2rem;
+
+    #inner-header {
+        li {
+            list-style: none;
+        }
+    }
+
+    .site-branding {
+        text-align: center;
+    }
+
+    .site-logo, .site-info {
+        text-align: inherit;
+    }
+
+    .site-logo img {
+        width: 40%;
+        opacity: .8;
+    }
+
+    .site-title {
+
+        font: {
+            size: 1.6rem;
+            weight: $header-font-weight;
+        }
+
+        letter-spacing: .15rem;
+        margin: .3rem 0 -.6rem 0;
+
+        a {
+            color: lighten($header-font-color, 10%);
+        }
+
+        a:hover {
+            color: $header-font-color;
+        }
+    }
+
+    .site-description, .site-email {
+
+        font: {
+            size: rem-calc(11);
+            weight: 300;
+        }
+
+        color: darken($header-font-color, 10%);
+        text-transform: uppercase;
+        letter-spacing: .07rem;
+        display: inline;
+
+        a {
+            color: darken($header-font-color, 10%);
+        }
+
+        a:hover {
+            color: $header-font-color;
+        }
+    }
+
+    .social-media {
+
+        text-align: center;
+        margin-top: 1.1rem;
+
+        .social-links {
+            display: inline-block;
+            list-style: none;
+            margin-bottom: 0;
+            margin-left: 0;
+
+            li#menu-name {
+                font-size: .9rem;
+                font-weight: 200;
+                text-transform: uppercase;
+                margin-right: .6rem;
+            }
+
+            li {
+                font-size: rem-calc(23);
+                float: left;
+                margin-right: .4rem;
+            }
+
+            li:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 40.0625em) { // 641px
+
+    .site-header {
+        .site-branding {
+            text-align: left;
+        }
+        
+        .site-logo {
+            float: left;
+            margin-right: 1rem;
+            display: inline-block;
+            
+            img {
+                width: rem-calc(100);
+            }
+        }
+
+        .site-info {
+            display: inline-block;
+        }
+
+        .site-title {
+
+        }
+
+        .site-description, .site-email {
+            margin: -.2rem 0 0 0;
+            padding-left: .35rem;
+        }
+
+        .social-media {
+            text-align: right;
+
+            .social-links li {
+                font-size: rem-calc(16);
+            }
+        }
+
+    }
+
+} // end of media query

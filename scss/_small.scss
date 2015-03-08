@@ -271,72 +271,7 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 
-.site-header {
-
-    margin-top: 2rem;
-
-    #inner-header {
-        li {
-            list-style: none;
-        }
-    }
-
-    .site-logo {
-        float: left;
-        margin-right: 1rem;
-        display: inline-block;
-    }
-
-    .site-logo img {
-        opacity: .8;
-    }
-
-    .site-info {
-        display: inline-block;
-    }
-
-    .site-title {
-
-        font: {
-            size: 1.6rem;
-            weight: $header-font-weight;
-        }
-
-        letter-spacing: .15rem;
-        margin: .3rem 0 -.6rem 0;
-
-        a {
-            color: lighten($header-font-color, 10%);
-        }
-
-        a:hover {
-            color: $header-font-color;
-        }
-    }
-
-    .site-description, .site-email {
-
-        font: {
-            size: rem-calc(10);
-            weight: 400;
-        }
-
-        color: darken($header-font-color, 10%);
-        margin: -.2rem 0 0 0;
-        padding-left: .35rem;
-        text-transform: uppercase;
-        letter-spacing: .07rem;
-        display: inline;
-
-        a {
-            color: darken($header-font-color, 10%);
-        }
-
-        a:hover {
-            color: $header-font-color;
-        }
-    }
-}
+@import "header";
 
 /*********************
 NAVIGATION STYLES
@@ -363,17 +298,6 @@ NAVIGATION STYLES
         .dropdown {
             margin-left: 20px;
         }
-    }
-}
-
-.social-links {
-    float: right;
-    list-style: none;
-    margin-bottom: 0;
-    margin-left: 0;
-
-    li {
-        float: left;
     }
 }
 

@@ -60,13 +60,13 @@
 
 					<div class="inner-header row collapse">
 
-						<div class="site-branding small-12 medium-7 columns">
+						<div class="site-branding small-12 medium-8 columns">
 								<div class="site-logo">
 									<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
 									   title="<?php esc_attr( bloginfo( 'name' ) ); ?>, <?php esc_attr( bloginfo( 'description' ) ); ?>"
 									   rel="home">
-										<img src="<?php echo get_template_directory_uri(); ?>/images/logo.png"
-										     width="100px" height="50px" alt="<?php esc_attr( bloginfo( 'name' ) ); ?> logo"/>
+										<img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg"
+										     alt="<?php esc_attr( bloginfo( 'name' ) ); ?> logo"/>
 									</a>
 								</div>
 
@@ -82,27 +82,10 @@
 						</div>
 						<!-- end .site-branding -->
 
-						<div class="social-media small-12 medium-5 columns">
+						<div class="social-media small-12 medium-4 columns">
 							<?php soblossom_social_media_links(); ?>
 						</div> <!-- end .social-media -->
 
 					</div> <!-- end .inner-header -->
-
-					<?php /** Select which setup works best for your site and remove the redundant one.
-					<div class="inner-header row">
-						
-						<div class="site-branding small-12 medium-6 columns">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr( bloginfo( 'name' ) ); ?>, <?php  esc_attr( bloginfo( 'description' ) ); ?>" rel="home">
-								<img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" width="300" height="60" alt="soblossom logo" />
-							</a>
-							<h2 class="site-description"><?php esc_attr( bloginfo( 'description' ) ); ?></h2>
-						</div> <!-- end .site-branding -->
-						
-						<div class="social-media small-12 medium-6 columns">
-							<?php soblossom_social_media_links(); ?>
-						</div> <!-- end .social-media -->
-						
-					</div><!-- end .inner-header -->
-					*/?>
 
 				</header> <!-- end header -->
