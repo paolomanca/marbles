@@ -110,14 +110,16 @@ MARBLES
 
 .biglie {
 
-    padding: 0 2rem;
+    margin: 0;
+    padding: 0;
     text-align: center;
 
     .biglia {
         text-align: center;
         display: inline-block;
-        width: 100%;
-        margin: 0 .625rem;
+        width: 90%;
+        max-width: rem-calc(350);
+        margin: 5%;
 
         &:hover {
             .biglia-image {
@@ -157,7 +159,7 @@ MARBLES
         h2 {
 
             font: {
-                size: rem-calc(23);
+                size: rem-calc(28);
                 weight: 300;
             }
 
@@ -175,7 +177,7 @@ MARBLES
 
             color: lighten($body-font-color, 15%);
             font: {
-                size: rem-calc(11);
+                size: rem-calc(16);
                 weight: 400;
             }
             text-transform: uppercase;
@@ -191,10 +193,24 @@ MARBLES
 
 }
 
-@media only screen and (min-width: 40.0625em) {
-    // 641px
+@media only screen and (min-width: rem-calc(641)) {
 
     .biglie {
+        padding: 0 3%;
+
+        .biglia {
+            margin: 2%;
+
+            h2 {
+                font-size: rem-calc(23);
+            }
+
+            h3 {
+                font-size: rem-calc(11);
+            }
+
+        }
+
         &.small-size .biglia {
             width: rem-calc(140);
         }
