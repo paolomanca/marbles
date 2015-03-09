@@ -53,7 +53,11 @@ body {
 
 .font-smooth {
     -webkit-font-smoothing: antialiased;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.ghost-link {
+    color: inherit !important;
 }
 
 /********************
@@ -241,6 +245,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     http://css-tricks.com/watch-your-font-weight/
     */
 
+    letter-spacing: rem-calc(1);
+
     /* removing text decoration from all headline links */
     a {
         text-decoration: none;
@@ -407,10 +413,19 @@ POSTS & CONTENT STYLES
 /* entry content */
 .entry-content {
 
+    padding: 0 2%;
+
     p {
+        text-align: justify;
+        padding: 0 1%;
     }
 
     ul, ol, table, dl {
+
+    }
+
+    ul, ol, dl {
+        list-style-position: inside;
     }
 
     ul, ol {

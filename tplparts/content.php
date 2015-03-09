@@ -6,9 +6,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?>>
 
+	<?php if ( function_exists('get_field') && get_field('hide_title') ) { ?>
 	<header class="entry-header">
 		<?php
-			the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' );
+			the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">',
+				esc_url( get_permalink() ) . get_field('hide_title') ), '</a></h1>' );
 
 			if ( 'post' == get_post_type() ) {
 				soblossom_posted_on( '<div class="entry-meta">', '</div>' );
@@ -19,6 +21,7 @@
 			}
 		?>
 	</header><!-- .entry-header -->
+	<?php } ?>
 
 	<div class="entry-content">
 		<?php the_content( __( 'Continue reading <i class="fa fa-long-arrow-right"></i>', 'soblossom' ) ); ?>
