@@ -1,0 +1,123 @@
+/******************************************************************
+EVENT ORGANISER STYLESHEETS
+******************************************************************/
+
+.single-event {
+
+    .event-infos {
+        margin-top: 2rem;
+    }
+
+    .eventorganiser-event-meta {
+
+
+        border: {
+            top: rem-calc(3) solid $gray-light;
+            bottom: rem-calc(7) solid $gray-light;
+        }
+
+        font: {
+            size: rem-calc(14);
+        }
+
+        h4 {
+            border: {
+                bottom: rem-calc(3) dashed $gray-light;
+            }
+
+            font: {
+                size: rem-calc(16);
+                weight: bold;
+            }
+
+            margin: 0;
+            padding: rem-calc(3 4 4);
+            text-transform: uppercase;
+        }
+
+        hr {
+            display: none;
+        }
+
+        .eo-event-details {
+            padding: 1%;
+        }
+
+        .eo-event-meta {
+            margin: 1.5rem;
+
+            li strong:first-child {
+                text-transform: uppercase;
+            }
+        }
+
+        .eo-event-venue-map {
+            float: none;
+            width: 100%;
+        }
+    }
+
+    /************************
+     * eo_events shortcode
+     ************************/
+
+/*    .eo-events-shortcode, .tdb-events {
+
+        border-radius: 1rem;
+        border: $dark-gray 1px solid;
+        padding: .8rem;
+
+        li {
+            vertical-align: top;
+            display:inline-block;
+            width: 33%;
+
+            p {
+                display: none;
+            }
+        }
+
+        .event-date {
+            width: 6rem;
+            height: 6rem;
+            background-color: $text-color;
+            border-radius: 100%;
+            float: left;
+            text-align: center;
+            color: $back-color;
+            padding: 1rem;
+
+            div {
+                position: relative;
+                line-height: 90%;
+            }
+        }
+
+        .event-day {
+            font-size: 3rem;
+        }
+
+        .event-month {
+            opacity: .7;
+        }
+
+        .event-description {
+
+            display: inline-block;
+            padding: 0 1rem;
+            line-height: 130%;
+
+            a {
+                font-weight: 400;
+            }
+
+            span {
+                display: block;
+                font-size: 85%;
+                line-height: 110%;
+                padding: 0 .3rem;
+            }
+        }
+    }*/
+
+}
