@@ -41,7 +41,7 @@ class iconfont_walker extends Walker_Nav_Menu {
 		$description  = ! empty( $item->description ) ? esc_attr( $item->description ) : '';
 		
 		$item_output = $args->before;
-		$item_output .= '<a' . $attributes . '><i class="fa fa-lg fa-' . $description . '"></i></span> ';
+		$item_output .= '<a' . $attributes . '><i class="fa fa-' . $description . '"></i></span> ';
 		$item_output .= '</a>';
 		$item_output .= $args->after;
 		$item_output .= "\r\n";

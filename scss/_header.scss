@@ -4,7 +4,7 @@ HEADER STYLESHEETS
 
 .site-header {
 
-    margin-top: 2rem;
+    margin-top: rem-calc(32);
 
     #inner-header {
         li {
@@ -28,12 +28,12 @@ HEADER STYLESHEETS
     .site-title {
 
         font: {
-            size: 1.6rem;
+            size: rem-calc(26);
             weight: $header-font-weight;
         }
 
-        letter-spacing: .15rem;
-        margin: .3rem 0 -.6rem 0;
+        letter-spacing: rem-calc(3);
+        margin: rem-calc(5 0 -12 0);
 
         a {
             color: lighten($header-font-color, 10%);
@@ -53,7 +53,7 @@ HEADER STYLESHEETS
 
         color: darken($header-font-color, 10%);
         text-transform: uppercase;
-        letter-spacing: .07rem;
+        letter-spacing: rem-calc(1.5);
         display: inline;
 
         a {
@@ -68,7 +68,6 @@ HEADER STYLESHEETS
     .social-media {
 
         text-align: center;
-        margin-top: 1.1rem;
 
         .social-links {
             display: inline-block;
@@ -76,17 +75,13 @@ HEADER STYLESHEETS
             margin-bottom: 0;
             margin-left: 0;
 
-            li#menu-name {
-                font-size: .9rem;
-                font-weight: 200;
-                text-transform: uppercase;
-                margin-right: .6rem;
-            }
-
             li {
-                font-size: rem-calc(23);
                 float: left;
                 margin-right: .4rem;
+
+                .fa {
+                    font-size: rem-calc(22);
+                }
             }
 
             li:last-child {
@@ -122,15 +117,25 @@ HEADER STYLESHEETS
         }
 
         .site-description, .site-email {
-            margin: -.2rem 0 0 0;
-            padding-left: .35rem;
+            margin: 0;
+            padding-left: rem-calc(5);
         }
 
         .social-media {
             text-align: right;
+            margin-top: rem-calc(20);
 
-            .social-links li {
-                font-size: rem-calc(16);
+            .social-links {
+                li .fa {
+                    font-size: rem-calc(21);
+                }
+
+                li#menu-name {
+                    font-size: rem-calc(14);
+                    font-weight: 200;
+                    text-transform: uppercase;
+                    margin-right: rem-calc(11);
+                }
             }
         }
 
