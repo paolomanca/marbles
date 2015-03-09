@@ -659,10 +659,20 @@ Search Form Widget
 FOOTER STYLES
 *********************/
 
-.footer {
+.site-footer {
     clear: both;
-    margin-top: 1em;
+    margin: rem-calc(50) 0 rem-calc(30);
+
+    .credits {
+
+        font-size: rem-calc(14);
+        text-align: center;
+        text-transform: uppercase;
+
+    }
+
 }
+
 
 /*
 if you checked out the link above:

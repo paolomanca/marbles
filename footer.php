@@ -9,30 +9,15 @@
 ?>
 
 					<footer id="colophon" class="site-footer" role="contentinfo">
-						
-						<?php get_sidebar( 'footer' ); ?>
-						
-						<div class="site-info row">
-							
-							<nav class="footer-links small-12 medium-6 medium-push-6 columns">
-								<?php soblossom_footer_nav(); ?>
-							</nav>
-							
-							<div class="credits small-12 medium-6 medium-pull-6 columns">
-						
+
+						<div class="credits">
 							<?php
-								printf( __( '&copy %1$s <a href="#page" title="back to top">%2$s</a>; %3$s theme by %4$s.', 'soblossom' ),
-									date( 'Y' ),
-									esc_attr( get_bloginfo( 'name' ) ),
-									'<a href="http://so-wp.com/themes/soblossom/">soblossom</a>',
-									'<a href="http://senlinonline.com" rel="designer">Piet Bos</a>'
-								);
+								printf( __( 'Le attività del Teatro delle Biglie sono realizzate col contributo dei %1$s e del %2$s', 'marblestheme' ),
+									'<a href="'. admin_url() .'" title="login" class="ghost-link">volontari</a>',
+									'<a href="http://www.polimi.it">Politecnico di Milano</a>' );
 							?>
-							
-							</div> <!-- end .credits -->
-							
-						</div><!-- end .site-info -->
-					
+						</div> <!-- end .credits -->
+
 					</footer><!-- end #colophon -->
 
 				</div> <!-- end #page .hfeed.site line 59 header.php -->
