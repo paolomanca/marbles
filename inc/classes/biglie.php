@@ -106,7 +106,7 @@ function biglia_f( $atts ) {
 		// If a title was provided, keep it; otherwise get the page's custom field course_type
 		if ( !isset($atts['subtitle']) || empty($atts['subtitle']) ) {
 			if (function_exists('get_field') && !empty($atts['page']->course_type)) {
-				$atts['subtitle'] = $atts['page']->course_type;
+				$atts['subtitle'] = $atts['page']->subtitle;
 			}
 		}
 

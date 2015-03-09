@@ -113,90 +113,94 @@ MARBLES
     margin: 0;
     padding: 0;
     text-align: center;
+}
 
-    .biglia {
-        text-align: center;
-        display: inline-block;
-        width: 90%;
-        max-width: rem-calc(350);
-        margin: 5%;
+.biglia {
+    text-align: center;
+    display: inline-block;
+    width: 90%;
+    max-width: rem-calc(350);
+    margin: 5%;
 
-        &:hover {
-            .biglia-image {
-                opacity: 1;
-            }
+    .biglia-image {
+
+        @include transition(all .4s ease-in-out);
+
+        background: darken($body-bg, 10%);
+        border-radius: 100%;
+        position: relative;
+        width: inherit;
+        margin-bottom: 4%;
+
+        &:before { /* a little hack to keep the ratio */
+            content: "";
+            display: block;
+            padding-top: 100%; 	/* change here the ratio 1:1 = 100% */
         }
 
-        .biglia-image {
+        img {
+            @extend .desaturate;
 
-            @include transition(all .4s ease-in-out);
-
-            background: darken($body-bg, 10%);
+            width: 100%;
+            height: 100%;
             border-radius: 100%;
-            position: relative;
-            width: inherit;
-            opacity: .75;
-
-
-            &:before { /* a little hack to keep the ratio */
-                content: "";
-                display: block;
-                padding-top: 100%; 	/* change here the ratio 1:1 = 100% */
-            }
-
-            img {
-                @extend .desaturate;
-
-                width: 100%;
-                height: 100%;
-                border-radius: 100%;
-                /* following lines are needed for the ratio thing */
-                position:  absolute;
-                top: 0; left: 0; bottom: 0; right: 0;
-            }
-        }
-
-        h2 {
-
-            font: {
-                size: rem-calc(28);
-                weight: 300;
-            }
-
-            letter-spacing: rem-calc(2);
-            text-align: center;
-            word-wrap: break-word;
-            margin: 0;
-            padding: 4% 5% 0 5%;
-
-        }
-
-        h3 {
-
-            @extend .font-smooth;
-
-            color: lighten($body-font-color, 15%);
-            font: {
-                size: rem-calc(16);
-                weight: 400;
-            }
-            text-transform: uppercase;
-
-            letter-spacing: rem-calc(1.3);
-
-            text-align: center;
-            word-wrap: break-word;
-            margin: 0;
-            padding: 0 5%;
+            /* following lines are needed for the ratio thing */
+            position:  absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
         }
     }
 
+    a .biglia-image {
+        opacity: .75;
+    }
+
+    &:hover {
+        a .biglia-image {
+            opacity: 1;
+        }
+    }
+
+    h2 {
+
+        font: {
+            size: rem-calc(28);
+            weight: 300;
+        }
+
+        letter-spacing: rem-calc(2);
+        text-align: center;
+        word-wrap: break-word;
+        margin: 0;
+        padding: 0 5%;
+
+    }
+
+    h3 {
+
+        @extend .font-smooth;
+
+        color: lighten($body-font-color, 15%);
+        font: {
+            size: rem-calc(16);
+            weight: 400;
+        }
+        text-transform: uppercase;
+
+        letter-spacing: rem-calc(1.3);
+
+        text-align: center;
+        word-wrap: break-word;
+        margin: 0;
+        padding: 0 5%;
+    }
 }
+
 
 @media only screen and (min-width: rem-calc(641)) {
 
     .biglie {
-        padding: 0 3%;
+
+        margin-top: 5%;
 
         .biglia {
             margin: 2%;
