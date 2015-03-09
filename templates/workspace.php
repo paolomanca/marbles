@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Workspace
+ * (T)emplate Name: Workspace
  *
  * This template is based on the Foundation Workspace template
  *
