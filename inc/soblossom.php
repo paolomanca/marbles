@@ -106,6 +106,7 @@ function soblossom_supports_wp_features() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 	//add_image_size( $name, $width, $height, $crop );
+	add_image_size( 'marble', 750, 750, true );
 
 	// Enable support for HTML5 markup.
 	add_theme_support( 'html5',

@@ -9,6 +9,10 @@
  * YOU CAN ADD YOUR OWN FUNCTIONS HERE
  *************************************/
 
+/**
+ * /inc/classes/biglie.php
+ */
+require get_template_directory() . '/inc/classes/biglie.php';
 
 
 /****************************

@@ -9,174 +9,196 @@
  * @since 2.0.0
  * @package marbles
  *
+ * @param $in_atts array Attributes passed by the user
+ *              ['size'] string (optional) The size of the circle (Options: small|medium|large|larger; Default: medium)
+ *              ['style'] string (optional) Eventual inline styling
+ * @param null $content
+ *
+ * @return string
  */
 
 function biglie_f( $atts, $content = null ) {
 
-	$m_style = null;
-
+	// Default values if user doesn't provide any
 	$default = array(
-		'size'	=>	'medium',
+		'size'  => 'medium',
+		'style' => null,
 	);
 
-	$atts = array_merge($default, $atts);
+	$atts = shortcode_atts( $default, $atts, 'biglie' );
 
-	if ( !empty($atts['style']) ) {
-		$m_style = ' style="'. $atts['style'] .'"';
+
+	// Let's sanitize and clean up the input that will be used
+	if ( preg_match( "/\A(small|medium|large|larger)\z/", $atts['size'] ) === 0 ) {
+		unset( $atts['size'] );
 	}
 
-	$output = '<ul class="biglie '. $atts['size'] .'-size"'. $m_style .'>';
+	$atts['style'] = esc_html( $atts['style'] );
 
-	if ( !empty($content) )	:
 
-		$output .= do_shortcode( wp_kses($content, null) );
+	// Starting to construct the output
+	$output = '<ul class="biglie ' . $atts['size'] . '-size"';
 
-	else:
+	if ( ! empty( $atts['style'] ) ) {
+		$output .= ' style="' . $atts['style'] . '"';
+	}
 
-		if ( empty($atts['children_of']) ) {
-			return 'No marbles to show';
+	$output .= '>';
+
+
+	// Since we also want to provide support for empty [biglie], we check if its content is empty
+	if ( empty( $content ) ) {
+		// If it is, we output a biglia for each children of the page
+
+		if ( empty( $atts['children_of'] ) ) {
+			$parent = get_post();
+		} else {
+			$parent = get_page_by_path( $atts['children_of'] );
+
+			if ( empty( $parent ) ) {
+				return __( 'Not a page', 'marblestheme' );
+			}
 		}
 
-		$parent = get_page_by_path($atts['children_of']);
-
-		if ( empty($parent) ) {
-			return 'Not a page';
-		}
-
-		$children = get_pages(array(
-			'child_of' => $parent->ID,
-			'parent' => $parent->ID,
+		$children = get_pages( array(
+			'child_of'    => $parent->ID,
+			'parent'      => $parent->ID,
 			'post_status' => 'publish',
-		));
+		) );
 
+		if ( empty( $children ) ) {
+			return __( 'No children to show', 'marblestheme' );
+		}
 
+		foreach ( $children as $child ) {
+			$output .= print_marble( array(
+				'post-ID' => $child->ID,
+				'link'    => get_page_link( $child->ID ),
+				'title'   => $child->post_title,
+			) );
 
-		foreach ( $children as $child ) :
-			$thumb_img = wp_get_attachment_image_src( get_post_thumbnail_id($child->ID), 'marbles-thumb');
+		}
 
-			$output .= print_marble(array(
-				'link' 	=>	get_page_link($child->ID),
-				'image'	=>	$thumb_img[0],
-				'title'	=>	$child->post_title,
-			));
+	} else {
+		$output .= do_shortcode( $content, null );
+	}
 
-		endforeach;
-
-	endif;
-
-
-	$output .= '</ul><!-- .marbles -->';
+	$output .= '</ul>';
 
 	return $output;
 
 }
+
 add_shortcode( 'biglie', 'biglie_f' );
 
 
 /**
  * Translates the shortcode [biglia] to its HTML
- * @param $atts
+ *
+ * @param $atts_in
+ *
  * @return string
  */
 function biglia_f( $atts ) {
 
+	$default = array(
+		'image'    => null,
+		'link'     => null,
+		'page'     => null,
+		'subtitle' => null,
+		'title'    => null,
+	);
+
+	$atts = shortcode_atts( $default, $atts );
+
+
+	// Sanitizing
+	$atts['image']    = esc_url( $atts_in['image'] );
+	$atts['link']     = esc_url( $atts_in['link'] );
+	$atts['page']     = sanitize_text_field( $atts['page'] );
+	$atts['subtitle'] = wp_kses( $atts['subtitle'], array( 'br' => array() ) );
+	$atts['title']    = wp_kses( $atts['title'], array( 'br' => array() ) );
+
+
 	// Check whether the user provided a page to link and take data from
-	if ( !empty($atts['page']) ) {
+	if ( ! empty( $atts['page'] ) ) {
 
 		// retrieve the page using the provided page name
-		$atts['page'] = get_page_by_path($atts['page']);
+		$atts['page'] = get_page_by_path( $atts['page'] );
 
-		if ( empty($atts['page']) ) {
+		if ( empty( $atts['page'] ) ) {
 			return 'Not a page';
 		}
 
-		$atts['link'] = get_page_link($atts['page']->ID);
+		$atts['page-ID'] = $atts['page']->ID;
 
-		// If a link to an image was provided, keep it; otherwise retrieve the page thumbnail
-		if ( !isset($atts['image']) || empty($atts['image']) ) {
-			$thumb_img = wp_get_attachment_image_src(get_post_thumbnail_id($atts['page']->ID), 'marbles-thumb');
-			$atts['image'] = $thumb_img[0];// [0] => url
-		}
+		$atts['link'] = get_page_link( $atts['page']->ID );
 
 		// If a title was provided, keep it; otherwise get the page's title
-		if ( !isset($atts['title']) || empty($atts['title']) ) {
+		if ( ! isset( $atts['title'] ) || empty( $atts['title'] ) ) {
 			$atts['title'] = $atts['page']->post_title;
 		}
 
-		// If a title was provided, keep it; otherwise get the page's custom field course_type
-		if ( !isset($atts['subtitle']) || empty($atts['subtitle']) ) {
-			if (function_exists('get_field') && !empty($atts['page']->course_type)) {
+		// If a subtitle was provided, keep it; otherwise get the page's custom field subtitle
+		if ( ! isset( $atts['subtitle'] ) || empty( $atts['subtitle'] ) ) {
+			if ( function_exists( 'get_field' ) && ! empty( $atts['page']->subtitle ) ) {
 				$atts['subtitle'] = $atts['page']->subtitle;
 			}
 		}
 
 	}
 
-	return print_marble($atts);
-
+	return print_marble( $atts );
 }
+
 add_shortcode( 'biglia', 'biglia_f' );
 
 
 /**
- * @param $marble
+ * Prints the HTML code of a single biglia
+ *
+ * @param $in_atts array
+ *              ['image'] string (optional) The URL of the image inside the biglia
+ *              ['link'] string The URL to which the biglia links
+ *              ['page-ID'] integer (optional) The ID of the page
+ *              ['subtitle'] string The subtitle ('false' means the title will be hidden)
+ *              ['title'] string The title ('false' means the subtitle will be hidden)
+ *
  * @return string
  */
-function _print_marble( $marble ) {
+function print_marble( $in_atts ) {
 
+	$default = array(
+		'image'    => null,
+		'link'     => null,
+		'page-ID'  => null,
+		'subtitle' => false,
+		'title'    => null,
+	);
 
-	$output = '<div class="marble">';
-
-	$output .= '<a href="'. $marble['link'] .'">';
-
-	$output .= '<div class="marble-image" role="presentation">';
-
-	$output .= '<img class="grayscale" src="'. $marble['image'] .'" title="'. $marble['title'] .'" />';
-
-	$output .= '</div><!-- .marble-image -->';
-
-	if (!isset($marble['notitle'])) {
-		$output .= '<h2 class="marble-title">' . $marble['title'] . '</h2>';
-	}
-
-	if (!isset($marble['nosubtitle'])) {
-		$output .= '<h3 class="marble-subtitle">' . $marble['subtitle'] . '</h3>';
-	}
-
-	$output .= '</a>';
-
-	$output .= '</div><!-- .marble -->';
-
-	return $output;
-}
-
-/**
- * @param $marble
- * @return string
- */
-function print_marble( $marble ) {
-
+	$atts = wp_parse_args( $in_atts, $default );
 
 	$output = '<li class="biglia">';
-
-	$output .= '<a href="'. $marble['link'] .'">';
-
+	$output .= '<a href="' . $atts['link'] . '">';
 	$output .= '<div class="biglia-image">';
 
-	$output .= '<img src="'. $marble['image'] .'" title="'. $marble['title'] .'" />';
+	if ( empty( $atts['image'] ) ) {
+		$output .= get_the_post_thumbnail( $atts['page-ID'], 'marble' );
+	} else {
+		$output .= '<img src="' . $atts['image'] . '" title="' . $atts['title'] . '" />';
+	}
 
 	$output .= '</div>';
 
-	if (!isset($marble['notitle'])) {
-		$output .= '<h2>' . $marble['title'] . '</h2>';
+	if ( $atts['title'] != 'false' ) {
+		$output .= '<h2>' . $atts['title'] . '</h2>';
 	}
 
-	if (!isset($marble['nosubtitle'])) {
-		$output .= '<h3>' . $marble['subtitle'] . '</h3>';
+	if ( $atts['subtitle'] != 'false' ) {
+		$output .= '<h3>' . $atts['subtitle'] . '</h3>';
 	}
 
 	$output .= '</a>';
-
 	$output .= '</li>';
 
 	return $output;

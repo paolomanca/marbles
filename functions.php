@@ -65,17 +65,12 @@ require get_template_directory() . '/inc/walkers/iconfont-walker.php';
 require get_template_directory() . '/inc/classes/gallery.php';
 
 /**
- * /inc/classes/biglie.php
- */
-require get_template_directory() . '/inc/classes/biglie.php';
-
-/**
  * /inc/classes/aq_resizer.php - Aqua Resizer script to dynamically resize images
  *
  * @link: github.com/syamilmj/Aqua-Resizer
  * uncomment to include
  */
-//require get_template_directory() . '/inc/classes/aq_resizer.php';
+require get_template_directory() . '/inc/classes/aq_resizer.php';
 
 /**
  * /inc/functions/functionality.php - your own functions file
@@ -84,7 +79,7 @@ require get_template_directory() . '/inc/classes/biglie.php';
  * 
  * uncomment to include
  */
-//require get_template_directory() . '/inc/functions/functionality.php';
+require get_template_directory() . '/inc/functions/functionality.php';
 
 /**
  * /inc/functions/cpt.php - Custom Post Type registration file
