@@ -1,5 +1,8 @@
 ### MARBLES THEME CHANGE LOG & HISTORY
 
+### 2.0.1
+* FIXED: The image inside the biglia in the bio page was too small
+
 ### 2.0.0
 * IMPROVED: Totally rewritten the theme on [soblossom] (http://so-wp.com/themes/soblossom/). It should now be more polished and responsive.
 
