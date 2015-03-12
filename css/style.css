@@ -6816,7 +6816,8 @@ MARBLES
   display: inline-block;
   width: 90%;
   max-width: 19.44444rem;
-  margin: 5%; }
+  margin: 5%;
+  vertical-align: top; }
   .biglia .biglia-image {
     -moz-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
@@ -7235,5 +7236,3 @@ Adjust where necessary
   .respond-form,
   nav {
     display: none; } }
-
-/*# sourceMappingURL=style.css.map */
