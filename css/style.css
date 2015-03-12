@@ -6965,13 +6965,51 @@ EVENT ORGANISER STYLESHEETS
       display: none; }
     .single-event .eventorganiser-event-meta .eo-event-details {
       padding: 1%; }
-    .single-event .eventorganiser-event-meta .eo-event-meta {
-      margin: 1.5rem; }
-      .single-event .eventorganiser-event-meta .eo-event-meta li strong:first-child {
-        text-transform: uppercase; }
+      .single-event .eventorganiser-event-meta .eo-event-details p {
+        margin: 0; }
     .single-event .eventorganiser-event-meta .eo-event-venue-map {
       float: none;
       width: 100%; }
+
+.fc .fc-header {
+  background: transparent;
+  border: 0;
+  margin: 1.11111rem 0 0 0; }
+.fc table, .fc th, .fc td {
+  border: 0; }
+.fc .fc-border-separate {
+  border: 0.05556rem solid #e0e0e0; }
+.fc .fc-day-header {
+  background-image: none;
+  background-color: whitesmoke;
+  padding: 0.5rem 0.16667rem; }
+.fc .fc-header-title h2 {
+  font-size: 1.22222rem;
+  text-transform: uppercase; }
+.fc .fc-week:nth-child(even) {
+  background-color: #fcfcfc; }
+.fc .fc-day {
+  background-color: transparent;
+  padding: 0.44444rem; }
+.fc .fc-today {
+  background-color: rgba(230, 218, 86, 0.2);
+  border: 0.05556rem solid rgba(230, 218, 86, 0.5); }
+.fc .fc-event-inner {
+  font-size: 0.77778rem; }
+  .fc .fc-event-inner .fc-event-time {
+    font-size: 0.66667rem;
+    font-weight: 400;
+    display: block; }
+
+.qtip {
+  border: 0.05556rem solid #e0e0e0 !important;
+  font-size: 0.66667rem; }
+  .qtip .qtip-titlebar {
+    background-image: none;
+    background-color: whitesmoke;
+    font-size: 0.77778rem; }
+  .qtip .qtip-title {
+    padding: 0.16667rem 0.27778rem 0.05556rem; }
 
 /**
  * If you adjust the media queries in the _settings.scss (lines 80-85),

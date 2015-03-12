@@ -61,7 +61,9 @@ $body-font-weight: $font-weight-normal;
 // $default-float: left;
 
 // We use these as default colors throughout
-$gray-light: darken($body-bg, 30);
+$gray-lighter: darken($body-bg, 5);
+$gray-light: darken($body-bg, 10);
+$gray: darken($body-bg, 30);
 
 $primary-color: #71afc2;
 // $secondary-color: #e7e7e7;

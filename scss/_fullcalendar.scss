@@ -1,0 +1,76 @@
+.fc {
+    .fc-header {
+        background: transparent;
+        border: 0;
+        margin: rem-calc(20) 0 0 0;
+    }
+
+    .fc-button {
+        .ui-icon {
+        }
+    }
+
+    .fc-button-prev .ui-icon:before {
+    }
+
+    .fc-button-next .ui-icon {
+    }
+
+    table, th, td {
+        border: 0
+    }
+
+    .fc-border-separate {
+        border: rem-calc(1) solid $gray-light;
+    }
+
+    .fc-day-header {
+        background-image: none;
+        background-color: hsl(0, 0, 96%);
+        padding: rem-calc(9) rem-calc(3);
+    }
+
+    .fc-header-title h2 {
+        font-size: rem-calc(22);
+        text-transform: uppercase;
+    }
+
+    .fc-week:nth-child(even) {
+        background-color: hsl(0, 0, 99%);
+    }
+
+    .fc-day {
+        background-color: transparent;
+        padding: rem-calc(8);
+    }
+
+    .fc-today {
+        background-color: hsla(55, 74%, 62%, .2);
+        border: rem-calc(1) solid hsla(55, 74%, 62%, .5);
+    }
+
+    .fc-event-inner {
+        font-size: rem-calc(14);
+
+        .fc-event-time {
+            font-size: rem-calc(12);
+            font-weight: 400;
+            display: block;
+        }
+    }
+}
+
+.qtip {
+    border: rem-calc(1) solid $gray-light !important;
+    font-size: rem-calc(12);
+
+    .qtip-titlebar {
+        background-image: none;
+        background-color: hsl(0, 0, 96%);
+        font-size: rem-calc(14);
+    }
+
+    .qtip-title {
+        padding: rem-calc(3px 5px 1px);
+    }
+}

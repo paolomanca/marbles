@@ -12,8 +12,8 @@ EVENT ORGANISER STYLESHEETS
 
 
         border: {
-            top: rem-calc(3) solid $gray-light;
-            bottom: rem-calc(7) solid $gray-light;
+            top: rem-calc(3) solid $gray;
+            bottom: rem-calc(7) solid $gray;
         }
 
         font: {
@@ -22,7 +22,7 @@ EVENT ORGANISER STYLESHEETS
 
         h4 {
             border: {
-                bottom: rem-calc(3) dashed $gray-light;
+                bottom: rem-calc(3) dashed $gray;
             }
 
             font: {
@@ -41,13 +41,9 @@ EVENT ORGANISER STYLESHEETS
 
         .eo-event-details {
             padding: 1%;
-        }
 
-        .eo-event-meta {
-            margin: 1.5rem;
-
-            li strong:first-child {
-                text-transform: uppercase;
+            p {
+                margin: 0;
             }
         }
 

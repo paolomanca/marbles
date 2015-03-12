@@ -32,12 +32,14 @@
 				<!-- Single event -->
 				<li><strong><?php _e( 'Start', 'eventorganiser' ); ?>:</strong> <?php eo_the_start( $date_format ); ?>
 				</li>
+				<li><strong><?php _e( 'End', 'eventorganiser' ); ?>:</strong> <?php eo_the_end( $date_format ); ?>
+				</li>
 			<?php
 			} ?>
 
 			<?php if ( eo_get_venue() ) { ?>
 				<li><strong><?php _e( 'Venue', 'eventorganiser' ); ?>:</strong>
-					<a href="<?php eo_venue_link(); ?>"><?php eo_venue_name(); ?></a></li>
+					<?php eo_venue_name(); ?></li>
 			<?php } ?>
 
 
