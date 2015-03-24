@@ -199,6 +199,8 @@ function soblossom_supports_wp_features() {
 		wp_enqueue_style( 'google_webfonts', soblossom_google_webfonts(), array(), null );
 	
 		/* SCRIPTS */
+		wp_enqueue_script('jquery');
+
 		wp_enqueue_script( 'head-js', get_template_directory_uri() . '/js/head.js', array(), null);
 
 		wp_enqueue_script( 'foot-js', get_template_directory_uri() . '/js/foot.js', array(), null, true );

@@ -48,6 +48,12 @@ module.exports = function (grunt) {
                         flatten: true,
                         src: ['bower_components/foundation/js/foundation.js'],
                         dest: 'js/foot'
+                    },
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: ['bower_components/fontawesome/fonts/*'],
+                        dest: 'fonts'
                     }
                 ]
             }
@@ -82,7 +88,7 @@ module.exports = function (grunt) {
             },
 
             copy: {
-                files: ['bower_components/{foundation,modernizr}/**/*.js'],
+                files: ['bower_components/{foundation,modernizr}/**/*.js', 'bower_components/fontawesome/fonts/*'],
                 tasks: ['copy']
             },
 
