@@ -17,7 +17,7 @@ module.exports = function (grunt) {
         },
 
         cssmin: {
-            minyfy: {
+            minify: {
                 files: {
                     'css/style.min.css': 'css/style.css'
                 }
@@ -53,6 +53,16 @@ module.exports = function (grunt) {
             }
         },
 
+        markdown: {
+            all: {
+                files: [{
+                    expand: true,
+                    src: '*.md',
+                    ext: '.html'
+                }]
+            }
+        },
+
         watch: {
             grunt: {files: ['Gruntfile.js']},
 
@@ -74,6 +84,11 @@ module.exports = function (grunt) {
             copy: {
                 files: ['bower_components/{foundation,modernizr}/**/*.js'],
                 tasks: ['copy']
+            },
+
+            markdown: {
+                files: ['*.md'],
+                tasks: ['markdown']
             }
         }
     });
@@ -82,8 +97,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-markdown');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('build', ['copy', 'sass', 'cssmin', 'uglify']);
+    grunt.registerTask('build', ['copy', 'sass', 'cssmin', 'uglify', 'markdown']);
     grunt.registerTask('default', ['build', 'watch']);
 }

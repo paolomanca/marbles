@@ -1,0 +1,244 @@
+<!DOCTYPE  html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>doc</title>
+    <style>
+      /*github.com style (c) Vasily Polovnyov <vast@whiteants.net>*/
+      pre code {
+        display: block; padding: 0.5em;
+        color: #333;
+        background: #f8f8ff
+      }
+      pre .comment,
+      pre .template_comment,
+      pre .diff .header,
+      pre .javadoc {
+        color: #998;
+        font-style: italic
+      }
+      pre .keyword,
+      pre .css .rule .keyword,
+      pre .winutils,
+      pre .javascript .title,
+      pre .nginx .title,
+      pre .subst,
+      pre .request,
+      pre .status {
+        color: #333;
+        font-weight: bold
+      }
+      pre .number,
+      pre .hexcolor,
+      pre .ruby .constant {
+        color: #099;
+      }
+      pre .string,
+      pre .tag .value,
+      pre .phpdoc,
+      pre .tex .formula {
+        color: #d14
+      }
+      pre .title,
+      pre .id {
+        color: #900;
+        font-weight: bold
+      }
+      pre .javascript .title,
+      pre .lisp .title,
+      pre .clojure .title,
+      pre .subst {
+        font-weight: normal
+      }
+      pre .class .title,
+      pre .haskell .type,
+      pre .vhdl .literal,
+      pre .tex .command {
+        color: #458;
+        font-weight: bold
+      }
+      pre .tag,
+      pre .tag .title,
+      pre .rules .property,
+      pre .django .tag .keyword {
+        color: #000080;
+        font-weight: normal
+      }
+      pre .attribute,
+      pre .variable,
+      pre .lisp .body {
+        color: #008080
+      }
+      pre .regexp {
+        color: #009926
+      }
+      pre .class {
+        color: #458;
+        font-weight: bold
+      }
+      pre .symbol,
+      pre .ruby .symbol .string,
+      pre .lisp .keyword,
+      pre .tex .special,
+      pre .prompt {
+        color: #990073
+      }
+      pre .built_in,
+      pre .lisp .title,
+      pre .clojure .built_in {
+        color: #0086b3
+      }
+      pre .preprocessor,
+      pre .pi,
+      pre .doctype,
+      pre .shebang,
+      pre .cdata {
+        color: #999;
+        font-weight: bold
+      }
+      pre .deletion {
+        background: #fdd
+      }
+      pre .addition {
+        background: #dfd
+      }
+      pre .diff .change {
+        background: #0086b3
+      }
+      pre .chunk {
+        color: #aaa
+      }
+    </style>
+  </head>
+  <body>  
+    <h1 id="soblossom-wordpress-theme">soblossom WordPress theme</h1>
+<h6 id="last-updated-on-2015-01-13">Last updated on 2015.01.13</h6>
+<h6 id="foundation-version-5-5-0">Foundation version 5.5.0</h6>
+<h6 id="-demo-site-http-so-wp-com-themes-soblossom-"><a href="http://so-wp.com/themes/soblossom/">DEMO SITE</a></h6>
+<h6 id="author-piet-bos-https-github-com-senlin-">Author: <a href="https://github.com/senlin">Piet Bos</a></h6>
+<p>soblossom is a WordPress starter theme that is based on <a href="http://foundation.zurb.com">Foundation</a> on the frontend and <a href="http://underscores.me">Underscores sass</a> on the backend. </p>
+<p>We first started developing soblossom in 2013 under a few different names (with Foundation 3 and 4). Then when Foundation 5 was released, instead of updating the lot, we started over and in August 2014 we went through another of those quite extreme makeovers/reorganisations...</p>
+<h2 id="built-in-features">Built in Features</h2>
+<h3 id="navigation">Navigation</h3>
+<p>The default mobile navigation is with the off canvas. We have kept the navigation as flexible as possible though, so you can also choose the &quot;conventional&quot; topbar navigation (where the menu slides down) or any variation you might think of.</p>
+<p>soblossom also comes with a footer navigation menu and a social media menu which comes with an iconfont walker (<code>inc/walkers/iconfont-walker.php</code>) that has the <a href="https://fontawesome.io/">FontAwesome</a> font-icon-set integrated.</p>
+<h3 id="featured-images">Featured Images</h3>
+<p>All Featured Images, for example those on a Single Post, come with the builtin <a href="http://foundation.zurb.com/docs/components/interchange.html">Foundation Interchange</a>. The main advantage of this is that the image shown (AND loaded) is different per device: medium sized for small devices, tablets and laptops and the large image for everything wider than 1280px. You can customise the code by adding your own image sizes and call those instead. The function that deals with this is the <code>soblossom_featured_image()</code> function on lines 278-313 of <code>inc/soblossom.php</code>.</p>
+<h3 id="gallery-shortcode">Gallery Shortcode</h3>
+<p>For the soblossom theme we have completely overhauled the default WordPress Gallery shortcode. You won&#39;t find any inline styling either. We have replaced the functionality with <a href="http://foundation.zurb.com/docs/components/block_grid.html">Foundation Blockgrid</a> <strong>and</strong> <a href="http://foundation.zurb.com/docs/components/clearing.html">Foundation Clearing Thumbs</a>, which shows the images with a cool lightbox effect, so you won&#39;t need an additional plugin for that either.
+By default the blockgrid shows <code>small-block-grid-2 medium-block-grid-3 large-block-grid-4</code>, which means that on small devices (up to 640px wide) it shows 2 thumbs; on medium devices (640-1024px wide) it shows 3 thumbs and on large devices (anything over 1024px) it will show 4 thumbs. Clicking on a thumb will show the Foundation Clearing effect.
+If you want to adjust anything, you can do so in <code>inc/classes/gallery.php</code> and the <code>scss/_gallery.scss</code> files.
+Showing your galleries this way means that whatever you choose as amount of columns in the WordPress interface will have no effect on the frontend. That is the &quot;price you pay&quot; for awesomeness. Of course you can remove the function and let WordPress do it its own way too.</p>
+<h3 id="other-foundation-features">Other Foundation Features</h3>
+<p>Foundation comes packed with features and although we have not actively implemented all of them, they are all readily available to you. You can ready all about them via the <a href="http://foundation.zurb.com/docs/">Foundation Documentation</a>. Check out the <a href="http://so-wp.com/themes/soblossom">demo</a> where we show a few more things that are possible.</p>
+<h3 id="functions">Functions</h3>
+<p>We have tried to keep most of the functions together. The main <code>functions.php</code> file in the theme root is where we do all the inclusions of other files as well as registering the 3 navigation menus and the 2 widget areas.
+Then there is the <code>inc/soblossom.php</code> file, the core functions file and without it the blossom cannot bloom :)
+The rest of the functions files you can find in the <code>inc/functions</code> folder. There are the <code>dashboard-functions.php</code> for functions and filters that have to do with the admin or backend of the site, there are sample <code>cmb.php</code> and <code>cpt.php</code> files for Custom Meta Boxes and Custom Post Types resp. and you will also find the <code>functionality.php</code> file in the <code>inc/functions</code> folder. 
+The purpose of this file is to add your own functions and filters to the theme and at the same time to ensure portability if you ever want to switch themes. Of course you can also get rid of that file and start hacking away in the <code>inc/soblossom.php</code> file or any of the other files that add functionality to the theme.</p>
+<h3 id="page-templates">Page Templates</h3>
+<p>Apart from the default ones, soblossom comes with 4 additional page templates. One is the full width template. Two are based on <a href="http://foundation.zurb.com/templates.html">Foundation templates</a>, Banded and Workspace. There is also a sample template which you can use to build a new template from/on.</p>
+<p>The <a href="http://so-wp.com/themes/soblossom/">homepage of the demo site</a> uses the banded template, so you can have a look and decide whether you can use that on your own site(s) too.</p>
+<p>In the <code>templates</code> folder you can find these 4 page templates.</p>
+<h3 id="plugins">Plugins</h3>
+<p>The soblossom theme comes optimised for the following plugins:</p>
+<ul>
+<li><a href="http://senl.in/FormidablePro">Formidable Pro</a> (aff.link) - turn off the CSS output of the plugin to fully enjoy the Foundation Forms styling</li>
+<li><a href="http://senl.in/gRaVitY">Gravity Forms</a> (aff.link) - turn off the CSS output of the plugin to fully enjoy the Foundation Forms styling</li>
+<li><a href="http://wordpress.org/plugins/meta-box/">Meta Box</a> - the <code>inc/functions/cmb.php</code> file has been generated with the <a href="github.com/rilwis/meta-box/blob/master/demo/demo.php">demo code</a> of this plugin.</li>
+<li><a href="http://wordpress.org/plugins/wordpress-seo/">WordPress SEO</a> - title tags in the head section, breadcrumb code already added, admin columns removed via filter in <code>inc/functions/dashboard-functions.php</code></li>
+<li><a href="http://senl.in/getwpml">WPML</a> (aff.link) - language code is added to the body class if WPML is active (filter in <code>inc/soblossom.php</code>)</li>
+</ul>
+<h2 id="languages">Languages</h2>
+<p>In the languages folder you will find the <code>soblossom.pot</code> file and any translations that have been completed. To help us translate soblossom in your language, you can do as follows:</p>
+<ul>
+<li>Help translate soblossom using <a href="https://www.transifex.com/projects/p/soblossom/">Transifex</a></li>
+<li>Fork soblossom on Github, locally open the pot file with PO Edit, translate the file into your language and send us a Pull Request on Github</li>
+</ul>
+<p>All contributions naturally receive credits here in the readme file.</p>
+<p>2014.12.27 - Dutch added - by <a href="http://senlinonline.com">Piet Bos</a></p>
+<h2 id="credits">Credits</h2>
+<p>Nowadays there are plenty of WordPress themes built on Foundation and we have looked at a few of them: <a href="https://github.com/milohuang/reverie">Reverie</a> by <a href="https://github.com/milohuang">Zhen Huang</a>, <a href="http://wpforge.themeawesome.com/">WPForge</a> by <a href="https://twitter.com/tsquez">Thomas Vasquez</a> and last but not least <a href="http://jointswp.com/">JointsWP</a> by <a href="http://twitter.com/jeremyenglert">Jeremy Englert</a>. Thanks all for your guidance, tips and inspiration!</p>
+<h2 id="license">License</h2>
+<ul>
+<li>License: GNU Version 2 or Any Later Version</li>
+<li>License URI: <a href="http://www.gnu.org/licenses/gpl-2.0.html">http://www.gnu.org/licenses/gpl-2.0.html</a></li>
+</ul>
+<h2 id="donations">Donations</h2>
+<ul>
+<li>Donate link: <a href="http://so-wp.com/donations">http://so-wp.com/donations</a></li>
+</ul>
+<h2 id="connect-with-me-through">Connect with me through</h2>
+<p><a href="https://github.com/senlin">Github</a> </p>
+<p><a href="http://plus.google.com/+PietBos">Google+</a> </p>
+<p><a href="http://profiles.wordpress.org/senlin/">WordPress</a> </p>
+<p><a href="http://senlinonline.com">Website</a></p>
+<h2 id="changelog">Changelog</h2>
+<h3 id="150111">150111</h3>
+<ul>
+<li>address <a href="https://github.com/senlin/soblossom/issues?q=is%3Aissue+is%3Aclosed">issues #2-#18</a> by <a href="https://github.com/emiluzelac">Emil Uzelac</a> after his official <a href="http://themereview.co/theme-reviews-as-a-service/">Theme Review</a></li>
+</ul>
+<h3 id="141227">141227</h3>
+<ul>
+<li>complete Dutch translation</li>
+</ul>
+<h3 id="141218">141218</h3>
+<ul>
+<li>update to Foundation 5.5.0</li>
+</ul>
+<h3 id="141112">141112</h3>
+<ul>
+<li>update to Foundation 5.4.7</li>
+</ul>
+<h3 id="141016">141016</h3>
+<ul>
+<li>update to Foundation 5.4.6</li>
+<li>move comments styling to its own sheet</li>
+<li>fix typo on comments.php</li>
+<li>add selection styling</li>
+</ul>
+<h3 id="140825">140825</h3>
+<ul>
+<li>update to Foundation 5.4.0</li>
+<li>remove function &quot;Remove Query strings from Static Resources&quot; as number of caching plugins already have that builtin</li>
+<li>rewrite inclusion print stylesheet</li>
+<li>add #link to off-canvas-toggle to enable for iOS</li>
+</ul>
+<h3 id="140822">140822</h3>
+<ul>
+<li>update readme.md</li>
+<li>add page templates banded and workspace</li>
+</ul>
+<h3 id="140820">140820</h3>
+<ul>
+<li>more tweaking</li>
+</ul>
+<h3 id="140819">140819</h3>
+<ul>
+<li>nth overhaul, but we&#39;re getting somewhere now</li>
+</ul>
+<h3 id="140810">140810</h3>
+<ul>
+<li>complete theme overhaul; many parts reorganised</li>
+</ul>
+<h3 id="140804">140804</h3>
+<ul>
+<li>integrate latest changes from _s</li>
+</ul>
+<h3 id="140526">140526</h3>
+<ul>
+<li>massive theme overhaul with lots of additional function (as I commited too fast, you can see the changes to all files where it says &quot;add gitignore&quot;)</li>
+</ul>
+<h3 id="140315">140315</h3>
+<ul>
+<li>changed arrows of continue reading, next/previous post/posts/pages into Font Awesome long arrows</li>
+<li>clean up</li>
+</ul>
+<h3 id="2014-1-24">2014.1.24</h3>
+<ul>
+<li>initial commit</li>
+</ul>
+
+  </body>
+</html>

@@ -1,5 +1,13 @@
 ### MARBLES THEME CHANGE LOG & HISTORY
 
+### 2.1.0
+* NEW: Now javascript is deployed as two minimized files for header and footer
+* NEW: Grunt taking care of a lot of housekeeping
+* NEW: Got rid of compass dependency
+* IMPROVED: Fontawesome is now included using bower, so that it can be used in SCSSs
+* IMPROVED: Removed menus that were registered but not actually used
+* FIXED: Wordpress is no more enqueueing javascript from /bower_components
+
 ### 2.0.1
 * FIXED: The image inside the biglia in the bio page was too small
 
