@@ -1,5 +1,9 @@
 ### MARBLES THEME CHANGE LOG & HISTORY
 
+### 2.1.1
+* FIX: No jquery
+* FIX: No Fontawesome font files
+
 ### 2.1.0
 * NEW: Now javascript is deployed as two minimized files for header and footer
 * NEW: Grunt taking care of a lot of housekeeping
