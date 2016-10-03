@@ -1,4 +1,8 @@
 ### MARBLES THEME CHANGE LOG & HISTORY
+###2.1.2
+* NEW: Updates foundation
+* NEW: Updates fontawesome
+* FIX: grayscale wasn't working properly on all browsers
 
 ### 2.1.1
 * FIX: No jquery
