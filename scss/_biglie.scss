@@ -34,7 +34,7 @@ MARBLES
         }
 
         img {
-            @extend .desaturate;
+            @extend .grayscale;
 
             width: 100%;
             height: 100%;
